@@ -2,6 +2,7 @@ import 'package:book/pages/main_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'styles.dart';
+import 'screens.dart';
 
 import 'framework.dart';
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
                     ),
               ),
           primaryIconTheme: Theme.of(context).primaryIconTheme.copyWith(
-                color: Colors.black,
+                color: Colors.white,
               ),
           accentTextTheme: Theme.of(context).accentTextTheme.copyWith(
                 button: Theme.of(context).accentTextTheme.button.copyWith(
@@ -72,6 +73,10 @@ class MyApp extends StatelessWidget {
       case '/':
       case '/a':
         return _buildRootRoute(settings, (_) => MainPage());
+      case '/widgets_for_week':
+        return _buildRootRoute(settings, (_) => WidgetsListPage());
+      case '/widgets_for_text':
+        return _buildRootRoute(settings, (_) => WidgetText());
       default:
         return null;
     }
@@ -98,7 +103,7 @@ class MyApp extends StatelessWidget {
     debugPrint('page should be closed');
     FocusScope.of(context).requestFocus(FocusNode()); // 确保收起键盘
     // await finishCurrPage(code: AppChannels.RESULT_CANCELLED);
-    return false;
+    return true;
   }
 }
 
