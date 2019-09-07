@@ -56,6 +56,7 @@ class MyApp extends StatelessWidget {
           // ),
         ),
         onGenerateRoute: _onGenerateRoute,
+        title: "宴峰",
       );
 
   Route _onGenerateRoute(RouteSettings settings) {
