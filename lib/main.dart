@@ -1,4 +1,5 @@
 import 'package:book/pages/main_page.dart';
+import 'package:book/to_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'styles.dart';
@@ -40,6 +41,8 @@ class MyApp extends StatelessWidget {
           primaryIconTheme: Theme.of(context).primaryIconTheme.copyWith(
                 color: Colors.white,
               ),
+          scaffoldBackgroundColor: Styles.scaffoldBackgroundColor,
+          // 设置页面整体背景色
           accentTextTheme: Theme.of(context).accentTextTheme.copyWith(
                 button: Theme.of(context).accentTextTheme.button.copyWith(
                       color: Styles.colorPrimary,
@@ -77,6 +80,8 @@ class MyApp extends StatelessWidget {
         return _buildRootRoute(settings, (_) => WidgetsListPage());
       case '/widgets_for_text':
         return _buildRootRoute(settings, (_) => WidgetText());
+      case '/test':
+        return _buildRootRoute(settings, (_) => TodoListPage());
       default:
         return null;
     }

@@ -1,40 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:book/net/BaseResp.dart';
 import 'package:book/net/HttpUtils.dart';
-import 'dart:developer';
+import 'package:book/widgets.dart' show FetchResult;
 
 import 'package:book/domin/HomeBean.dart';
 import 'package:book/domin/NavigationBean.dart';
 import 'package:book/domin/SystemTreeArticleBean.dart';
 import 'package:book/domin/SystemTreeBean.dart';
 
-/**
- * https://juejin.im/post/5b5d782ae51d45191c7e7fb3#heading-7   json 解析
- */
+///
+///https://juejin.im/post/5b5d782ae51d45191c7e7fb3#heading-7   json 解析
+///
 class NetManager {
+  static var page = 0;
+
   //登录接口
-  static loginApi(BuildContext context) async {
-    BaseResp baseResp = await HttpUtils.postRequest(context,
+  static loginApi() async {
+    BaseResp baseResp = await HttpUtils.postRequest(
         "/user/login?username=18310257489&password=qqqq1111", null, null);
     print("TAG--222--" + "" + baseResp.toString());
   }
 
-  //首页列表接口
-  static homeListApi(BuildContext context, int page) async {
+  /// 获取首页列表数据
+  /// @param page 分页页码
+  /// [increment]指定是否为增量加载(翻页)
+  static Future<FetchResult<HomeItemBean>> fetchHomeListApi([
+    bool isIncremental = false,
+  ]) async {
+    page = isIncremental ? (page + 1) : 0;
+    print("isIncremental-------->$isIncremental");
     BaseResp baseResp = await HttpUtils.getRequest(
-        context, "/article/list/" + page.toString() + "/json", null, null,
+        "/article/list/" + page.toString() + "/json", null, null,
         showLoading: true);
     BaseResp ta = BaseResp.init(baseResp.data);
-    print("ta---$ta");
     HomeBean homeBean = HomeBean.fromJson(ta.data);
-   print("TAG---"+"home bean===="+homeBean.toString());
-    return homeBean;
+    return FetchResult<HomeItemBean>(homeBean.datas, true);
   }
 
   //获取体系结构列表
   static treeApi(BuildContext context) async {
     BaseResp baseResp = await HttpUtils.getRequest(
-        context, "/tree/json", null, null,
+        "/tree/json", null, null,
         showLoading: true);
     BaseResp bean = BaseResp.init(baseResp.data);
     SystemTreeBean systemTreeBean = SystemTreeBean.fromJson(bean.data);
@@ -44,7 +50,7 @@ class NetManager {
   //知识体系下的文章
   static treeArticleApi(BuildContext context, int id, int pageNo) async {
     BaseResp baseResp = await HttpUtils.getRequest(
-        context, "/article/list/$pageNo/json?cid=$id", null, null,
+        "/article/list/$pageNo/json?cid=$id", null, null,
         showLoading: true);
     BaseResp ta = BaseResp.init(baseResp.data);
     SystemTreeArticleBean articleBean = SystemTreeArticleBean.fromJson(ta.data);
@@ -53,7 +59,7 @@ class NetManager {
 
   static naviListApi(BuildContext context) async {
     BaseResp baseResp = await HttpUtils.getRequest(
-        context, "/navi/json", null, null,
+        "/navi/json", null, null,
         showLoading: true);
     BaseResp ta = BaseResp.init(baseResp.data);
     NavigationBean naviBean = NavigationBean.fromJson(ta.data);

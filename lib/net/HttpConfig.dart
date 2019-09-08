@@ -1,3 +1,3 @@
 class HttpConfig{
-  static bool DEBUG = true;
+  static bool DEBUG = false;
 }

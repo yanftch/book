@@ -12,14 +12,6 @@ import 'dart:developer';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:book/http.dart' show ApiConfig;
 
-/**
- *
- * Author : yanftch
- * Date   : 2018/11/7
- * Time   : 14:27
- * Desc   :
- */
-
 class HttpUtils {
   // TODO: 2018/11/7 动态配置请求头信息
 
@@ -42,27 +34,24 @@ class HttpUtils {
   };
   static bool _loading = true;
 
-  static postRequest(BuildContext context, url, params, cancelToken,
+  static postRequest(url, params, cancelToken,
       {showLoading = false}) async {
     BaseOptions option = new BaseOptions(method: "POST");
-    return await _request(context, url, params, null, option, cancelToken,
+    return await _request(url, params, null, option, cancelToken,
         showLoading: showLoading);
   }
 
-  static getRequest(BuildContext context, url, params, cancelToken,
+  static getRequest(url, params, cancelToken,
       {showLoading = false}) async {
     BaseOptions option = new BaseOptions(method: "GET");
-    return await _request(context, url, params, null, option, cancelToken,
+    return await _request(url, params, null, option, cancelToken,
         showLoading: showLoading);
   }
 
-  static _request(context, url, params, Map<String, String> header,
+  static _request(url, params, Map<String, String> header,
       BaseOptions option, CancelToken cancelToken,
       {showLoading = false}) async {
         print("url--->$url");
-    if (showLoading) {
-      showHiddenDialog(context, true);
-    }
     var networkResult = await (new Connectivity().checkConnectivity());
     if (ConnectivityResult.mobile == networkResult) {
     } else if (ConnectivityResult.wifi == networkResult) {
@@ -94,9 +83,6 @@ class HttpUtils {
     try {
       response = await dio.request(url, data: params, cancelToken: cancelToken);
     } on DioError catch (error) {
-      if (showLoading) {
-        showHiddenDialog(context, false);
-      }
       // debugger();
       if (error.response != null) {
         print("TAG---" + "走异常了" + error.response.statusCode.toString());
@@ -135,9 +121,6 @@ class HttpUtils {
     //处理 response
 
     try {
-      if (showLoading) {
-        showHiddenDialog(context, false);
-      }
       if (response.statusCode == 200) {
         //解析
         if (HttpConfig.DEBUG) {
