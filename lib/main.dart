@@ -1,10 +1,7 @@
-import 'package:book/pages/main_page.dart';
-import 'package:book/to_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'styles.dart';
 import 'screens.dart';
-
 import 'framework.dart';
 
 /// 当做入口，只提供路由跳转
@@ -67,7 +64,8 @@ class MyApp extends StatelessWidget {
     print("settings----->$settings");
     if (isEmpty(settings.name)) return null;
     print(
-        "settings----->settings.name=${settings.name}&&&&settings.arguments=${settings.arguments}");
+        "settings----->settings.name=${settings
+            .name}   settings.arguments=${settings.arguments}");
 
     final uri = Uri.parse(settings.name);
     final path = uri.path ?? '';
@@ -80,8 +78,12 @@ class MyApp extends StatelessWidget {
         return _buildRootRoute(settings, (_) => WidgetsListPage());
       case '/widgets_for_text':
         return _buildRootRoute(settings, (_) => WidgetText());
+      case '/detail':
+        return _buildRootRoute(
+            settings, (_) => DetailPage(title: q['title'], url: q["url"],));
       case '/test':
-        return _buildRootRoute(settings, (_) => TodoListPage());
+        return _buildRootRoute(
+            settings, (_) => DetailPage(title: q['title'], url: q["url"],));
       default:
         return null;
     }

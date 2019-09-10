@@ -8,17 +8,17 @@ part of 'HomeBean.dart';
 
 HomeBean _$HomeBeanFromJson(Map<String, dynamic> json) {
   return HomeBean(
-      curPage: json['curPage'] as int,
-      offset: json['offset'] as int,
-      over: json['over'] as bool,
-      pageCount: json['pageCount'] as int,
-      size: json['size'] as int,
-      total: json['total'] as int,
-      datas: (json['datas'] as List)
-          ?.map((e) => e == null
-              ? null
-              : HomeItemBean.fromJson(e as Map<String, dynamic>))
-          ?.toList());
+    curPage: json['curPage'] as int,
+    offset: json['offset'] as int,
+    over: json['over'] as bool,
+    pageCount: json['pageCount'] as int,
+    size: json['size'] as int,
+    total: json['total'] as int,
+    datas: (json['datas'] as List)
+        ?.map((e) =>
+            e == null ? null : HomeItemBean.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+  );
 }
 
 Map<String, dynamic> _$HomeBeanToJson(HomeBean instance) => <String, dynamic>{
@@ -28,37 +28,38 @@ Map<String, dynamic> _$HomeBeanToJson(HomeBean instance) => <String, dynamic>{
       'pageCount': instance.pageCount,
       'size': instance.size,
       'total': instance.total,
-      'datas': instance.datas
+      'datas': instance.datas,
     };
 
 HomeItemBean _$HomeItemBeanFromJson(Map<String, dynamic> json) {
   return HomeItemBean(
-      apkLink: json['apkLink'] as String,
-      author: json['author'] as String,
-      chapterId: json['chapterId'] as int,
-      chapterName: json['chapterName'] as String,
-      collect: json['collect'] as bool,
-      courseId: json['courseId'] as int,
-      desc: json['desc'] as String,
-      envelopePic: json['envelopePic'] as String,
-      fresh: json['fresh'] as bool,
-      id: json['id'] as int,
-      link: json['link'] as String,
-      niceDate: json['niceDate'] as String,
-      origin: json['origin'] as String,
-      projectLink: json['projectLink'] as String,
-      publishTime: json['publishTime'] as int,
-      superChapterId: json['superChapterId'] as int,
-      superChapterName: json['superChapterName'] as String,
-      title: json['title'] as String,
-      type: json['type'] as int,
-      userId: json['userId'] as int,
-      visible: json['visible'] as int,
-      zan: json['zan'] as int,
-      tags: (json['tags'] as List)
-          ?.map((e) =>
-              e == null ? null : TagsBean.fromJson(e as Map<String, dynamic>))
-          ?.toList());
+    apkLink: json['apkLink'] as String,
+    author: json['author'] as String,
+    chapterId: json['chapterId'] as int,
+    chapterName: json['chapterName'] as String,
+    collect: json['collect'] as bool,
+    courseId: json['courseId'] as int,
+    desc: json['desc'] as String,
+    envelopePic: json['envelopePic'] as String,
+    fresh: json['fresh'] as bool,
+    id: json['id'] as int,
+    link: json['link'] as String,
+    niceDate: json['niceDate'] as String,
+    origin: json['origin'] as String,
+    projectLink: json['projectLink'] as String,
+    publishTime: json['publishTime'] as int,
+    superChapterId: json['superChapterId'] as int,
+    superChapterName: json['superChapterName'] as String,
+    title: json['title'] as String,
+    type: json['type'] as int,
+    userId: json['userId'] as int,
+    visible: json['visible'] as int,
+    zan: json['zan'] as int,
+    tags: (json['tags'] as List)
+        ?.map((e) =>
+            e == null ? null : TagsBean.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+  );
 }
 
 Map<String, dynamic> _$HomeItemBeanToJson(HomeItemBean instance) =>
@@ -85,12 +86,17 @@ Map<String, dynamic> _$HomeItemBeanToJson(HomeItemBean instance) =>
       'userId': instance.userId,
       'visible': instance.visible,
       'zan': instance.zan,
-      'tags': instance.tags
+      'tags': instance.tags,
     };
 
 TagsBean _$TagsBeanFromJson(Map<String, dynamic> json) {
-  return TagsBean(name: json['name'] as String, url: json['url'] as String);
+  return TagsBean(
+    name: json['name'] as String,
+    url: json['url'] as String,
+  );
 }
 
-Map<String, dynamic> _$TagsBeanToJson(TagsBean instance) =>
-    <String, dynamic>{'name': instance.name, 'url': instance.url};
+Map<String, dynamic> _$TagsBeanToJson(TagsBean instance) => <String, dynamic>{
+      'name': instance.name,
+      'url': instance.url,
+    };

@@ -14,13 +14,6 @@ import 'package:book/domin/SystemTreeBean.dart';
 class NetManager {
   static var page = 0;
 
-  //登录接口
-  static loginApi() async {
-    BaseResp baseResp = await HttpUtils.postRequest(
-        "/user/login?username=18310257489&password=qqqq1111", null, null);
-    print("TAG--222--" + "" + baseResp.toString());
-  }
-
   /// 获取首页列表数据
   /// @param page 分页页码
   /// [increment]指定是否为增量加载(翻页)
@@ -36,6 +29,23 @@ class NetManager {
     HomeBean homeBean = HomeBean.fromJson(ta.data);
     return FetchResult<HomeItemBean>(homeBean.datas, true);
   }
+
+  /// 获取首页 banner 数据
+  static Future fetchHomeBanner() {
+
+  }
+
+
+
+
+  //登录接口
+  static loginApi() async {
+    BaseResp baseResp = await HttpUtils.postRequest(
+        "/user/login?username=18310257489&password=qqqq1111", null, null);
+    print("TAG--222--" + "" + baseResp.toString());
+  }
+
+
 
   //获取体系结构列表
   static treeApi(BuildContext context) async {

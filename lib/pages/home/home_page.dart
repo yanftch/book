@@ -78,12 +78,13 @@ class _HomePageState<T> extends State<HomePage> {
 //      case 0:
 //        return Text("this is header...", style: TextStyle(fontSize: 20),);
       default:
-        return Text("this is header...", style: TextStyle(fontSize: 20),);
+        return null;
     }
   }
 
-  void _onItemClick(HomeItemBean homeItemBean) {
-    Navigator.pushNamed(context, "/test");
+  void _onItemClick(HomeItemBean item) {
+    Navigator.pushNamed(
+        context, "/detail?title=${item.title}&url=${item.link}");
   }
 
   /// 构建 Item
