@@ -1,12 +1,9 @@
+import 'package:book/http/api_config.dart';
 import 'package:flutter/material.dart';
 import 'package:book/net/BaseResp.dart';
 import 'package:book/net/HttpUtils.dart';
 import 'package:book/widgets.dart' show FetchResult;
-
-import 'package:book/domin/HomeBean.dart';
-import 'package:book/domin/NavigationBean.dart';
-import 'package:book/domin/SystemTreeArticleBean.dart';
-import 'package:book/domin/SystemTreeBean.dart';
+import 'package:book/domins.dart';
 
 ///
 ///https://juejin.im/post/5b5d782ae51d45191c7e7fb3#heading-7   json 解析
@@ -23,7 +20,7 @@ class NetManager {
     page = isIncremental ? (page + 1) : 0;
     print("isIncremental-------->$isIncremental");
     BaseResp baseResp = await HttpUtils.getRequest(
-        "/article/list/" + page.toString() + "/json", null, null,
+        "article/list/" + page.toString() + "/json", null, null,
         showLoading: true);
     BaseResp ta = BaseResp.init(baseResp.data);
     HomeBean homeBean = HomeBean.fromJson(ta.data);
@@ -31,10 +28,13 @@ class NetManager {
   }
 
   /// 获取首页 banner 数据
-  static Future fetchHomeBanner() {
+  static Future<List<HomeBannerBean>> fetchHomeBanner() async{
+    BaseResp baseResp =  await HttpUtils.getRequest(ApiConfig.HOME_BANNER, null, null);
 
+    BaseResp base = BaseResp.init(baseResp.data);
+    List<HomeBannerBean> banners =  HomeBannerBean.fromJsons(base.data);
+    return banners;
   }
-
 
 
 

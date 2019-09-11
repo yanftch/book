@@ -39,7 +39,8 @@ dependencies:
   banner: ^0.1.3
   shared_preferences: ^0.5.3+4
   synchronized: ^2.1.0+1
-
+  # banner
+  flutter_swiper: ^1.1.6
 
 dev_dependencies:
   flutter_test:

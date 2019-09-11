@@ -28,4 +28,10 @@ class HomeBannerBean {
       _$HomeBannerBeanFromJson(json);
 
   Map<String, dynamic> toJson() => _$HomeBannerBeanToJson(this);
+
+  // 将 List 转换成  List<HomeBannerBean>
+  static fromJsons(List<dynamic> originList) {
+    return originList.map((e) =>
+        HomeBannerBean.fromJson(e as Map<String, dynamic>)).toList();
+  }
 }

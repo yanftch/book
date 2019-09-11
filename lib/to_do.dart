@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+
+
+/// 使用到的三方库
+/// banner : https://github.com/best-flutter/flutter_swiper
+///
 class TodoListPage extends StatelessWidget {
   final todoList = <Todo>[
     Todo(false, "1.title 和 subtitle 的 Text，样式各自统一的话，可以考虑分别封装不同的 Text，自带样式。"),
