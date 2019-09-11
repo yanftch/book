@@ -92,6 +92,10 @@ class _HomePageState<T> extends State<HomePage> {
         ? Container(
             height: screenWidth * 5 / 9,
             child: Swiper(
+              onTap: (index) {
+                Navigator.pushNamed(context,
+                    "/detail?title=${_bannerDatas[index].title}&url=${_bannerDatas[index].url}");
+              },
               pagination: SwiperPagination(alignment: Alignment.bottomRight),
               autoplay: true,
               itemCount: _bannerDatas.length ?? 0,
