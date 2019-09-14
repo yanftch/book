@@ -41,6 +41,7 @@ dependencies:
   synchronized: ^2.1.0+1
   # banner
   flutter_swiper: ^1.1.6
+  # flutter_html: ^0.11.0
 
 dev_dependencies:
   flutter_test:
@@ -57,6 +58,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

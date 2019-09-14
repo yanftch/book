@@ -26,7 +26,8 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> pages = [
     HomePage(),
-    SecondPage(),
+    ProjectPage(),
+    TimeMainPage(),
     ThirdPage(),
     MinePage()
   ];
@@ -39,6 +40,10 @@ class _MainPageState extends State<MainPage> {
     BottomNavigationBarItem(
         icon: Icon(Icons.chat),
         title: Text("second"),
+        backgroundColor: Styles.colorPrimary),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.timelapse),
+        title: Text("时光"),
         backgroundColor: Styles.colorPrimary),
     BottomNavigationBarItem(
         icon: Icon(Icons.video_library),

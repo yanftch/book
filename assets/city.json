@@ -1,0 +1,4162 @@
+{
+    "p": [
+        {
+            "count": 347,
+            "id": 292,
+            "n": "上海",
+            "pinyinFull": "Shanghai",
+            "pinyinShort": "sh"
+        },
+        {
+            "count": 270,
+            "id": 366,
+            "n": "深圳",
+            "pinyinFull": "Shenzhen",
+            "pinyinShort": "sz"
+        },
+        {
+            "count": 251,
+            "id": 291,
+            "n": "重庆",
+            "pinyinFull": "Chongqing",
+            "pinyinShort": "cq"
+        },
+        {
+            "count": 220,
+            "id": 290,
+            "n": "北京",
+            "pinyinFull": "Beijing",
+            "pinyinShort": "bj"
+        },
+        {
+            "count": 200,
+            "id": 880,
+            "n": "成都",
+            "pinyinFull": "Chengdu",
+            "pinyinShort": "cd"
+        },
+        {
+            "count": 194,
+            "id": 365,
+            "n": "广州",
+            "pinyinFull": "Guangzhou",
+            "pinyinShort": "gz"
+        },
+        {
+            "count": 165,
+            "id": 974,
+            "n": "杭州",
+            "pinyinFull": "Hangzhou",
+            "pinyinShort": "hz"
+        },
+        {
+            "count": 129,
+            "id": 373,
+            "n": "佛山",
+            "pinyinFull": "Foshan",
+            "pinyinShort": "fs"
+        },
+        {
+            "count": 127,
+            "id": 561,
+            "n": "武汉",
+            "pinyinFull": "Wuhan",
+            "pinyinShort": "wh"
+        },
+        {
+            "count": 126,
+            "id": 371,
+            "n": "东莞",
+            "pinyinFull": "Dongguan",
+            "pinyinShort": "dg"
+        },
+        {
+            "count": 120,
+            "id": 791,
+            "n": "西安",
+            "pinyinFull": "Xian",
+            "pinyinShort": "xa"
+        },
+        {
+            "count": 110,
+            "id": 628,
+            "n": "南京",
+            "pinyinFull": "Nanjing",
+            "pinyinShort": "nj"
+        },
+        {
+            "count": 107,
+            "id": 598,
+            "n": "长沙",
+            "pinyinFull": "Changsha",
+            "pinyinShort": "cs"
+        },
+        {
+            "count": 105,
+            "id": 489,
+            "n": "郑州",
+            "pinyinFull": "Zhengzhou",
+            "pinyinShort": "zz"
+        },
+        {
+            "count": 98,
+            "id": 293,
+            "n": "天津",
+            "pinyinFull": "Tianjin",
+            "pinyinShort": "tj"
+        },
+        {
+            "count": 89,
+            "id": 295,
+            "n": "合肥",
+            "pinyinFull": "Hefei",
+            "pinyinShort": "hf"
+        },
+        {
+            "count": 83,
+            "id": 1332,
+            "n": "苏州",
+            "pinyinFull": "Suzhou",
+            "pinyinShort": "sz"
+        },
+        {
+            "count": 82,
+            "id": 1001,
+            "n": "温州",
+            "pinyinFull": "Wenzhou",
+            "pinyinShort": "wz"
+        },
+        {
+            "count": 78,
+            "id": 950,
+            "n": "昆明",
+            "pinyinFull": "Kunming",
+            "pinyinShort": "km"
+        },
+        {
+            "count": 78,
+            "id": 992,
+            "n": "宁波",
+            "pinyinFull": "Ningbo",
+            "pinyinShort": "nb"
+        },
+        {
+            "count": 77,
+            "id": 722,
+            "n": "沈阳",
+            "pinyinFull": "Shenyang",
+            "pinyinShort": "sy"
+        },
+        {
+            "count": 72,
+            "id": 662,
+            "n": "无锡",
+            "pinyinFull": "Wuxi",
+            "pinyinShort": "wx"
+        },
+        {
+            "count": 69,
+            "id": 453,
+            "n": "石家庄",
+            "pinyinFull": "Shijiazhuang",
+            "pinyinShort": "sjz"
+        },
+        {
+            "count": 68,
+            "id": 649,
+            "n": "南通",
+            "pinyinFull": "Nantong",
+            "pinyinShort": "nt"
+        },
+        {
+            "count": 67,
+            "id": 409,
+            "n": "中山",
+            "pinyinFull": "Zhongshan",
+            "pinyinShort": "zs"
+        },
+        {
+            "count": 65,
+            "id": 829,
+            "n": "青岛",
+            "pinyinFull": "QingDao",
+            "pinyinShort": "qd"
+        },
+        {
+            "count": 65,
+            "id": 1355,
+            "n": "台州",
+            "pinyinFull": "Taizhou",
+            "pinyinShort": "tz"
+        },
+        {
+            "count": 59,
+            "id": 674,
+            "n": "南昌",
+            "pinyinFull": "Nanchang",
+            "pinyinShort": "nc"
+        },
+        {
+            "count": 57,
+            "id": 729,
+            "n": "大连",
+            "pinyinFull": "Dalian",
+            "pinyinShort": "dl"
+        },
+        {
+            "count": 57,
+            "id": 528,
+            "n": "哈尔滨",
+            "pinyinFull": "Harbin",
+            "pinyinShort": "heb"
+        },
+        {
+            "count": 56,
+            "id": 379,
+            "n": "惠州",
+            "pinyinFull": "Huizhou",
+            "pinyinShort": "hz"
+        },
+        {
+            "count": 54,
+            "id": 328,
+            "n": "福州",
+            "pinyinFull": "Fuzhou",
+            "pinyinShort": "fz"
+        },
+        {
+            "count": 53,
+            "id": 323,
+            "n": "厦门",
+            "pinyinFull": "Xiamen",
+            "pinyinShort": "xm"
+        },
+        {
+            "count": 52,
+            "id": 693,
+            "n": "长春",
+            "pinyinFull": "Changchun",
+            "pinyinShort": "cc"
+        },
+        {
+            "count": 52,
+            "id": 411,
+            "n": "南宁",
+            "pinyinFull": "Nanning",
+            "pinyinShort": "nn"
+        },
+        {
+            "count": 50,
+            "id": 630,
+            "n": "常州",
+            "pinyinFull": "Changzhou",
+            "pinyinShort": "cz"
+        },
+        {
+            "count": 49,
+            "id": 805,
+            "n": "济南",
+            "pinyinFull": "Jinan",
+            "pinyinShort": "jn"
+        },
+        {
+            "count": 48,
+            "id": 677,
+            "n": "赣州",
+            "pinyinFull": "Ganzhou",
+            "pinyinShort": "gz"
+        },
+        {
+            "count": 48,
+            "id": 664,
+            "n": "徐州",
+            "pinyinFull": "Xuzhou",
+            "pinyinShort": "xz"
+        },
+        {
+            "count": 47,
+            "id": 338,
+            "n": "泉州",
+            "pinyinFull": "Quanzhou",
+            "pinyinShort": "qz"
+        },
+        {
+            "count": 45,
+            "id": 380,
+            "n": "江门",
+            "pinyinFull": "Jiangmen",
+            "pinyinShort": "jm"
+        },
+        {
+            "count": 43,
+            "id": 320,
+            "n": "芜湖",
+            "pinyinFull": "Wuhu",
+            "pinyinShort": "wh"
+        },
+        {
+            "count": 42,
+            "id": 600,
+            "n": "常德",
+            "pinyinFull": "Changde",
+            "pinyinShort": "cd"
+        },
+        {
+            "count": 41,
+            "id": 433,
+            "n": "贵阳",
+            "pinyinFull": "Guiyang",
+            "pinyinShort": "gy"
+        },
+        {
+            "count": 41,
+            "id": 980,
+            "n": "湖州",
+            "pinyinFull": "Huzhou",
+            "pinyinShort": "hz"
+        },
+        {
+            "count": 40,
+            "id": 1687,
+            "n": "临沂",
+            "pinyinFull": "Linyi",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 40,
+            "id": 688,
+            "n": "上饶",
+            "pinyinFull": "Shangrao",
+            "pinyinShort": "sr"
+        },
+        {
+            "count": 39,
+            "id": 854,
+            "n": "太原",
+            "pinyinFull": "Taiyuan",
+            "pinyinShort": "ty"
+        },
+        {
+            "count": 39,
+            "id": 926,
+            "n": "乌鲁木齐",
+            "pinyinFull": "Wulumuqi",
+            "pinyinShort": "wlmq"
+        },
+        {
+            "count": 38,
+            "id": 680,
+            "n": "九江",
+            "pinyinFull": "Jiujiang",
+            "pinyinShort": "jj"
+        },
+        {
+            "count": 38,
+            "id": 904,
+            "n": "南充",
+            "pinyinFull": "Nanchong",
+            "pinyinShort": "nc"
+        },
+        {
+            "count": 36,
+            "id": 455,
+            "n": "保定",
+            "pinyinFull": "Baoding",
+            "pinyinShort": "bd"
+        },
+        {
+            "count": 36,
+            "id": 636,
+            "n": "淮安",
+            "pinyinFull": "Huaian",
+            "pinyinShort": "ha"
+        },
+        {
+            "count": 36,
+            "id": 981,
+            "n": "嘉兴",
+            "pinyinFull": "Jiaxing",
+            "pinyinShort": "jx"
+        },
+        {
+            "count": 36,
+            "id": 347,
+            "n": "兰州",
+            "pinyinFull": "Lanzhou",
+            "pinyinShort": "lz"
+        },
+        {
+            "count": 36,
+            "id": 503,
+            "n": "洛阳",
+            "pinyinFull": "Luoyang",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 36,
+            "id": 505,
+            "n": "南阳",
+            "pinyinFull": "Nanyang",
+            "pinyinShort": "ny"
+        },
+        {
+            "count": 36,
+            "id": 665,
+            "n": "盐城",
+            "pinyinFull": "Yancheng",
+            "pinyinShort": "yc"
+        },
+        {
+            "count": 36,
+            "id": 667,
+            "n": "扬州",
+            "pinyinFull": "Yangzhou",
+            "pinyinShort": "yz"
+        },
+        {
+            "count": 35,
+            "id": 464,
+            "n": "邯郸",
+            "pinyinFull": "Handan",
+            "pinyinShort": "hd"
+        },
+        {
+            "count": 35,
+            "id": 753,
+            "n": "呼和浩特",
+            "pinyinFull": "Hohhot",
+            "pinyinShort": "hhht"
+        },
+        {
+            "count": 35,
+            "id": 984,
+            "n": "金华",
+            "pinyinFull": "Jinhua",
+            "pinyinShort": "jh"
+        },
+        {
+            "count": 35,
+            "id": 867,
+            "n": "临汾",
+            "pinyinFull": "Linfen",
+            "pinyinShort": "lf"
+        },
+        {
+            "count": 35,
+            "id": 843,
+            "n": "烟台",
+            "pinyinFull": "Yantai",
+            "pinyinShort": "yt"
+        },
+        {
+            "count": 34,
+            "id": 954,
+            "n": "大理",
+            "pinyinFull": "Dali",
+            "pinyinShort": "dl"
+        },
+        {
+            "count": 34,
+            "id": 480,
+            "n": "唐山",
+            "pinyinFull": "Tangshan",
+            "pinyinShort": "ts"
+        },
+        {
+            "count": 34,
+            "id": 448,
+            "n": "遵义",
+            "pinyinFull": "Zunyi",
+            "pinyinShort": "zy"
+        },
+        {
+            "count": 33,
+            "id": 599,
+            "n": "郴州",
+            "pinyinFull": "Chenzhou",
+            "pinyinShort": "cz"
+        },
+        {
+            "count": 33,
+            "id": 878,
+            "n": "运城",
+            "pinyinFull": "Yuncheng",
+            "pinyinShort": "yc"
+        },
+        {
+            "count": 32,
+            "id": 793,
+            "n": "宝鸡",
+            "pinyinFull": "Baoji",
+            "pinyinShort": "bj"
+        },
+        {
+            "count": 32,
+            "id": 450,
+            "n": "海口",
+            "pinyinFull": "Haikou",
+            "pinyinShort": "hk"
+        },
+        {
+            "count": 32,
+            "id": 990,
+            "n": "丽水",
+            "pinyinFull": "Lishui",
+            "pinyinShort": "ls"
+        },
+        {
+            "count": 31,
+            "id": 533,
+            "n": "大庆",
+            "pinyinFull": "Daqing",
+            "pinyinShort": "dq"
+        },
+        {
+            "count": 31,
+            "id": 420,
+            "n": "桂林",
+            "pinyinFull": "Guilin",
+            "pinyinShort": "gl"
+        },
+        {
+            "count": 31,
+            "id": 901,
+            "n": "绵阳",
+            "pinyinFull": "Mianyang",
+            "pinyinShort": "my"
+        },
+        {
+            "count": 31,
+            "id": 777,
+            "n": "银川",
+            "pinyinFull": "Yinchuan",
+            "pinyinShort": "yc"
+        },
+        {
+            "count": 30,
+            "id": 301,
+            "n": "阜阳",
+            "pinyinFull": "Fuyang",
+            "pinyinShort": "fy"
+        },
+        {
+            "count": 30,
+            "id": 517,
+            "n": "新乡",
+            "pinyinFull": "Xinxiang",
+            "pinyinShort": "xx"
+        },
+        {
+            "count": 30,
+            "id": 914,
+            "n": "宜宾",
+            "pinyinFull": "Yibin",
+            "pinyinShort": "yb"
+        },
+        {
+            "count": 30,
+            "id": 623,
+            "n": "岳阳",
+            "pinyinFull": "Yueyang",
+            "pinyinShort": "yy"
+        },
+        {
+            "count": 30,
+            "id": 368,
+            "n": "珠海",
+            "pinyinFull": "Zhuhai",
+            "pinyinShort": "zh"
+        },
+        {
+            "count": 29,
+            "id": 300,
+            "n": "滁州",
+            "pinyinFull": "Chuzhou",
+            "pinyinShort": "cz"
+        },
+        {
+            "count": 29,
+            "id": 602,
+            "n": "衡阳",
+            "pinyinFull": "Hengyang",
+            "pinyinShort": "hy"
+        },
+        {
+            "count": 29,
+            "id": 506,
+            "n": "平顶山",
+            "pinyinFull": "Pingdingshan",
+            "pinyinShort": "pds"
+        },
+        {
+            "count": 29,
+            "id": 367,
+            "n": "汕头",
+            "pinyinFull": "Shantou",
+            "pinyinShort": "st"
+        },
+        {
+            "count": 29,
+            "id": 997,
+            "n": "绍兴",
+            "pinyinFull": "Shaoxing",
+            "pinyinShort": "sx"
+        },
+        {
+            "count": 29,
+            "id": 1744,
+            "n": "宜春",
+            "pinyinFull": "Yichun",
+            "pinyinShort": "yc"
+        },
+        {
+            "count": 28,
+            "id": 813,
+            "n": "菏泽",
+            "pinyinFull": "Heze",
+            "pinyinShort": "hz"
+        },
+        {
+            "count": 28,
+            "id": 511,
+            "n": "商丘",
+            "pinyinFull": "Shangqiu",
+            "pinyinShort": "sq"
+        },
+        {
+            "count": 28,
+            "id": 657,
+            "n": "泰州",
+            "pinyinFull": "Taizhou",
+            "pinyinShort": "tz"
+        },
+        {
+            "count": 28,
+            "id": 586,
+            "n": "襄阳",
+            "pinyinFull": "Xiangyang",
+            "pinyinShort": "xy"
+        },
+        {
+            "count": 27,
+            "id": 1745,
+            "n": "抚州",
+            "pinyinFull": "Fuzhou",
+            "pinyinShort": "fz"
+        },
+        {
+            "count": 27,
+            "id": 312,
+            "n": "六安",
+            "pinyinFull": "luan",
+            "pinyinShort": "la"
+        },
+        {
+            "count": 27,
+            "id": 839,
+            "n": "潍坊",
+            "pinyinFull": "Weifang",
+            "pinyinShort": "wf"
+        },
+        {
+            "count": 27,
+            "id": 803,
+            "n": "延安",
+            "pinyinFull": "Yanan",
+            "pinyinShort": "ya"
+        },
+        {
+            "count": 27,
+            "id": 1763,
+            "n": "榆林",
+            "pinyinFull": "Yulin",
+            "pinyinShort": "yl"
+        },
+        {
+            "count": 27,
+            "id": 345,
+            "n": "漳州",
+            "pinyinFull": "Zhangzhou",
+            "pinyinShort": "zz"
+        },
+        {
+            "count": 27,
+            "id": 407,
+            "n": "湛江",
+            "pinyinFull": "Zhanjiang",
+            "pinyinShort": "zj"
+        },
+        {
+            "count": 27,
+            "id": 851,
+            "n": "淄博",
+            "pinyinFull": "Zibo",
+            "pinyinShort": "zb"
+        },
+        {
+            "count": 26,
+            "id": 796,
+            "n": "汉中",
+            "pinyinFull": "Hanzhong",
+            "pinyinShort": "hz"
+        },
+        {
+            "count": 26,
+            "id": 604,
+            "n": "怀化",
+            "pinyinFull": "Huaihua",
+            "pinyinShort": "hh"
+        },
+        {
+            "count": 26,
+            "id": 682,
+            "n": "吉安",
+            "pinyinFull": "Jian",
+            "pinyinShort": "ja"
+        },
+        {
+            "count": 26,
+            "id": 654,
+            "n": "宿迁",
+            "pinyinFull": "Suqian",
+            "pinyinShort": "sq"
+        },
+        {
+            "count": 26,
+            "id": 801,
+            "n": "咸阳",
+            "pinyinFull": "Xianyang",
+            "pinyinShort": "xy"
+        },
+        {
+            "count": 26,
+            "id": 525,
+            "n": "周口",
+            "pinyinFull": "Zhoukou",
+            "pinyinShort": "zk"
+        },
+        {
+            "count": 25,
+            "id": 855,
+            "n": "长治",
+            "pinyinFull": "Changzhi",
+            "pinyinShort": "cz"
+        },
+        {
+            "count": 25,
+            "id": 857,
+            "n": "大同",
+            "pinyinFull": "Datong",
+            "pinyinShort": "dt"
+        },
+        {
+            "count": 25,
+            "id": 575,
+            "n": "荆州",
+            "pinyinFull": "Jingzhou",
+            "pinyinShort": "jz"
+        },
+        {
+            "count": 25,
+            "id": 818,
+            "n": "济宁",
+            "pinyinFull": "Jining",
+            "pinyinShort": "jn"
+        },
+        {
+            "count": 25,
+            "id": 313,
+            "n": "马鞍山",
+            "pinyinFull": "Maanshan",
+            "pinyinShort": "mas"
+        },
+        {
+            "count": 25,
+            "id": 621,
+            "n": "益阳",
+            "pinyinFull": "Yiyang",
+            "pinyinShort": "yy"
+        },
+        {
+            "count": 24,
+            "id": 296,
+            "n": "安庆",
+            "pinyinFull": "Anqing",
+            "pinyinShort": "aq"
+        },
+        {
+            "count": 24,
+            "id": 958,
+            "n": "红河",
+            "pinyinFull": "Honghe",
+            "pinyinShort": "hh"
+        },
+        {
+            "count": 24,
+            "id": 425,
+            "n": "柳州",
+            "pinyinFull": "Liuzhou",
+            "pinyinShort": "lz"
+        },
+        {
+            "count": 24,
+            "id": 396,
+            "n": "韶关",
+            "pinyinFull": "Shaoguan",
+            "pinyinShort": "sg"
+        },
+        {
+            "count": 24,
+            "id": 515,
+            "n": "信阳",
+            "pinyinFull": "Xinyang",
+            "pinyinShort": "xy"
+        },
+        {
+            "count": 23,
+            "id": 297,
+            "n": "蚌埠",
+            "pinyinFull": "Bengbu",
+            "pinyinShort": "bb"
+        },
+        {
+            "count": 23,
+            "id": 458,
+            "n": "沧州",
+            "pinyinFull": "Cangzhou",
+            "pinyinShort": "cz"
+        },
+        {
+            "count": 23,
+            "id": 499,
+            "n": "开封",
+            "pinyinFull": "Kaifeng",
+            "pinyinShort": "kf"
+        },
+        {
+            "count": 23,
+            "id": 646,
+            "n": "连云港",
+            "pinyinFull": "Lianyungang",
+            "pinyinShort": "lyg"
+        },
+        {
+            "count": 23,
+            "id": 964,
+            "n": "曲靖",
+            "pinyinFull": "Qujing",
+            "pinyinShort": "qj"
+        },
+        {
+            "count": 23,
+            "id": 994,
+            "n": "衢州",
+            "pinyinFull": "Quzhou",
+            "pinyinShort": "qz"
+        },
+        {
+            "count": 23,
+            "id": 622,
+            "n": "永州",
+            "pinyinFull": "Yongzhou",
+            "pinyinShort": "yz"
+        },
+        {
+            "count": 23,
+            "id": 485,
+            "n": "张家口",
+            "pinyinFull": "Zhangjiakou",
+            "pinyinShort": "zjk"
+        },
+        {
+            "count": 22,
+            "id": 756,
+            "n": "包头",
+            "pinyinFull": "Baotou",
+            "pinyinShort": "bt"
+        },
+        {
+            "count": 22,
+            "id": 572,
+            "n": "黄冈",
+            "pinyinFull": "Huanggang",
+            "pinyinShort": "hg"
+        },
+        {
+            "count": 22,
+            "id": 645,
+            "n": "昆山",
+            "pinyinFull": "Kunshan",
+            "pinyinShort": "ks"
+        },
+        {
+            "count": 22,
+            "id": 470,
+            "n": "廊坊",
+            "pinyinFull": "Langfang",
+            "pinyinShort": "lf"
+        },
+        {
+            "count": 22,
+            "id": 617,
+            "n": "邵阳",
+            "pinyinFull": "Shaoyang",
+            "pinyinShort": "sy"
+        },
+        {
+            "count": 22,
+            "id": 840,
+            "n": "威海",
+            "pinyinFull": "Weihai",
+            "pinyinShort": "wh"
+        },
+        {
+            "count": 22,
+            "id": 625,
+            "n": "株洲",
+            "pinyinFull": "Zhuzhou",
+            "pinyinShort": "zz"
+        },
+        {
+            "count": 21,
+            "id": 886,
+            "n": "德阳",
+            "pinyinFull": "Deyang",
+            "pinyinShort": "dy"
+        },
+        {
+            "count": 21,
+            "id": 497,
+            "n": "焦作",
+            "pinyinFull": "Jiaozuo",
+            "pinyinShort": "jz"
+        },
+        {
+            "count": 21,
+            "id": 866,
+            "n": "晋中",
+            "pinyinFull": "Jinzhong",
+            "pinyinShort": "jz"
+        },
+        {
+            "count": 21,
+            "id": 898,
+            "n": "乐山",
+            "pinyinFull": "Leshan",
+            "pinyinShort": "ls"
+        },
+        {
+            "count": 21,
+            "id": 581,
+            "n": "十堰",
+            "pinyinFull": "Shiyan",
+            "pinyinShort": "sy"
+        },
+        {
+            "count": 21,
+            "id": 587,
+            "n": "咸宁",
+            "pinyinFull": "Xianning",
+            "pinyinShort": "xn"
+        },
+        {
+            "count": 21,
+            "id": 589,
+            "n": "孝感",
+            "pinyinFull": "Xiaogan",
+            "pinyinShort": "xg"
+        },
+        {
+            "count": 21,
+            "id": 590,
+            "n": "宜昌",
+            "pinyinFull": "Yichang",
+            "pinyinShort": "yc"
+        },
+        {
+            "count": 21,
+            "id": 1003,
+            "n": "义乌",
+            "pinyinFull": "Yiwu",
+            "pinyinShort": "yw"
+        },
+        {
+            "count": 21,
+            "id": 670,
+            "n": "张家港",
+            "pinyinFull": "Zhangjiagang",
+            "pinyinShort": "zjg"
+        },
+        {
+            "count": 21,
+            "id": 408,
+            "n": "肇庆",
+            "pinyinFull": "Zhaoqing",
+            "pinyinShort": "zq"
+        },
+        {
+            "count": 21,
+            "id": 526,
+            "n": "驻马店",
+            "pinyinFull": "Zhumadian",
+            "pinyinShort": "zmd"
+        },
+        {
+            "count": 20,
+            "id": 724,
+            "n": "鞍山",
+            "pinyinFull": "Anshan",
+            "pinyinShort": "as"
+        },
+        {
+            "count": 20,
+            "id": 759,
+            "n": "鄂尔多斯",
+            "pinyinFull": "Eerduosi",
+            "pinyinShort": "eeds"
+        },
+        {
+            "count": 20,
+            "id": 703,
+            "n": "吉林市",
+            "pinyinFull": "Jilin",
+            "pinyinShort": "jls"
+        },
+        {
+            "count": 20,
+            "id": 900,
+            "n": "泸州",
+            "pinyinFull": "Luzhou",
+            "pinyinShort": "lz"
+        },
+        {
+            "count": 20,
+            "id": 869,
+            "n": "吕梁",
+            "pinyinFull": "Lvliang",
+            "pinyinShort": "ll"
+        },
+        {
+            "count": 20,
+            "id": 337,
+            "n": "莆田",
+            "pinyinFull": "Putian",
+            "pinyinShort": "pt"
+        },
+        {
+            "count": 20,
+            "id": 451,
+            "n": "三亚",
+            "pinyinFull": "Sanya",
+            "pinyinShort": "sy"
+        },
+        {
+            "count": 20,
+            "id": 318,
+            "n": "宿州",
+            "pinyinFull": "Suzhou",
+            "pinyinShort": "sz"
+        },
+        {
+            "count": 20,
+            "id": 800,
+            "n": "渭南",
+            "pinyinFull": "Weinan",
+            "pinyinShort": "wn"
+        },
+        {
+            "count": 20,
+            "id": 618,
+            "n": "湘潭",
+            "pinyinFull": "Xiangtan",
+            "pinyinShort": "xt"
+        },
+        {
+            "count": 20,
+            "id": 671,
+            "n": "镇江",
+            "pinyinFull": "Zhenjiang",
+            "pinyinShort": "zj"
+        },
+        {
+            "count": 19,
+            "id": 758,
+            "n": "赤峰",
+            "pinyinFull": "Chifeng",
+            "pinyinShort": "cf"
+        },
+        {
+            "count": 19,
+            "id": 809,
+            "n": "东营",
+            "pinyinFull": "Dongying",
+            "pinyinShort": "dy"
+        },
+        {
+            "count": 19,
+            "id": 641,
+            "n": "江阴",
+            "pinyinFull": "Jiangyin",
+            "pinyinShort": "jy"
+        },
+        {
+            "count": 19,
+            "id": 574,
+            "n": "荆门",
+            "pinyinFull": "Jingmen",
+            "pinyinShort": "jm"
+        },
+        {
+            "count": 19,
+            "id": 823,
+            "n": "聊城",
+            "pinyinFull": "Liaocheng",
+            "pinyinShort": "lc"
+        },
+        {
+            "count": 19,
+            "id": 507,
+            "n": "濮阳",
+            "pinyinFull": "Puyang",
+            "pinyinShort": "py"
+        },
+        {
+            "count": 19,
+            "id": 339,
+            "n": "三明",
+            "pinyinFull": "Sanming",
+            "pinyinShort": "sm"
+        },
+        {
+            "count": 19,
+            "id": 482,
+            "n": "邢台",
+            "pinyinFull": "Xingtai",
+            "pinyinShort": "xt"
+        },
+        {
+            "count": 19,
+            "id": 785,
+            "n": "西宁",
+            "pinyinFull": "Xining",
+            "pinyinShort": "xn"
+        },
+        {
+            "count": 19,
+            "id": 321,
+            "n": "宣城",
+            "pinyinFull": "Xuancheng",
+            "pinyinShort": "xc"
+        },
+        {
+            "count": 19,
+            "id": 403,
+            "n": "阳江",
+            "pinyinFull": "Yangjiang",
+            "pinyinShort": "yj"
+        },
+        {
+            "count": 19,
+            "id": 431,
+            "n": "玉林",
+            "pinyinFull": "Yulin",
+            "pinyinShort": "yl"
+        },
+        {
+            "count": 18,
+            "id": 953,
+            "n": "楚雄",
+            "pinyinFull": "Chuxiong",
+            "pinyinShort": "cx"
+        },
+        {
+            "count": 18,
+            "id": 377,
+            "n": "河源",
+            "pinyinFull": "Heyuan",
+            "pinyinShort": "hy"
+        },
+        {
+            "count": 18,
+            "id": 305,
+            "n": "黄山",
+            "pinyinFull": "Huangshan",
+            "pinyinShort": "hs"
+        },
+        {
+            "count": 18,
+            "id": 381,
+            "n": "揭阳",
+            "pinyinFull": "Jieyang",
+            "pinyinShort": "jy"
+        },
+        {
+            "count": 18,
+            "id": 390,
+            "n": "梅州",
+            "pinyinFull": "Meizhou",
+            "pinyinShort": "mz"
+        },
+        {
+            "count": 18,
+            "id": 971,
+            "n": "玉溪",
+            "pinyinFull": "Yuxi",
+            "pinyinShort": "yx"
+        },
+        {
+            "count": 18,
+            "id": 847,
+            "n": "枣庄",
+            "pinyinFull": "Zaozhuang",
+            "pinyinShort": "zz"
+        },
+        {
+            "count": 17,
+            "id": 629,
+            "n": "常熟",
+            "pinyinFull": "Changshu",
+            "pinyinShort": "cs"
+        },
+        {
+            "count": 17,
+            "id": 808,
+            "n": "德州",
+            "pinyinFull": "Dezhou",
+            "pinyinShort": "dz"
+        },
+        {
+            "count": 17,
+            "id": 1345,
+            "n": "锦州",
+            "pinyinFull": "Jinzhou",
+            "pinyinShort": "jz"
+        },
+        {
+            "count": 17,
+            "id": 333,
+            "n": "龙岩",
+            "pinyinFull": "Longyan",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 17,
+            "id": 903,
+            "n": "眉山",
+            "pinyinFull": "Meishan",
+            "pinyinShort": "ms"
+        },
+        {
+            "count": 17,
+            "id": 336,
+            "n": "宁德",
+            "pinyinFull": "Ningde",
+            "pinyinShort": "nd"
+        },
+        {
+            "count": 17,
+            "id": 394,
+            "n": "清远",
+            "pinyinFull": "Qingyuan",
+            "pinyinShort": "qy"
+        },
+        {
+            "count": 17,
+            "id": 750,
+            "n": "营口",
+            "pinyinFull": "Yingkou",
+            "pinyinShort": "yk"
+        },
+        {
+            "count": 16,
+            "id": 792,
+            "n": "安康",
+            "pinyinFull": "Ankang",
+            "pinyinShort": "ak"
+        },
+        {
+            "count": 16,
+            "id": 302,
+            "n": "亳州",
+            "pinyinFull": "Bozhou",
+            "pinyinShort": "bz"
+        },
+        {
+            "count": 16,
+            "id": 885,
+            "n": "达州",
+            "pinyinFull": "Dazhou",
+            "pinyinShort": "dz"
+        },
+        {
+            "count": 16,
+            "id": 502,
+            "n": "漯河",
+            "pinyinFull": "Luohe",
+            "pinyinShort": "lh"
+        },
+        {
+            "count": 16,
+            "id": 389,
+            "n": "茂名",
+            "pinyinFull": "Maoming",
+            "pinyinShort": "mm"
+        },
+        {
+            "count": 16,
+            "id": 713,
+            "n": "四平",
+            "pinyinFull": "Siping",
+            "pinyinShort": "sp"
+        },
+        {
+            "count": 16,
+            "id": 553,
+            "n": "绥化",
+            "pinyinFull": "Suihua",
+            "pinyinShort": "sh"
+        },
+        {
+            "count": 16,
+            "id": 837,
+            "n": "泰安",
+            "pinyinFull": "Taian",
+            "pinyinShort": "ta"
+        },
+        {
+            "count": 16,
+            "id": 873,
+            "n": "忻州",
+            "pinyinFull": "Xinzhou",
+            "pinyinShort": "xz"
+        },
+        {
+            "count": 15,
+            "id": 490,
+            "n": "安阳",
+            "pinyinFull": "Anyang",
+            "pinyinShort": "ay"
+        },
+        {
+            "count": 15,
+            "id": 412,
+            "n": "百色",
+            "pinyinFull": "Baise",
+            "pinyinShort": "bs"
+        },
+        {
+            "count": 15,
+            "id": 459,
+            "n": "承德",
+            "pinyinFull": "Chengde",
+            "pinyinShort": "cd"
+        },
+        {
+            "count": 15,
+            "id": 893,
+            "n": "广元",
+            "pinyinFull": "Guangyuan",
+            "pinyinShort": "gy"
+        },
+        {
+            "count": 15,
+            "id": 304,
+            "n": "淮南",
+            "pinyinFull": "Huainan",
+            "pinyinShort": "hn"
+        },
+        {
+            "count": 15,
+            "id": 960,
+            "n": "临沧",
+            "pinyinFull": "Lincang",
+            "pinyinShort": "lc"
+        },
+        {
+            "count": 15,
+            "id": 612,
+            "n": "浏阳",
+            "pinyinFull": "Liuyang",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 15,
+            "id": 613,
+            "n": "娄底",
+            "pinyinFull": "Loudi",
+            "pinyinShort": "ld"
+        },
+        {
+            "count": 15,
+            "id": 446,
+            "n": "黔东南",
+            "pinyinFull": "Qiandongnan",
+            "pinyinShort": "qdn"
+        },
+        {
+            "count": 15,
+            "id": 442,
+            "n": "黔南州",
+            "pinyinFull": "Qiannan",
+            "pinyinShort": "qn"
+        },
+        {
+            "count": 15,
+            "id": 910,
+            "n": "遂宁",
+            "pinyinFull": "Suining",
+            "pinyinShort": "sn"
+        },
+        {
+            "count": 15,
+            "id": 767,
+            "n": "通辽",
+            "pinyinFull": "Tongliao",
+            "pinyinShort": "tl"
+        },
+        {
+            "count": 15,
+            "id": 445,
+            "n": "铜仁",
+            "pinyinFull": "Tongren",
+            "pinyinShort": "tr"
+        },
+        {
+            "count": 15,
+            "id": 968,
+            "n": "文山",
+            "pinyinFull": "Wenshan",
+            "pinyinShort": "ws"
+        },
+        {
+            "count": 15,
+            "id": 1006,
+            "n": "舟山",
+            "pinyinFull": "Zhoushan",
+            "pinyinShort": "zs"
+        },
+        {
+            "count": 15,
+            "id": 915,
+            "n": "自贡",
+            "pinyinFull": "Zigong",
+            "pinyinShort": "zg"
+        },
+        {
+            "count": 14,
+            "id": 434,
+            "n": "安顺",
+            "pinyinFull": "Anshun",
+            "pinyinShort": "as"
+        },
+        {
+            "count": 14,
+            "id": 435,
+            "n": "毕节",
+            "pinyinFull": "Bijie",
+            "pinyinShort": "bj"
+        },
+        {
+            "count": 14,
+            "id": 1342,
+            "n": "滨州",
+            "pinyinFull": "Binzhou",
+            "pinyinShort": "bz"
+        },
+        {
+            "count": 14,
+            "id": 567,
+            "n": "恩施",
+            "pinyinFull": "Enshi",
+            "pinyinShort": "es"
+        },
+        {
+            "count": 14,
+            "id": 891,
+            "n": "广安",
+            "pinyinFull": "Guangan",
+            "pinyinShort": "ga"
+        },
+        {
+            "count": 14,
+            "id": 573,
+            "n": "黄石",
+            "pinyinFull": "Huangshi",
+            "pinyinShort": "hs"
+        },
+        {
+            "count": 14,
+            "id": 540,
+            "n": "佳木斯",
+            "pinyinFull": "Jiamusi",
+            "pinyinShort": "jms"
+        },
+        {
+            "count": 14,
+            "id": 354,
+            "n": "酒泉",
+            "pinyinFull": "Jiuquan",
+            "pinyinShort": "jq"
+        },
+        {
+            "count": 14,
+            "id": 544,
+            "n": "牡丹江",
+            "pinyinFull": "Mudanjiang",
+            "pinyinShort": "mdj"
+        },
+        {
+            "count": 14,
+            "id": 335,
+            "n": "南平",
+            "pinyinFull": "Nanping",
+            "pinyinShort": "np"
+        },
+        {
+            "count": 14,
+            "id": 905,
+            "n": "内江",
+            "pinyinFull": "Neijiang",
+            "pinyinShort": "nj"
+        },
+        {
+            "count": 14,
+            "id": 798,
+            "n": "商洛",
+            "pinyinFull": "Shangluo",
+            "pinyinShort": "sl"
+        },
+        {
+            "count": 14,
+            "id": 1007,
+            "n": "诸暨",
+            "pinyinFull": "Zhuji",
+            "pinyinShort": "zj"
+        },
+        {
+            "count": 13,
+            "id": 423,
+            "n": "河池",
+            "pinyinFull": "Hechi",
+            "pinyinShort": "hc"
+        },
+        {
+            "count": 13,
+            "id": 739,
+            "n": "葫芦岛",
+            "pinyinFull": "Huludao",
+            "pinyinShort": "hld"
+        },
+        {
+            "count": 13,
+            "id": 764,
+            "n": "呼伦贝尔",
+            "pinyinFull": "Hulun Buir",
+            "pinyinShort": "hlbe"
+        },
+        {
+            "count": 13,
+            "id": 358,
+            "n": "平凉",
+            "pinyinFull": "Pingliang",
+            "pinyinShort": "pl"
+        },
+        {
+            "count": 13,
+            "id": 475,
+            "n": "秦皇岛",
+            "pinyinFull": "Qinhuangdao",
+            "pinyinShort": "qhd"
+        },
+        {
+            "count": 13,
+            "id": 547,
+            "n": "齐齐哈尔",
+            "pinyinFull": "Qiqihar",
+            "pinyinShort": "qqhe"
+        },
+        {
+            "count": 13,
+            "id": 833,
+            "n": "日照",
+            "pinyinFull": "Rizhao",
+            "pinyinShort": "rz"
+        },
+        {
+            "count": 13,
+            "id": 395,
+            "n": "汕尾",
+            "pinyinFull": "Shanwei",
+            "pinyinShort": "sw"
+        },
+        {
+            "count": 13,
+            "id": 1000,
+            "n": "温岭",
+            "pinyinFull": "Wenling",
+            "pinyinShort": "wl"
+        },
+        {
+            "count": 13,
+            "id": 619,
+            "n": "湘西",
+            "pinyinFull": "Xiangxi",
+            "pinyinShort": "xx"
+        },
+        {
+            "count": 13,
+            "id": 936,
+            "n": "伊犁",
+            "pinyinFull": "Yili",
+            "pinyinShort": "yl"
+        },
+        {
+            "count": 12,
+            "id": 757,
+            "n": "巴彦淖尔",
+            "pinyinFull": "Bayannaoer",
+            "pinyinShort": "byze"
+        },
+        {
+            "count": 12,
+            "id": 727,
+            "n": "本溪",
+            "pinyinFull": "Benxi",
+            "pinyinShort": "bx"
+        },
+        {
+            "count": 12,
+            "id": 350,
+            "n": "定西",
+            "pinyinFull": "Dingxi",
+            "pinyinShort": "dx"
+        },
+        {
+            "count": 12,
+            "id": 735,
+            "n": "抚顺",
+            "pinyinFull": "Fushun",
+            "pinyinShort": "fs"
+        },
+        {
+            "count": 12,
+            "id": 466,
+            "n": "衡水",
+            "pinyinFull": "Hengshui",
+            "pinyinShort": "hs"
+        },
+        {
+            "count": 12,
+            "id": 906,
+            "n": "攀枝花",
+            "pinyinFull": "Panzhihua",
+            "pinyinShort": "pzh"
+        },
+        {
+            "count": 12,
+            "id": 359,
+            "n": "庆阳",
+            "pinyinFull": "Qingyang",
+            "pinyinShort": "qy"
+        },
+        {
+            "count": 12,
+            "id": 426,
+            "n": "钦州",
+            "pinyinFull": "Qinzhou",
+            "pinyinShort": "qz"
+        },
+        {
+            "count": 12,
+            "id": 360,
+            "n": "天水",
+            "pinyinFull": "Tianshui",
+            "pinyinShort": "ts"
+        },
+        {
+            "count": 12,
+            "id": 769,
+            "n": "乌兰察布",
+            "pinyinFull": "Wulanchabu",
+            "pinyinShort": "wlcb"
+        },
+        {
+            "count": 12,
+            "id": 428,
+            "n": "梧州",
+            "pinyinFull": "Wuzhou",
+            "pinyinShort": "wz"
+        },
+        {
+            "count": 12,
+            "id": 689,
+            "n": "新余",
+            "pinyinFull": "Xinyu",
+            "pinyinShort": "xy"
+        },
+        {
+            "count": 12,
+            "id": 520,
+            "n": "许昌",
+            "pinyinFull": "Xuchang",
+            "pinyinShort": "xc"
+        },
+        {
+            "count": 12,
+            "id": 405,
+            "n": "云浮",
+            "pinyinFull": "Yunfu",
+            "pinyinShort": "yf"
+        },
+        {
+            "count": 11,
+            "id": 952,
+            "n": "保山",
+            "pinyinFull": "Baoshan",
+            "pinyinShort": "bs"
+        },
+        {
+            "count": 11,
+            "id": 975,
+            "n": "慈溪",
+            "pinyinFull": "Cixi",
+            "pinyinShort": "cx"
+        },
+        {
+            "count": 11,
+            "id": 642,
+            "n": "靖江",
+            "pinyinFull": "Jingjiang",
+            "pinyinShort": "jj"
+        },
+        {
+            "count": 11,
+            "id": 331,
+            "n": "晋江",
+            "pinyinFull": "Jinjiang",
+            "pinyinShort": "jj"
+        },
+        {
+            "count": 11,
+            "id": 440,
+            "n": "六盘水",
+            "pinyinFull": "Liupanshui",
+            "pinyinShort": "lps"
+        },
+        {
+            "count": 11,
+            "id": 355,
+            "n": "陇南",
+            "pinyinFull": "Longnan",
+            "pinyinShort": "ln"
+        },
+        {
+            "count": 11,
+            "id": 744,
+            "n": "盘锦",
+            "pinyinFull": "Panjin",
+            "pinyinShort": "pj"
+        },
+        {
+            "count": 11,
+            "id": 1349,
+            "n": "萍乡",
+            "pinyinFull": "Pingxiang",
+            "pinyinShort": "px"
+        },
+        {
+            "count": 11,
+            "id": 652,
+            "n": "启东",
+            "pinyinFull": "Qidong",
+            "pinyinShort": "qd"
+        },
+        {
+            "count": 11,
+            "id": 588,
+            "n": "仙桃",
+            "pinyinFull": "Xiantao",
+            "pinyinShort": "xt"
+        },
+        {
+            "count": 11,
+            "id": 913,
+            "n": "雅安",
+            "pinyinFull": "Yaan",
+            "pinyinShort": "ya"
+        },
+        {
+            "count": 11,
+            "id": 916,
+            "n": "资阳",
+            "pinyinFull": "Ziyang",
+            "pinyinShort": "zy"
+        },
+        {
+            "count": 10,
+            "id": 349,
+            "n": "白银",
+            "pinyinFull": "Baiyin",
+            "pinyinShort": "by"
+        },
+        {
+            "count": 10,
+            "id": 882,
+            "n": "巴中",
+            "pinyinFull": "Bazhong",
+            "pinyinShort": "bz"
+        },
+        {
+            "count": 10,
+            "id": 728,
+            "n": "朝阳",
+            "pinyinFull": "Chaoyang",
+            "pinyinShort": "cy"
+        },
+        {
+            "count": 10,
+            "id": 730,
+            "n": "丹东",
+            "pinyinFull": "Dandong",
+            "pinyinShort": "dd"
+        },
+        {
+            "count": 10,
+            "id": 955,
+            "n": "德宏",
+            "pinyinFull": "Dehong",
+            "pinyinShort": "dh"
+        },
+        {
+            "count": 10,
+            "id": 736,
+            "n": "阜新",
+            "pinyinFull": "Fuxin",
+            "pinyinShort": "fx"
+        },
+        {
+            "count": 10,
+            "id": 889,
+            "n": "甘孜",
+            "pinyinFull": "Ganzi",
+            "pinyinShort": "gz"
+        },
+        {
+            "count": 10,
+            "id": 419,
+            "n": "贵港",
+            "pinyinFull": "Guigang",
+            "pinyinShort": "gg"
+        },
+        {
+            "count": 10,
+            "id": 865,
+            "n": "晋城",
+            "pinyinFull": "Jincheng",
+            "pinyinShort": "jc"
+        },
+        {
+            "count": 10,
+            "id": 356,
+            "n": "临夏",
+            "pinyinFull": "Linxia",
+            "pinyinShort": "lx"
+        },
+        {
+            "count": 10,
+            "id": 579,
+            "n": "潜江",
+            "pinyinFull": "Qianjiang",
+            "pinyinShort": "qj"
+        },
+        {
+            "count": 10,
+            "id": 441,
+            "n": "黔西南州",
+            "pinyinFull": "Qianxinan",
+            "pinyinShort": "qxn"
+        },
+        {
+            "count": 10,
+            "id": 653,
+            "n": "如皋",
+            "pinyinFull": "Rugao",
+            "pinyinShort": "rg"
+        },
+        {
+            "count": 10,
+            "id": 510,
+            "n": "三门峡",
+            "pinyinFull": "Sanmenxia",
+            "pinyinShort": "smx"
+        },
+        {
+            "count": 10,
+            "id": 714,
+            "n": "松原",
+            "pinyinFull": "Songyuan",
+            "pinyinShort": "sy"
+        },
+        {
+            "count": 10,
+            "id": 716,
+            "n": "通化",
+            "pinyinFull": "Tonghua",
+            "pinyinShort": "th"
+        },
+        {
+            "count": 10,
+            "id": 770,
+            "n": "乌兰浩特",
+            "pinyinFull": "Wulanhot",
+            "pinyinShort": "wlht"
+        },
+        {
+            "count": 10,
+            "id": 874,
+            "n": "阳泉",
+            "pinyinFull": "Yangquan",
+            "pinyinShort": "yq"
+        },
+        {
+            "count": 10,
+            "id": 668,
+            "n": "宜兴",
+            "pinyinFull": "Yixing",
+            "pinyinShort": "yx"
+        },
+        {
+            "count": 9,
+            "id": 695,
+            "n": "白山",
+            "pinyinFull": "Baishan",
+            "pinyinShort": "bs"
+        },
+        {
+            "count": 9,
+            "id": 413,
+            "n": "北海",
+            "pinyinFull": "Beihai",
+            "pinyinShort": "bh"
+        },
+        {
+            "count": 9,
+            "id": 369,
+            "n": "潮州",
+            "pinyinFull": "Chaozhou",
+            "pinyinShort": "cz"
+        },
+        {
+            "count": 9,
+            "id": 416,
+            "n": "崇左",
+            "pinyinFull": "Chongzuo",
+            "pinyinShort": "cz"
+        },
+        {
+            "count": 9,
+            "id": 418,
+            "n": "防城港",
+            "pinyinFull": "Fangchenggang",
+            "pinyinShort": "fcg"
+        },
+        {
+            "count": 9,
+            "id": 357,
+            "n": "甘南",
+            "pinyinFull": "Gannan",
+            "pinyinShort": "gn"
+        },
+        {
+            "count": 9,
+            "id": 979,
+            "n": "海宁",
+            "pinyinFull": "Haining",
+            "pinyinShort": "hn"
+        },
+        {
+            "count": 9,
+            "id": 303,
+            "n": "淮北",
+            "pinyinFull": "Huaibei",
+            "pinyinShort": "hb"
+        },
+        {
+            "count": 9,
+            "id": 681,
+            "n": "景德镇",
+            "pinyinFull": "Jingdezhen",
+            "pinyinShort": "jdz"
+        },
+        {
+            "count": 9,
+            "id": 918,
+            "n": "拉萨",
+            "pinyinFull": "Lhasa",
+            "pinyinShort": "ls"
+        },
+        {
+            "count": 9,
+            "id": 995,
+            "n": "瑞安",
+            "pinyinFull": "Ruian",
+            "pinyinShort": "ra"
+        },
+        {
+            "count": 9,
+            "id": 551,
+            "n": "双鸭山",
+            "pinyinFull": "Shuangyashan",
+            "pinyinShort": "sys"
+        },
+        {
+            "count": 9,
+            "id": 943,
+            "n": "塔城",
+            "pinyinFull": "Tacheng",
+            "pinyinShort": "tc"
+        },
+        {
+            "count": 9,
+            "id": 746,
+            "n": "铁岭",
+            "pinyinFull": "Tieling",
+            "pinyinShort": "tl"
+        },
+        {
+            "count": 9,
+            "id": 999,
+            "n": "桐乡",
+            "pinyinFull": "Tongxiang",
+            "pinyinShort": "tx"
+        },
+        {
+            "count": 9,
+            "id": 718,
+            "n": "延边",
+            "pinyinFull": "Yanbian",
+            "pinyinShort": "yb"
+        },
+        {
+            "count": 9,
+            "id": 1005,
+            "n": "余姚",
+            "pinyinFull": "Yuyao",
+            "pinyinShort": "yy"
+        },
+        {
+            "count": 8,
+            "id": 881,
+            "n": "阿坝",
+            "pinyinFull": "Aba",
+            "pinyinShort": "ab"
+        },
+        {
+            "count": 8,
+            "id": 932,
+            "n": "昌吉",
+            "pinyinFull": "Changji",
+            "pinyinShort": "cj"
+        },
+        {
+            "count": 8,
+            "id": 299,
+            "n": "池州",
+            "pinyinFull": "Chizhou",
+            "pinyinShort": "cz"
+        },
+        {
+            "count": 8,
+            "id": 632,
+            "n": "丹阳",
+            "pinyinFull": "Danyang",
+            "pinyinShort": "dy"
+        },
+        {
+            "count": 8,
+            "id": 327,
+            "n": "福清",
+            "pinyinFull": "Fuqing",
+            "pinyinShort": "fq"
+        },
+        {
+            "count": 8,
+            "id": 741,
+            "n": "辽阳",
+            "pinyinFull": "Liaoyang",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 8,
+            "id": 706,
+            "n": "辽源",
+            "pinyinFull": "Liaoyuan",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 8,
+            "id": 5064,
+            "n": "普洱",
+            "pinyinFull": "puer",
+            "pinyinShort": ""
+        },
+        {
+            "count": 8,
+            "id": 781,
+            "n": "石嘴山",
+            "pinyinFull": "Shizuishan",
+            "pinyinShort": "szs"
+        },
+        {
+            "count": 8,
+            "id": 871,
+            "n": "朔州",
+            "pinyinFull": "Shuozhou",
+            "pinyinShort": "sz"
+        },
+        {
+            "count": 8,
+            "id": 317,
+            "n": "铜陵",
+            "pinyinFull": "Tongling",
+            "pinyinShort": "tl"
+        },
+        {
+            "count": 8,
+            "id": 660,
+            "n": "吴江",
+            "pinyinFull": "Wujiang",
+            "pinyinShort": "wj"
+        },
+        {
+            "count": 8,
+            "id": 361,
+            "n": "武威",
+            "pinyinFull": "Wuwei",
+            "pinyinShort": "ww"
+        },
+        {
+            "count": 8,
+            "id": 624,
+            "n": "张家界",
+            "pinyinFull": "Zhangjiajie",
+            "pinyinShort": "zgj"
+        },
+        {
+            "count": 7,
+            "id": 927,
+            "n": "阿克苏",
+            "pinyinFull": "Akesu",
+            "pinyinShort": "aks"
+        },
+        {
+            "count": 7,
+            "id": 976,
+            "n": "东阳",
+            "pinyinFull": "Dongyang",
+            "pinyinShort": "dy"
+        },
+        {
+            "count": 7,
+            "id": 635,
+            "n": "海门",
+            "pinyinFull": "Haimen",
+            "pinyinShort": "hm"
+        },
+        {
+            "count": 7,
+            "id": 934,
+            "n": "哈密",
+            "pinyinFull": "Hami",
+            "pinyinShort": "hm"
+        },
+        {
+            "count": 7,
+            "id": 938,
+            "n": "喀什",
+            "pinyinFull": "Kashgar",
+            "pinyinShort": "ks"
+        },
+        {
+            "count": 7,
+            "id": 424,
+            "n": "来宾",
+            "pinyinFull": "Laibin",
+            "pinyinShort": "lb"
+        },
+        {
+            "count": 7,
+            "id": 961,
+            "n": "丽江",
+            "pinyinFull": "Lijiang",
+            "pinyinShort": "lj"
+        },
+        {
+            "count": 7,
+            "id": 988,
+            "n": "临海",
+            "pinyinFull": "Linhai",
+            "pinyinShort": "lh"
+        },
+        {
+            "count": 7,
+            "id": 5051,
+            "n": "时光市",
+            "pinyinFull": "Shiguangshi",
+            "pinyinShort": ""
+        },
+        {
+            "count": 7,
+            "id": 836,
+            "n": "寿光",
+            "pinyinFull": "Shouguang",
+            "pinyinShort": "sg"
+        },
+        {
+            "count": 7,
+            "id": 966,
+            "n": "思茅",
+            "pinyinFull": "Simao",
+            "pinyinShort": "sm"
+        },
+        {
+            "count": 7,
+            "id": 583,
+            "n": "随州",
+            "pinyinFull": "Suizhou",
+            "pinyinShort": "sz"
+        },
+        {
+            "count": 7,
+            "id": 655,
+            "n": "太仓",
+            "pinyinFull": "Taicang",
+            "pinyinShort": "tc"
+        },
+        {
+            "count": 7,
+            "id": 656,
+            "n": "泰兴",
+            "pinyinFull": "Taixing",
+            "pinyinShort": "tx"
+        },
+        {
+            "count": 7,
+            "id": 799,
+            "n": "铜川",
+            "pinyinFull": "Tongchuan",
+            "pinyinShort": "tc"
+        },
+        {
+            "count": 7,
+            "id": 969,
+            "n": "西双版纳",
+            "pinyinFull": "Xishuangbanna",
+            "pinyinShort": "xsbn"
+        },
+        {
+            "count": 7,
+            "id": 690,
+            "n": "鹰潭",
+            "pinyinFull": "Yingtan",
+            "pinyinShort": "yt"
+        },
+        {
+            "count": 7,
+            "id": 972,
+            "n": "昭通",
+            "pinyinFull": "Zhaotong",
+            "pinyinShort": "zt"
+        },
+        {
+            "count": 6,
+            "id": 568,
+            "n": "鄂州",
+            "pinyinFull": "Ezhou",
+            "pinyinShort": "ez"
+        },
+        {
+            "count": 6,
+            "id": 1764,
+            "n": "海东",
+            "pinyinFull": "haidong",
+            "pinyinShort": "hd"
+        },
+        {
+            "count": 6,
+            "id": 495,
+            "n": "鹤壁",
+            "pinyinFull": "Hebi",
+            "pinyinShort": "hb"
+        },
+        {
+            "count": 6,
+            "id": 817,
+            "n": "即墨",
+            "pinyinFull": "Jimo",
+            "pinyinShort": "jm"
+        },
+        {
+            "count": 6,
+            "id": 439,
+            "n": "凯里",
+            "pinyinFull": "Kaili",
+            "pinyinShort": "kl"
+        },
+        {
+            "count": 6,
+            "id": 766,
+            "n": "满洲里",
+            "pinyinFull": "Manzhouli",
+            "pinyinShort": "mzl"
+        },
+        {
+            "count": 6,
+            "id": 477,
+            "n": "三河",
+            "pinyinFull": "Sanhe",
+            "pinyinShort": "sh"
+        },
+        {
+            "count": 6,
+            "id": 998,
+            "n": "嵊州",
+            "pinyinFull": "Shengzhou",
+            "pinyinShort": "sz"
+        },
+        {
+            "count": 6,
+            "id": 942,
+            "n": "石河子",
+            "pinyinFull": "Shihezi",
+            "pinyinShort": "shz"
+        },
+        {
+            "count": 6,
+            "id": 669,
+            "n": "仪征",
+            "pinyinFull": "Yizheng",
+            "pinyinShort": "yz"
+        },
+        {
+            "count": 6,
+            "id": 1004,
+            "n": "永康",
+            "pinyinFull": "Yongkang",
+            "pinyinShort": "yk"
+        },
+        {
+            "count": 5,
+            "id": 694,
+            "n": "白城",
+            "pinyinFull": "Baicheng",
+            "pinyinShort": "bc"
+        },
+        {
+            "count": 5,
+            "id": 324,
+            "n": "长乐",
+            "pinyinFull": "Changle",
+            "pinyinShort": "cl"
+        },
+        {
+            "count": 5,
+            "id": 884,
+            "n": "崇州",
+            "pinyinFull": "Chongzhou",
+            "pinyinShort": "cz"
+        },
+        {
+            "count": 5,
+            "id": 534,
+            "n": "大兴安岭",
+            "pinyinFull": "Daxinganling",
+            "pinyinShort": "dxal"
+        },
+        {
+            "count": 5,
+            "id": 698,
+            "n": "敦化",
+            "pinyinFull": "Dunhua",
+            "pinyinShort": "dh"
+        },
+        {
+            "count": 5,
+            "id": 699,
+            "n": "公主岭",
+            "pinyinFull": "Gongzhuling",
+            "pinyinShort": "gzl"
+        },
+        {
+            "count": 5,
+            "id": 537,
+            "n": "黑河",
+            "pinyinFull": "Heihe",
+            "pinyinShort": "hh"
+        },
+        {
+            "count": 5,
+            "id": 422,
+            "n": "贺州",
+            "pinyinFull": "Hezhou",
+            "pinyinShort": "hz"
+        },
+        {
+            "count": 5,
+            "id": 353,
+            "n": "金昌",
+            "pinyinFull": "Jinchang",
+            "pinyinShort": "jc"
+        },
+        {
+            "count": 5,
+            "id": 541,
+            "n": "鸡西",
+            "pinyinFull": "Jixi",
+            "pinyinShort": "jx"
+        },
+        {
+            "count": 5,
+            "id": 498,
+            "n": "济源",
+            "pinyinFull": "Jiyuan",
+            "pinyinShort": "jy"
+        },
+        {
+            "count": 5,
+            "id": 644,
+            "n": "句容",
+            "pinyinFull": "Jurong",
+            "pinyinShort": "jr"
+        },
+        {
+            "count": 5,
+            "id": 939,
+            "n": "库尔勒",
+            "pinyinFull": "Korla",
+            "pinyinShort": "kel"
+        },
+        {
+            "count": 5,
+            "id": 820,
+            "n": "莱芜",
+            "pinyinFull": "Laiwu",
+            "pinyinShort": "lw"
+        },
+        {
+            "count": 5,
+            "id": 987,
+            "n": "乐清",
+            "pinyinFull": "Leqing",
+            "pinyinShort": "lq"
+        },
+        {
+            "count": 5,
+            "id": 899,
+            "n": "凉山",
+            "pinyinFull": "Liangshan",
+            "pinyinShort": "ls"
+        },
+        {
+            "count": 5,
+            "id": 647,
+            "n": "溧阳",
+            "pinyinFull": "Liyang",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 5,
+            "id": 963,
+            "n": "怒江",
+            "pinyinFull": "Nujiang",
+            "pinyinShort": "nj"
+        },
+        {
+            "count": 5,
+            "id": 1748,
+            "n": "琼海",
+            "pinyinFull": "Qionghai",
+            "pinyinShort": "qh"
+        },
+        {
+            "count": 5,
+            "id": 768,
+            "n": "乌海",
+            "pinyinFull": "Wuhai",
+            "pinyinShort": "wh"
+        },
+        {
+            "count": 5,
+            "id": 782,
+            "n": "吴忠",
+            "pinyinFull": "Wuzhong",
+            "pinyinShort": "wz"
+        },
+        {
+            "count": 5,
+            "id": 771,
+            "n": "锡林郭勒",
+            "pinyinFull": "Xilinguole",
+            "pinyinShort": "xlgl"
+        },
+        {
+            "count": 5,
+            "id": 772,
+            "n": "锡林浩特",
+            "pinyinFull": "Xilinhot",
+            "pinyinShort": "xlht"
+        },
+        {
+            "count": 5,
+            "id": 447,
+            "n": "兴义",
+            "pinyinFull": "Xingyi",
+            "pinyinShort": "xy"
+        },
+        {
+            "count": 5,
+            "id": 948,
+            "n": "伊宁",
+            "pinyinFull": "Yining",
+            "pinyinShort": "yn"
+        },
+        {
+            "count": 4,
+            "id": 754,
+            "n": "阿拉善",
+            "pinyinFull": "Alashan",
+            "pinyinShort": "als"
+        },
+        {
+            "count": 4,
+            "id": 298,
+            "n": "巢湖",
+            "pinyinFull": "Chaohu",
+            "pinyinShort": "ch"
+        },
+        {
+            "count": 4,
+            "id": 563,
+            "n": "赤壁",
+            "pinyinFull": "Chibi",
+            "pinyinShort": "cb"
+        },
+        {
+            "count": 4,
+            "id": 460,
+            "n": "定州",
+            "pinyinFull": "Dingzhou",
+            "pinyinShort": "dz"
+        },
+        {
+            "count": 4,
+            "id": 888,
+            "n": "峨眉山",
+            "pinyinFull": "Emeishan",
+            "pinyinShort": "ems"
+        },
+        {
+            "count": 4,
+            "id": 676,
+            "n": "丰城",
+            "pinyinFull": "Fengcheng",
+            "pinyinShort": "fc"
+        },
+        {
+            "count": 4,
+            "id": 978,
+            "n": "富阳",
+            "pinyinFull": "Fuyang",
+            "pinyinShort": "fy"
+        },
+        {
+            "count": 4,
+            "id": 634,
+            "n": "高邮",
+            "pinyinFull": "Gaoyou",
+            "pinyinShort": "gy"
+        },
+        {
+            "count": 4,
+            "id": 569,
+            "n": "广水",
+            "pinyinFull": "Guangshui",
+            "pinyinShort": "gs"
+        },
+        {
+            "count": 4,
+            "id": 679,
+            "n": "贵溪",
+            "pinyinFull": "Guixi",
+            "pinyinShort": "gx"
+        },
+        {
+            "count": 4,
+            "id": 4914,
+            "n": "海盐",
+            "pinyinFull": "Haiyan",
+            "pinyinShort": "hy"
+        },
+        {
+            "count": 4,
+            "id": 571,
+            "n": "洪湖",
+            "pinyinFull": "Honghu",
+            "pinyinShort": "hh"
+        },
+        {
+            "count": 4,
+            "id": 378,
+            "n": "化州",
+            "pinyinFull": "Huazhou",
+            "pinyinShort": "hz"
+        },
+        {
+            "count": 4,
+            "id": 702,
+            "n": "珲春",
+            "pinyinFull": "Huichun",
+            "pinyinShort": "hc"
+        },
+        {
+            "count": 4,
+            "id": 639,
+            "n": "江都",
+            "pinyinFull": "Jiangdu",
+            "pinyinShort": "jd"
+        },
+        {
+            "count": 4,
+            "id": 895,
+            "n": "江油",
+            "pinyinFull": "Jiangyou",
+            "pinyinShort": "jy"
+        },
+        {
+            "count": 4,
+            "id": 352,
+            "n": "嘉峪关",
+            "pinyinFull": "Jiayuguan",
+            "pinyinShort": "jyg"
+        },
+        {
+            "count": 4,
+            "id": 937,
+            "n": "克拉玛依",
+            "pinyinFull": "Karamay",
+            "pinyinShort": "klmy"
+        },
+        {
+            "count": 4,
+            "id": 385,
+            "n": "廉江",
+            "pinyinFull": "Lianjiang",
+            "pinyinShort": "lj"
+        },
+        {
+            "count": 4,
+            "id": 989,
+            "n": "临安",
+            "pinyinFull": "Linan",
+            "pinyinShort": "la"
+        },
+        {
+            "count": 4,
+            "id": 4966,
+            "n": "芒市",
+            "pinyinFull": "Mangshi",
+            "pinyinShort": "ms"
+        },
+        {
+            "count": 4,
+            "id": 334,
+            "n": "南安",
+            "pinyinFull": "Nanan",
+            "pinyinShort": "na"
+        },
+        {
+            "count": 4,
+            "id": 996,
+            "n": "上虞",
+            "pinyinFull": "Shangyu",
+            "pinyinShort": "sy"
+        },
+        {
+            "count": 4,
+            "id": 838,
+            "n": "滕州",
+            "pinyinFull": "Tengzhou",
+            "pinyinShort": "tz"
+        },
+        {
+            "count": 4,
+            "id": 584,
+            "n": "天门",
+            "pinyinFull": "Tianmen",
+            "pinyinShort": "tm"
+        },
+        {
+            "count": 4,
+            "id": 514,
+            "n": "项城",
+            "pinyinFull": "Xiangcheng",
+            "pinyinShort": "xc"
+        },
+        {
+            "count": 4,
+            "id": 872,
+            "n": "孝义",
+            "pinyinFull": "Xiaoyi",
+            "pinyinShort": "xy"
+        },
+        {
+            "count": 4,
+            "id": 912,
+            "n": "西昌",
+            "pinyinFull": "Xichang",
+            "pinyinShort": "xc"
+        },
+        {
+            "count": 4,
+            "id": 666,
+            "n": "扬中",
+            "pinyinFull": "Yangzhong",
+            "pinyinShort": "yz"
+        },
+        {
+            "count": 4,
+            "id": 558,
+            "n": "伊春",
+            "pinyinFull": "Yichun",
+            "pinyinShort": "yc"
+        },
+        {
+            "count": 4,
+            "id": 691,
+            "n": "樟树",
+            "pinyinFull": "Zhangshu",
+            "pinyinShort": "zs"
+        },
+        {
+            "count": 4,
+            "id": 363,
+            "n": "张掖",
+            "pinyinFull": "Zhangye",
+            "pinyinShort": "zy"
+        },
+        {
+            "count": 4,
+            "id": 783,
+            "n": "中卫",
+            "pinyinFull": "Zhongwei",
+            "pinyinShort": "zw"
+        },
+        {
+            "count": 4,
+            "id": 486,
+            "n": "涿州",
+            "pinyinFull": "Zhuozhou",
+            "pinyinShort": "zz"
+        },
+        {
+            "count": 3,
+            "id": 929,
+            "n": "阿勒泰",
+            "pinyinFull": "Aletai",
+            "pinyinShort": "alt"
+        },
+        {
+            "count": 3,
+            "id": 530,
+            "n": "安达",
+            "pinyinFull": "Anda",
+            "pinyinShort": "ad"
+        },
+        {
+            "count": 3,
+            "id": 1774,
+            "n": "巴音郭楞",
+            "pinyinFull": "bayinguoleng",
+            "pinyinShort": "bygl"
+        },
+        {
+            "count": 3,
+            "id": 807,
+            "n": "昌邑",
+            "pinyinFull": "Changyi",
+            "pinyinShort": "cy"
+        },
+        {
+            "count": 3,
+            "id": 1755,
+            "n": "澄迈县",
+            "pinyinFull": "Chengmaixian",
+            "pinyinShort": "cmx"
+        },
+        {
+            "count": 3,
+            "id": 631,
+            "n": "大丰",
+            "pinyinFull": "Dafeng",
+            "pinyinShort": "df"
+        },
+        {
+            "count": 3,
+            "id": 564,
+            "n": "丹江口",
+            "pinyinFull": "Danjiangkou",
+            "pinyinShort": "djk"
+        },
+        {
+            "count": 3,
+            "id": 786,
+            "n": "德令哈",
+            "pinyinFull": "Delingha",
+            "pinyinShort": "dlh"
+        },
+        {
+            "count": 3,
+            "id": 1752,
+            "n": "东方",
+            "pinyinFull": "dongfang",
+            "pinyinShort": "df"
+        },
+        {
+            "count": 3,
+            "id": 977,
+            "n": "奉化",
+            "pinyinFull": "Fenghua",
+            "pinyinShort": "fh"
+        },
+        {
+            "count": 3,
+            "id": 858,
+            "n": "汾阳",
+            "pinyinFull": "Fenyang",
+            "pinyinShort": "fy"
+        },
+        {
+            "count": 3,
+            "id": 325,
+            "n": "福安",
+            "pinyinFull": "Fuan",
+            "pinyinShort": "fa"
+        },
+        {
+            "count": 3,
+            "id": 737,
+            "n": "盖州",
+            "pinyinFull": "Gaizhou",
+            "pinyinShort": "gz"
+        },
+        {
+            "count": 3,
+            "id": 678,
+            "n": "高安",
+            "pinyinFull": "Gaoan",
+            "pinyinShort": "ga"
+        },
+        {
+            "count": 3,
+            "id": 859,
+            "n": "高平",
+            "pinyinFull": "Gaoping",
+            "pinyinShort": "gp"
+        },
+        {
+            "count": 3,
+            "id": 1344,
+            "n": "海安",
+            "pinyinFull": "Haian",
+            "pinyinShort": "ha"
+        },
+        {
+            "count": 3,
+            "id": 1769,
+            "n": "海南藏族自治州",
+            "pinyinFull": "Hainanzangzuzizhizhou",
+            "pinyinShort": "hnczzzz"
+        },
+        {
+            "count": 3,
+            "id": 536,
+            "n": "鹤岗",
+            "pinyinFull": "Hegang",
+            "pinyinShort": "hg"
+        },
+        {
+            "count": 3,
+            "id": 862,
+            "n": "侯马",
+            "pinyinFull": "Houma",
+            "pinyinShort": "hm"
+        },
+        {
+            "count": 3,
+            "id": 701,
+            "n": "桦甸",
+            "pinyinFull": "Huadian",
+            "pinyinShort": "hd"
+        },
+        {
+            "count": 3,
+            "id": 982,
+            "n": "建德",
+            "pinyinFull": "Jiande",
+            "pinyinShort": "jd"
+        },
+        {
+            "count": 3,
+            "id": 643,
+            "n": "金坛",
+            "pinyinFull": "Jintan",
+            "pinyinShort": "jt"
+        },
+        {
+            "count": 3,
+            "id": 821,
+            "n": "莱阳",
+            "pinyinFull": "Laiyang",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 3,
+            "id": 1759,
+            "n": "乐东",
+            "pinyinFull": "ledong",
+            "pinyinShort": "ld"
+        },
+        {
+            "count": 3,
+            "id": 607,
+            "n": "耒阳",
+            "pinyinFull": "Leiyang",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 3,
+            "id": 684,
+            "n": "乐平",
+            "pinyinFull": "Leping",
+            "pinyinShort": "lp"
+        },
+        {
+            "count": 3,
+            "id": 577,
+            "n": "利川",
+            "pinyinFull": "Lichuan",
+            "pinyinShort": "lc"
+        },
+        {
+            "count": 3,
+            "id": 610,
+            "n": "醴陵",
+            "pinyinFull": "Liling",
+            "pinyinShort": "ll"
+        },
+        {
+            "count": 3,
+            "id": 826,
+            "n": "龙口",
+            "pinyinFull": "Longkou",
+            "pinyinShort": "lk"
+        },
+        {
+            "count": 3,
+            "id": 578,
+            "n": "麻城",
+            "pinyinFull": "Macheng",
+            "pinyinShort": "mc"
+        },
+        {
+            "count": 3,
+            "id": 709,
+            "n": "梅河口",
+            "pinyinFull": "Meihekou",
+            "pinyinShort": "mhk"
+        },
+        {
+            "count": 3,
+            "id": 902,
+            "n": "绵竹",
+            "pinyinFull": "Mianzhu",
+            "pinyinShort": "mz"
+        },
+        {
+            "count": 3,
+            "id": 710,
+            "n": "磐石",
+            "pinyinFull": "Panshi",
+            "pinyinShort": "pd"
+        },
+        {
+            "count": 3,
+            "id": 5009,
+            "n": "彭州市",
+            "pinyinFull": "Pengzhoushi",
+            "pinyinShort": "pzs"
+        },
+        {
+            "count": 3,
+            "id": 993,
+            "n": "平湖",
+            "pinyinFull": "Pinghu",
+            "pinyinShort": "ph"
+        },
+        {
+            "count": 3,
+            "id": 651,
+            "n": "邳州",
+            "pinyinFull": "Pizhou",
+            "pinyinShort": "pz"
+        },
+        {
+            "count": 3,
+            "id": 474,
+            "n": "迁安",
+            "pinyinFull": "Qianan",
+            "pinyinShort": "qa"
+        },
+        {
+            "count": 3,
+            "id": 830,
+            "n": "青州",
+            "pinyinFull": "Qingzhou",
+            "pinyinShort": "qz"
+        },
+        {
+            "count": 3,
+            "id": 548,
+            "n": "七台河",
+            "pinyinFull": "Qitaihe",
+            "pinyinShort": "qth"
+        },
+        {
+            "count": 3,
+            "id": 476,
+            "n": "任丘",
+            "pinyinFull": "Renqiu",
+            "pinyinShort": "rq"
+        },
+        {
+            "count": 3,
+            "id": 686,
+            "n": "瑞昌",
+            "pinyinFull": "Ruichang",
+            "pinyinShort": "rc"
+        },
+        {
+            "count": 3,
+            "id": 478,
+            "n": "沙河",
+            "pinyinFull": "Shahe",
+            "pinyinShort": "sh"
+        },
+        {
+            "count": 3,
+            "id": 340,
+            "n": "邵武",
+            "pinyinFull": "Shaowu",
+            "pinyinShort": "sw"
+        },
+        {
+            "count": 3,
+            "id": 341,
+            "n": "石狮",
+            "pinyinFull": "Shishi",
+            "pinyinShort": "ss"
+        },
+        {
+            "count": 3,
+            "id": 711,
+            "n": "双辽",
+            "pinyinFull": "Shuangliao",
+            "pinyinShort": "sl"
+        },
+        {
+            "count": 3,
+            "id": 747,
+            "n": "瓦房店",
+            "pinyinFull": "Wafangdian",
+            "pinyinShort": "wfd"
+        },
+        {
+            "count": 3,
+            "id": 1750,
+            "n": "文昌",
+            "pinyinFull": "wenchang",
+            "pinyinShort": "wc"
+        },
+        {
+            "count": 3,
+            "id": 946,
+            "n": "五家渠",
+            "pinyinFull": "Wujiaqu",
+            "pinyinShort": "wgq"
+        },
+        {
+            "count": 3,
+            "id": 620,
+            "n": "湘乡",
+            "pinyinFull": "Xiangxiang",
+            "pinyinShort": "xx"
+        },
+        {
+            "count": 3,
+            "id": 663,
+            "n": "兴化",
+            "pinyinFull": "Xinghua",
+            "pinyinShort": "xh"
+        },
+        {
+            "count": 3,
+            "id": 518,
+            "n": "新郑",
+            "pinyinFull": "Xinzheng",
+            "pinyinShort": "xz"
+        },
+        {
+            "count": 3,
+            "id": 970,
+            "n": "宣威",
+            "pinyinFull": "Xuanwei",
+            "pinyinShort": "xw"
+        },
+        {
+            "count": 3,
+            "id": 719,
+            "n": "延吉",
+            "pinyinFull": "Yanji",
+            "pinyinShort": "yj"
+        },
+        {
+            "count": 3,
+            "id": 848,
+            "n": "章丘",
+            "pinyinFull": "Zhangqiu",
+            "pinyinShort": "zq"
+        },
+        {
+            "count": 2,
+            "id": 928,
+            "n": "阿拉尔",
+            "pinyinFull": "Alaer",
+            "pinyinShort": "ale"
+        },
+        {
+            "count": 2,
+            "id": 456,
+            "n": "霸州",
+            "pinyinFull": "Bazhou",
+            "pinyinShort": "bz"
+        },
+        {
+            "count": 2,
+            "id": 531,
+            "n": "北安",
+            "pinyinFull": "Beian",
+            "pinyinShort": "ba"
+        },
+        {
+            "count": 2,
+            "id": 414,
+            "n": "北流",
+            "pinyinFull": "Beiliu",
+            "pinyinShort": "bl"
+        },
+        {
+            "count": 2,
+            "id": 1773,
+            "n": "博尔塔拉",
+            "pinyinFull": "boertala",
+            "pinyinShort": "bedl"
+        },
+        {
+            "count": 2,
+            "id": 931,
+            "n": "博乐",
+            "pinyinFull": "Bole",
+            "pinyinShort": "bl"
+        },
+        {
+            "count": 2,
+            "id": 491,
+            "n": "长葛",
+            "pinyinFull": "Changge",
+            "pinyinShort": "cg"
+        },
+        {
+            "count": 2,
+            "id": 370,
+            "n": "从化",
+            "pinyinFull": "Conghua",
+            "pinyinShort": "ch"
+        },
+        {
+            "count": 2,
+            "id": 1749,
+            "n": "儋州市",
+            "pinyinFull": "danzhou",
+            "pinyinShort": "dzs"
+        },
+        {
+            "count": 2,
+            "id": 731,
+            "n": "大石桥",
+            "pinyinFull": "Dashiqiao",
+            "pinyinShort": "ddq"
+        },
+        {
+            "count": 2,
+            "id": 697,
+            "n": "德惠",
+            "pinyinFull": "Dehui",
+            "pinyinShort": "dh"
+        },
+        {
+            "count": 2,
+            "id": 733,
+            "n": "调兵山",
+            "pinyinFull": "Diaobingshan",
+            "pinyinShort": "dbs"
+        },
+        {
+            "count": 2,
+            "id": 956,
+            "n": "迪庆",
+            "pinyinFull": "Diqing",
+            "pinyinShort": "dq"
+        },
+        {
+            "count": 2,
+            "id": 734,
+            "n": "东港",
+            "pinyinFull": "Donggang",
+            "pinyinShort": "dg"
+        },
+        {
+            "count": 2,
+            "id": 633,
+            "n": "东台",
+            "pinyinFull": "Dongtai",
+            "pinyinShort": "dt"
+        },
+        {
+            "count": 2,
+            "id": 417,
+            "n": "东兴",
+            "pinyinFull": "Dongxing",
+            "pinyinShort": "dx"
+        },
+        {
+            "count": 2,
+            "id": 887,
+            "n": "都江堰",
+            "pinyinFull": "Dujiangyan",
+            "pinyinShort": "djy"
+        },
+        {
+            "count": 2,
+            "id": 810,
+            "n": "肥城",
+            "pinyinFull": "Feicheng",
+            "pinyinShort": "fc"
+        },
+        {
+            "count": 2,
+            "id": 462,
+            "n": "高碑店",
+            "pinyinFull": "Gaobeidian",
+            "pinyinShort": "gbd"
+        },
+        {
+            "count": 2,
+            "id": 375,
+            "n": "高州",
+            "pinyinFull": "Gaozhou",
+            "pinyinShort": "gz"
+        },
+        {
+            "count": 2,
+            "id": 787,
+            "n": "格尔木",
+            "pinyinFull": "Geermu",
+            "pinyinShort": "gem"
+        },
+        {
+            "count": 2,
+            "id": 494,
+            "n": "巩义",
+            "pinyinFull": "Gongyi",
+            "pinyinShort": "gy"
+        },
+        {
+            "count": 2,
+            "id": 778,
+            "n": "固原",
+            "pinyinFull": "Guyuan",
+            "pinyinShort": "gy"
+        },
+        {
+            "count": 2,
+            "id": 738,
+            "n": "海城",
+            "pinyinFull": "Haicheng",
+            "pinyinShort": "hc"
+        },
+        {
+            "count": 2,
+            "id": 861,
+            "n": "河津",
+            "pinyinFull": "Hejin",
+            "pinyinShort": "hj"
+        },
+        {
+            "count": 2,
+            "id": 376,
+            "n": "鹤山",
+            "pinyinFull": "Heshan",
+            "pinyinShort": "hs"
+        },
+        {
+            "count": 2,
+            "id": 496,
+            "n": "辉县",
+            "pinyinFull": "Huixian",
+            "pinyinShort": "hx"
+        },
+        {
+            "count": 2,
+            "id": 640,
+            "n": "姜堰",
+            "pinyinFull": "Jiangyan",
+            "pinyinShort": "jy"
+        },
+        {
+            "count": 2,
+            "id": 1353,
+            "n": "简阳",
+            "pinyinFull": "Jianyang",
+            "pinyinShort": "jy"
+        },
+        {
+            "count": 2,
+            "id": 816,
+            "n": "胶州",
+            "pinyinFull": "Jiaozhou",
+            "pinyinShort": "jz"
+        },
+        {
+            "count": 2,
+            "id": 864,
+            "n": "介休",
+            "pinyinFull": "Jiexiu",
+            "pinyinShort": "jx"
+        },
+        {
+            "count": 2,
+            "id": 606,
+            "n": "吉首",
+            "pinyinFull": "Jishou",
+            "pinyinShort": "js"
+        },
+        {
+            "count": 2,
+            "id": 740,
+            "n": "开原",
+            "pinyinFull": "Kaiyuan",
+            "pinyinShort": "ky"
+        },
+        {
+            "count": 2,
+            "id": 1775,
+            "n": "克孜勒",
+            "pinyinFull": "kezile",
+            "pinyinShort": "kzl"
+        },
+        {
+            "count": 2,
+            "id": 897,
+            "n": "阆中",
+            "pinyinFull": "Langzhong",
+            "pinyinShort": "lz"
+        },
+        {
+            "count": 2,
+            "id": 986,
+            "n": "兰溪",
+            "pinyinFull": "Lanxi",
+            "pinyinShort": "lx"
+        },
+        {
+            "count": 2,
+            "id": 576,
+            "n": "老河口",
+            "pinyinFull": "Laohekou",
+            "pinyinShort": "lhk"
+        },
+        {
+            "count": 2,
+            "id": 608,
+            "n": "冷水江",
+            "pinyinFull": "Lengshuijiang",
+            "pinyinShort": "lsj"
+        },
+        {
+            "count": 2,
+            "id": 609,
+            "n": "涟源",
+            "pinyinFull": "Lianyuan",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 2,
+            "id": 1760,
+            "n": "陵水",
+            "pinyinFull": "Lingshui",
+            "pinyinShort": "ls"
+        },
+        {
+            "count": 2,
+            "id": 743,
+            "n": "凌源",
+            "pinyinFull": "Lingyuan",
+            "pinyinShort": "ly"
+        },
+        {
+            "count": 2,
+            "id": 824,
+            "n": "临清",
+            "pinyinFull": "Linqing",
+            "pinyinShort": "lq"
+        },
+        {
+            "count": 2,
+            "id": 500,
+            "n": "林州",
+            "pinyinFull": "Linzhou",
+            "pinyinShort": "lz"
+        },
+        {
+            "count": 2,
+            "id": 504,
+            "n": "孟州",
+            "pinyinFull": "Mengzhou",
+            "pinyinShort": "mz"
+        },
+        {
+            "count": 2,
+            "id": 614,
+            "n": "汨罗",
+            "pinyinFull": "Miluo",
+            "pinyinShort": "ml"
+        },
+        {
+            "count": 2,
+            "id": 827,
+            "n": "蓬莱",
+            "pinyinFull": "Penglai",
+            "pinyinShort": "pl"
+        },
+        {
+            "count": 2,
+            "id": 828,
+            "n": "平度",
+            "pinyinFull": "Pingdu",
+            "pinyinShort": "pd"
+        },
+        {
+            "count": 2,
+            "id": 745,
+            "n": "普兰店",
+            "pinyinFull": "Pulandian",
+            "pinyinShort": "pld"
+        },
+        {
+            "count": 2,
+            "id": 832,
+            "n": "曲阜",
+            "pinyinFull": "Qufu",
+            "pinyinShort": "qf"
+        },
+        {
+            "count": 2,
+            "id": 834,
+            "n": "荣成",
+            "pinyinFull": "Rongcheng",
+            "pinyinShort": "rc"
+        },
+        {
+            "count": 2,
+            "id": 687,
+            "n": "瑞金",
+            "pinyinFull": "Ruijin",
+            "pinyinShort": "rj"
+        },
+        {
+            "count": 2,
+            "id": 549,
+            "n": "尚志",
+            "pinyinFull": "Shangzhi",
+            "pinyinShort": "sz"
+        },
+        {
+            "count": 2,
+            "id": 4954,
+            "n": "射阳",
+            "pinyinFull": "Sheyangshi",
+            "pinyinShort": "sys"
+        },
+        {
+            "count": 2,
+            "id": 550,
+            "n": "双城",
+            "pinyinFull": "Shuangcheng",
+            "pinyinShort": "sc"
+        },
+        {
+            "count": 2,
+            "id": 648,
+            "n": "沭阳",
+            "pinyinFull": "Shuyang",
+            "pinyinShort": "sy"
+        },
+        {
+            "count": 2,
+            "id": 582,
+            "n": "松滋",
+            "pinyinFull": "Songzi",
+            "pinyinShort": "sz"
+        },
+        {
+            "count": 2,
+            "id": 715,
+            "n": "洮南",
+            "pinyinFull": "Taonan",
+            "pinyinShort": "tn"
+        },
+        {
+            "count": 2,
+            "id": 945,
+            "n": "吐鲁番",
+            "pinyinFull": "Turpan",
+            "pinyinShort": "tlf"
+        },
+        {
+            "count": 2,
+            "id": 1751,
+            "n": "万宁",
+            "pinyinFull": "wanning",
+            "pinyinShort": "wn"
+        },
+        {
+            "count": 2,
+            "id": 481,
+            "n": "武安",
+            "pinyinFull": "Wuan",
+            "pinyinShort": "wa"
+        },
+        {
+            "count": 2,
+            "id": 556,
+            "n": "五常",
+            "pinyinFull": "Wuchang",
+            "pinyinShort": "wc"
+        },
+        {
+            "count": 2,
+            "id": 773,
+            "n": "兴安",
+            "pinyinFull": "Xingan",
+            "pinyinShort": "xa"
+        },
+        {
+            "count": 2,
+            "id": 483,
+            "n": "辛集",
+            "pinyinFull": "Xinji",
+            "pinyinShort": "xj"
+        },
+        {
+            "count": 2,
+            "id": 484,
+            "n": "新乐",
+            "pinyinFull": "Xinle",
+            "pinyinShort": "xl"
+        },
+        {
+            "count": 2,
+            "id": 401,
+            "n": "信宜",
+            "pinyinFull": "Xinyi",
+            "pinyinShort": "xy"
+        },
+        {
+            "count": 2,
+            "id": 844,
+            "n": "兖州",
+            "pinyinFull": "Yanzhou",
+            "pinyinShort": "yz"
+        },
+        {
+            "count": 2,
+            "id": 592,
+            "n": "宜都",
+            "pinyinFull": "Yidu",
+            "pinyinShort": "yd"
+        },
+        {
+            "count": 2,
+            "id": 404,
+            "n": "英德",
+            "pinyinFull": "Yingde",
+            "pinyinShort": "yd"
+        },
+        {
+            "count": 2,
+            "id": 430,
+            "n": "宜州",
+            "pinyinFull": "Yizhou",
+            "pinyinShort": "yz"
+        },
+        {
+            "count": 2,
+            "id": 343,
+            "n": "永安",
+            "pinyinFull": "Yongan",
+            "pinyinShort": "ya"
+        },
+        {
+            "count": 2,
+            "id": 523,
+            "n": "永城",
+            "pinyinFull": "Yongcheng",
+            "pinyinShort": "yc"
+        },
+        {
+            "count": 2,
+            "id": 524,
+            "n": "禹州",
+            "pinyinFull": "Yuzhou",
+            "pinyinShort": "yz"
+        },
+        {
+            "count": 2,
+            "id": 595,
+            "n": "枝江",
+            "pinyinFull": "Zhijiang",
+            "pinyinShort": "zj"
+        },
+        {
+            "count": 2,
+            "id": 751,
+            "n": "庄河",
+            "pinyinFull": "Zhuanghe",
+            "pinyinShort": "zh"
+        },
+        {
+            "count": 2,
+            "id": 850,
+            "n": "诸城",
+            "pinyinFull": "Zhucheng",
+            "pinyinShort": "zc"
+        },
+        {
+            "count": 2,
+            "id": 852,
+            "n": "邹城",
+            "pinyinFull": "Zoucheng",
+            "pinyinShort": "zc"
+        },
+        {
+            "count": 2,
+            "id": 487,
+            "n": "遵化",
+            "pinyinFull": "Zunhua",
+            "pinyinShort": "zh"
+        },
+        {
+            "count": 1,
+            "id": 1757,
+            "n": "白沙",
+            "pinyinFull": "baisha",
+            "pinyinShort": "bs"
+        },
+        {
+            "count": 1,
+            "id": 457,
+            "n": "泊头",
+            "pinyinFull": "Botou",
+            "pinyinShort": "bt"
+        },
+        {
+            "count": 1,
+            "id": 920,
+            "n": "昌都",
+            "pinyinFull": "Changdu",
+            "pinyinShort": "cd"
+        },
+        {
+            "count": 1,
+            "id": 1758,
+            "n": "昌江",
+            "pinyinFull": "changjiang",
+            "pinyinShort": "cj"
+        },
+        {
+            "count": 1,
+            "id": 601,
+            "n": "常宁",
+            "pinyinFull": "Changning",
+            "pinyinShort": "cn"
+        },
+        {
+            "count": 1,
+            "id": 566,
+            "n": "当阳",
+            "pinyinFull": "Dangyang",
+            "pinyinShort": "dy"
+        },
+        {
+            "count": 1,
+            "id": 565,
+            "n": "大冶",
+            "pinyinFull": "Daye",
+            "pinyinShort": "dy"
+        },
+        {
+            "count": 1,
+            "id": 492,
+            "n": "登封",
+            "pinyinFull": "Dengfeng",
+            "pinyinShort": "df"
+        },
+        {
+            "count": 1,
+            "id": 732,
+            "n": "灯塔",
+            "pinyinFull": "Dengta",
+            "pinyinShort": "dd"
+        },
+        {
+            "count": 1,
+            "id": 493,
+            "n": "邓州",
+            "pinyinFull": "Dengzhou",
+            "pinyinShort": "dz"
+        },
+        {
+            "count": 1,
+            "id": 675,
+            "n": "德兴",
+            "pinyinFull": "Dexing",
+            "pinyinShort": "dx"
+        },
+        {
+            "count": 1,
+            "id": 1753,
+            "n": "定安县",
+            "pinyinFull": "dinganxian",
+            "pinyinShort": "dax"
+        },
+        {
+            "count": 1,
+            "id": 437,
+            "n": "都匀",
+            "pinyinFull": "Duyun",
+            "pinyinShort": "dy"
+        },
+        {
+            "count": 1,
+            "id": 761,
+            "n": "二连浩特",
+            "pinyinFull": "Elianhot",
+            "pinyinShort": "elht"
+        },
+        {
+            "count": 1,
+            "id": 372,
+            "n": "恩平",
+            "pinyinFull": "Enping",
+            "pinyinShort": "ep"
+        },
+        {
+            "count": 1,
+            "id": 326,
+            "n": "福鼎",
+            "pinyinFull": "Fuding",
+            "pinyinShort": "fd"
+        },
+        {
+            "count": 1,
+            "id": 811,
+            "n": "高密",
+            "pinyinFull": "Gaomi",
+            "pinyinShort": "gm"
+        },
+        {
+            "count": 1,
+            "id": 892,
+            "n": "广汉",
+            "pinyinFull": "Guanghan",
+            "pinyinShort": "gh"
+        },
+        {
+            "count": 1,
+            "id": 1766,
+            "n": "海北",
+            "pinyinFull": "haibei",
+            "pinyinShort": "hb"
+        },
+        {
+            "count": 1,
+            "id": 812,
+            "n": "海阳",
+            "pinyinFull": "Haiyang",
+            "pinyinShort": "hy"
+        },
+        {
+            "count": 1,
+            "id": 465,
+            "n": "河间",
+            "pinyinFull": "Hejian",
+            "pinyinShort": "hj"
+        },
+        {
+            "count": 1,
+            "id": 797,
+            "n": "华阴",
+            "pinyinFull": "Huayin",
+            "pinyinShort": "hy"
+        },
+        {
+            "count": 1,
+            "id": 894,
+            "n": "华蓥",
+            "pinyinFull": "Huaying",
+            "pinyinShort": "hy"
+        },
+        {
+            "count": 1,
+            "id": 539,
+            "n": "虎林",
+            "pinyinFull": "Hulin",
+            "pinyinShort": "hl"
+        },
+        {
+            "count": 1,
+            "id": 863,
+            "n": "霍州",
+            "pinyinFull": "Huozhou",
+            "pinyinShort": "hz"
+        },
+        {
+            "count": 1,
+            "id": 704,
+            "n": "蛟河",
+            "pinyinFull": "Jiaohe",
+            "pinyinShort": "jh"
+        },
+        {
+            "count": 1,
+            "id": 683,
+            "n": "井冈山",
+            "pinyinFull": "Jinggangshan",
+            "pinyinShort": "jgs"
+        },
+        {
+            "count": 1,
+            "id": 819,
+            "n": "莱西",
+            "pinyinFull": "Laixi",
+            "pinyinShort": "lx"
+        },
+        {
+            "count": 1,
+            "id": 822,
+            "n": "莱州",
+            "pinyinFull": "Laizhou",
+            "pinyinShort": "lz"
+        },
+        {
+            "count": 1,
+            "id": 383,
+            "n": "乐昌",
+            "pinyinFull": "Lechang",
+            "pinyinShort": "lc"
+        },
+        {
+            "count": 1,
+            "id": 1756,
+            "n": "临高县",
+            "pinyinFull": "lingaoxian",
+            "pinyinShort": "lgx"
+        },
+        {
+            "count": 1,
+            "id": 611,
+            "n": "临湘",
+            "pinyinFull": "Linxiang",
+            "pinyinShort": "lx"
+        },
+        {
+            "count": 1,
+            "id": 924,
+            "n": "林芝",
+            "pinyinFull": "Linzhi",
+            "pinyinShort": "lz"
+        },
+        {
+            "count": 1,
+            "id": 332,
+            "n": "龙海",
+            "pinyinFull": "Longhai",
+            "pinyinShort": "lh"
+        },
+        {
+            "count": 1,
+            "id": 708,
+            "n": "龙井",
+            "pinyinFull": "Longjing",
+            "pinyinShort": "lj"
+        },
+        {
+            "count": 1,
+            "id": 868,
+            "n": "潞城",
+            "pinyinFull": "Lucheng",
+            "pinyinShort": "lc"
+        },
+        {
+            "count": 1,
+            "id": 387,
+            "n": "陆丰",
+            "pinyinFull": "Lufeng",
+            "pinyinShort": "lf"
+        },
+        {
+            "count": 1,
+            "id": 543,
+            "n": "密山",
+            "pinyinFull": "Mishan",
+            "pinyinShort": "ms"
+        },
+        {
+            "count": 1,
+            "id": 391,
+            "n": "南雄",
+            "pinyinFull": "Nanxiong",
+            "pinyinShort": "nx"
+        },
+        {
+            "count": 1,
+            "id": 545,
+            "n": "讷河",
+            "pinyinFull": "Nehe",
+            "pinyinShort": "nh"
+        },
+        {
+            "count": 1,
+            "id": 315,
+            "n": "宁国",
+            "pinyinFull": "Ningguo",
+            "pinyinShort": "ng"
+        },
+        {
+            "count": 1,
+            "id": 831,
+            "n": "栖霞",
+            "pinyinFull": "Qixia",
+            "pinyinShort": "qx"
+        },
+        {
+            "count": 1,
+            "id": 444,
+            "n": "仁怀",
+            "pinyinFull": "Renhuai",
+            "pinyinShort": "rh"
+        },
+        {
+            "count": 1,
+            "id": 965,
+            "n": "瑞丽",
+            "pinyinFull": "Ruili",
+            "pinyinShort": "rl"
+        },
+        {
+            "count": 1,
+            "id": 509,
+            "n": "汝州",
+            "pinyinFull": "Ruzhou",
+            "pinyinShort": "rz"
+        },
+        {
+            "count": 1,
+            "id": 921,
+            "n": "山南",
+            "pinyinFull": "Shannan",
+            "pinyinShort": "sn"
+        },
+        {
+            "count": 1,
+            "id": 1746,
+            "n": "神农架",
+            "pinyinFull": "Shennongjia",
+            "pinyinShort": "snjlo"
+        },
+        {
+            "count": 1,
+            "id": 909,
+            "n": "什邡",
+            "pinyinFull": "Shifang",
+            "pinyinShort": "sf"
+        },
+        {
+            "count": 1,
+            "id": 922,
+            "n": "日喀则",
+            "pinyinFull": "Shigatse",
+            "pinyinShort": "rkz"
+        },
+        {
+            "count": 1,
+            "id": 580,
+            "n": "石首",
+            "pinyinFull": "Shishou",
+            "pinyinShort": "ds"
+        },
+        {
+            "count": 1,
+            "id": 712,
+            "n": "舒兰",
+            "pinyinFull": "Shulan",
+            "pinyinShort": "sl"
+        },
+        {
+            "count": 1,
+            "id": 554,
+            "n": "铁力",
+            "pinyinFull": "Tieli",
+            "pinyinShort": "tl"
+        },
+        {
+            "count": 1,
+            "id": 316,
+            "n": "桐城",
+            "pinyinFull": "Tongcheng",
+            "pinyinShort": "tc"
+        },
+        {
+            "count": 1,
+            "id": 717,
+            "n": "图门",
+            "pinyinFull": "Tumen",
+            "pinyinShort": "tm"
+        },
+        {
+            "count": 1,
+            "id": 1754,
+            "n": "屯昌县",
+            "pinyinFull": "Tunchangxian",
+            "pinyinShort": "tcx"
+        },
+        {
+            "count": 1,
+            "id": 512,
+            "n": "卫辉",
+            "pinyinFull": "Weihui",
+            "pinyinShort": "wh"
+        },
+        {
+            "count": 1,
+            "id": 399,
+            "n": "吴川",
+            "pinyinFull": "Wuchuan",
+            "pinyinShort": "wc"
+        },
+        {
+            "count": 1,
+            "id": 557,
+            "n": "五大连池",
+            "pinyinFull": "Wudalianchi",
+            "pinyinShort": "wdlc"
+        },
+        {
+            "count": 1,
+            "id": 947,
+            "n": "乌苏",
+            "pinyinFull": "Wusu",
+            "pinyinShort": "ws"
+        },
+        {
+            "count": 1,
+            "id": 342,
+            "n": "武夷山",
+            "pinyinFull": "Wuyishan",
+            "pinyinShort": "wys"
+        },
+        {
+            "count": 1,
+            "id": 749,
+            "n": "兴城",
+            "pinyinFull": "Xingcheng",
+            "pinyinShort": "xc"
+        },
+        {
+            "count": 1,
+            "id": 400,
+            "n": "兴宁",
+            "pinyinFull": "Xingning",
+            "pinyinShort": "xn"
+        },
+        {
+            "count": 1,
+            "id": 519,
+            "n": "荥阳",
+            "pinyinFull": "Xingyang",
+            "pinyinShort": "xy"
+        },
+        {
+            "count": 1,
+            "id": 516,
+            "n": "新密",
+            "pinyinFull": "Xinmi",
+            "pinyinShort": "xm"
+        },
+        {
+            "count": 1,
+            "id": 5005,
+            "n": "洋浦市",
+            "pinyinFull": "yangpushi",
+            "pinyinShort": "xps"
+        },
+        {
+            "count": 1,
+            "id": 593,
+            "n": "应城",
+            "pinyinFull": "Yingcheng",
+            "pinyinShort": "yc"
+        },
+        {
+            "count": 1,
+            "id": 1771,
+            "n": "玉树",
+            "pinyinFull": "yushu",
+            "pinyinShort": "ys"
+        },
+        {
+            "count": 1,
+            "id": 344,
+            "n": "漳平",
+            "pinyinFull": "Zhangping",
+            "pinyinShort": "zp"
+        },
+        {
+            "count": 1,
+            "id": 849,
+            "n": "招远",
+            "pinyinFull": "Zhaoyuan",
+            "pinyinShort": "zy"
+        }
+    ]
+}
