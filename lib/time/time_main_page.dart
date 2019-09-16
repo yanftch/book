@@ -42,9 +42,18 @@ class _TimeMainPageState extends State<TimeMainPage> {
           SliverToBoxAdapter(
             child: Container(
               padding: const EdgeInsets.all(10.0),
-              child: Text(
-                "即将上映",
-                style: TextStyle(color: Colors.black, fontSize: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "即将上映",
+                    style: TextStyle(color: Colors.black, fontSize: 20.0),
+                  ),
+                  Text(
+                    "${comingMovies.length}部>",
+                    style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                  )
+                ],
               ),
             ),
           ),
@@ -76,23 +85,34 @@ class _TimeMainPageState extends State<TimeMainPage> {
 
   Widget _buildHorizontal(BuildContext context, int index, Movie movie) => Card(
         child: Container(
-          height: 160,
-          width: 100,
+          height: 140,
+          width: 80,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
 //            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Image.network(
-                movie.img,
-                fit: BoxFit.fill,
-                width: 80,
-                height: 100,
-              ),
-              Text(
-                movie.titleCn,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(color: Styles.titleColor, fontSize: 14.0),
+              Stack(
+                alignment: Alignment.bottomCenter,
+                children: <Widget>[
+                  Image.network(
+                    movie.img,
+                    fit: BoxFit.fill,
+                    width: 80,
+                    height: 100,
+                  ),
+                  Container(
+                    width: 80,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(color: Styles.color_DEE4E4),
+                    child: Text(
+                      movie.titleCn,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style:
+                          TextStyle(color: Colors.blueAccent, fontSize: 14.0),
+                    ),
+                  )
+                ],
               ),
               SizedBox(height: 6.0),
               Text(
@@ -133,12 +153,9 @@ class _TimeMainPageState extends State<TimeMainPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text(
-                    movie.titleCn,
-                    style: Styles.titleStyle,
-                  ),
+                  _buildTitleWidget(movie),
                   SizedBox(height: 8.0),
-                  _buildDescWidget(movie),
+                  _buildDescLine(movie),
                   SizedBox(height: 8.0),
                   Text(
                     (movie.actorName2.isNotEmpty && movie.actorName1.isNotEmpty)
@@ -153,7 +170,9 @@ class _TimeMainPageState extends State<TimeMainPage> {
                             TextSpan(
                                 text: "${movie.ratingFinal}",
                                 style: TextStyle(
-                                    color: Colors.lightGreen, fontSize: 22.0)),
+                                    color: Colors.lightGreen,
+                                    fontSize: 22.0,
+                                    fontWeight: FontWeight.w400)),
                             TextSpan(
                                 text: "分",
                                 style: TextStyle(
@@ -168,14 +187,35 @@ class _TimeMainPageState extends State<TimeMainPage> {
         ),
       );
 
-  Widget _buildDescWidget(Movie movie) => Row(
+  Widget _buildDescLine(Movie movie) => movie.showRatings()
+      ? Text(
+          movie.commonSpecial,
+          maxLines: 1,
+          softWrap: true,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(color: Colors.lightGreen),
+        )
+      : RichText(
+          text: TextSpan(style: TextStyle(fontSize: 16.0), children: [
+            TextSpan(
+                text: "${movie.wantedCount}",
+                style: TextStyle(color: Styles.color_E9A445)),
+            TextSpan(
+                text: "人想看-", style: TextStyle(color: Styles.color_666666)),
+            TextSpan(
+                text: "${movie.type}",
+                style: TextStyle(color: Styles.color_666666)),
+          ]),
+        );
+
+  Widget _buildTitleWidget(Movie movie) => Row(
         children: <Widget>[
           Text(
-            movie.commonSpecial,
+            movie.titleCn,
             maxLines: 1,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(color: Colors.lightGreen),
+            style: Styles.titleStyle,
           ),
           SizedBox(width: 4.0),
           // 标签
@@ -195,7 +235,7 @@ class _TimeMainPageState extends State<TimeMainPage> {
           SizedBox(
             width: 4.0,
           ),
-          movie.isIMAX3D
+          movie.isIMAX
               ? Container(
                   child: Text(
                     "IMAX",

@@ -9,7 +9,10 @@ abstract class Styles {
 
   /// 标题颜色
   static const Color titleColor = Color(0xFF191919);
-
+  
+  static const Color color_666666 = Color(0xFF666666);
+  static const Color color_E9A445 = Color(0xFFE9A445);
+  static const Color color_DEE4E4 = Color(0xFFDEE4E4);
   /// 副标题 & 其他文本颜色
   static const Color subTitleColor = Color(0xFF999999);
 

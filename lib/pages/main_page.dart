@@ -35,7 +35,7 @@ class _MainPageState extends State<MainPage> {
   final List<BottomNavigationBarItem> _bottomTabs = <BottomNavigationBarItem>[
     BottomNavigationBarItem(
         icon: Icon(Icons.home),
-        title: Text("home"),
+        title: Text("首页"),
         backgroundColor: Styles.colorPrimary),
     BottomNavigationBarItem(
         icon: Icon(Icons.chat),
