@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 class TodoListPage extends StatelessWidget {
   final todoList = <Todo>[
     Todo(false, "1.title 和 subtitle 的 Text，样式各自统一的话，可以考虑分别封装不同的 Text，自带样式。"),
+    Todo(false, "2.影片简介页面，story 内容，展开/收起  功能完善"),
   ];
 
   @override

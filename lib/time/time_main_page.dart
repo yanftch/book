@@ -1,5 +1,4 @@
 import 'package:book/time/time_net_util.dart';
-import 'package:book/widgets/pull_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:book/domins.dart';
 import 'package:book/styles.dart' show Styles;
@@ -83,45 +82,52 @@ class _TimeMainPageState extends State<TimeMainPage> {
         ],
       );
 
-  Widget _buildHorizontal(BuildContext context, int index, Movie movie) => Card(
-        child: Container(
-          height: 140,
-          width: 80,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+  Widget _buildHorizontal(BuildContext context, int index, Movie movie) =>
+      GestureDetector(
+        child: Card(
+          child: Container(
+            height: 180,
+            width: 80,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
 //            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Stack(
-                alignment: Alignment.bottomCenter,
-                children: <Widget>[
-                  Image.network(
-                    movie.img,
-                    fit: BoxFit.fill,
-                    width: 80,
-                    height: 100,
-                  ),
-                  Container(
-                    width: 80,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(color: Styles.color_DEE4E4),
-                    child: Text(
-                      movie.titleCn,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style:
-                          TextStyle(color: Colors.blueAccent, fontSize: 14.0),
+              children: <Widget>[
+                Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: <Widget>[
+                    Image.network(
+                      movie.img,
+                      fit: BoxFit.fill,
+                      width: 100,
+                      height: 120,
                     ),
-                  )
-                ],
-              ),
-              SizedBox(height: 6.0),
-              Text(
-                "${movie.wantedCount} 人想看",
-                style: TextStyle(color: Colors.pinkAccent, fontSize: 12.0),
-              ),
-            ],
+                    Container(
+                      width: 100,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(color: Styles.color_DEE4E4),
+                      child: Text(
+                        movie.titleCn,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style:
+                            TextStyle(color: Colors.blueAccent, fontSize: 14.0),
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(height: 6.0),
+                Text(
+                  "${movie.wantedCount} 人想看",
+                  style: TextStyle(color: Colors.pinkAccent, fontSize: 12.0),
+                ),
+              ],
+            ),
           ),
         ),
+        onTap: () {
+          Navigator.pushNamed(
+              context, "/time_movie_detail?movie_id=${movie.movieId}");
+        },
       );
 
   Widget _buildContent() {
@@ -132,59 +138,67 @@ class _TimeMainPageState extends State<TimeMainPage> {
     );
   }
 
-  Widget _buildCardItem(Movie movie) => Card(
-        child: Container(
-          margin: const EdgeInsets.all(8.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Image.network(
-                movie.img,
-                fit: BoxFit.fill,
-                width: 80,
-                height: 120,
-              ),
-              SizedBox(
-                width: 8.0,
-              ),
-              Expanded(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  _buildTitleWidget(movie),
-                  SizedBox(height: 8.0),
-                  _buildDescLine(movie),
-                  SizedBox(height: 8.0),
-                  Text(
-                    (movie.actorName2.isNotEmpty && movie.actorName1.isNotEmpty)
-                        ? "${movie.actorName1} / ${movie.actorName2}"
-                        : "",
-                    style: Styles.subtitleStyle,
-                  ),
-                  SizedBox(height: 8.0),
-                  movie.showRatings()
-                      ? RichText(
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: "${movie.ratingFinal}",
-                                style: TextStyle(
-                                    color: Colors.lightGreen,
-                                    fontSize: 22.0,
-                                    fontWeight: FontWeight.w400)),
-                            TextSpan(
-                                text: "分",
-                                style: TextStyle(
-                                    color: Colors.lightGreen, fontSize: 16.0)),
-                          ]),
-                        )
-                      : SizedBox()
-                ],
-              )),
-            ],
+  Widget _buildCardItem(Movie movie) => GestureDetector(
+        child: Card(
+          child: Container(
+            margin: const EdgeInsets.all(8.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Image.network(
+                  movie.img,
+                  fit: BoxFit.fill,
+                  width: 80,
+                  height: 120,
+                ),
+                SizedBox(
+                  width: 8.0,
+                ),
+                Expanded(
+                    child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    _buildTitleWidget(movie),
+                    SizedBox(height: 8.0),
+                    _buildDescLine(movie),
+                    SizedBox(height: 8.0),
+                    Text(
+                      (movie.actorName2.isNotEmpty &&
+                              movie.actorName1.isNotEmpty)
+                          ? "${movie.actorName1} / ${movie.actorName2}"
+                          : "",
+                      style: Styles.subtitleStyle,
+                    ),
+                    SizedBox(height: 8.0),
+                    movie.showRatings()
+                        ? RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                  text: "${movie.ratingFinal}",
+                                  style: TextStyle(
+                                      color: Colors.lightGreen,
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.w400)),
+                              TextSpan(
+                                  text: "分",
+                                  style: TextStyle(
+                                      color: Colors.lightGreen,
+                                      fontSize: 16.0)),
+                            ]),
+                          )
+                        : SizedBox()
+                  ],
+                )),
+              ],
+            ),
           ),
         ),
+        onTap: () {
+          Navigator.pushNamed(
+              context, "/time_movie_detail?movie_id=${movie.movieId}");
+        },
       );
 
   Widget _buildDescLine(Movie movie) => movie.showRatings()

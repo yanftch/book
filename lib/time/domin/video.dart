@@ -16,7 +16,7 @@ class Video {
 
   Video.fromJson(Map<String, dynamic> json) {
     hightUrl = json['hightUrl'];
-    image = json['image'];
+    image = json['image'] ?? json['img'];
     length = json['length'];
     title = json['title'];
     url = json['url'];

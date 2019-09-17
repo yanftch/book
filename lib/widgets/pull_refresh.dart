@@ -47,7 +47,8 @@ typedef ItemBuilder<T> = Widget Function(BuildContext, T, int);
 typedef ScrollingCallback = void Function(ScrollPosition);
 
 /// 封装下拉刷新组件的基本逻辑，以及平台特定的交互行为
-abstract class PullRefreshableState<W extends StatefulWidget, T> extends State<W> {
+abstract class PullRefreshableState<W extends StatefulWidget, T>
+    extends State<W> {
   DataFetcher<T> dataFetcher;
   ScrollingCallback scrollingCallback;
 
@@ -62,7 +63,9 @@ abstract class PullRefreshableState<W extends StatefulWidget, T> extends State<W
   PullRefreshStatus _pullRefreshStatus = PullRefreshStatus.idle;
 
   /// 判断当前是否还有更多数据可以加载 (用于翻页)
-  bool get isFetchingAllowed => _pullRefreshStatus == PullRefreshStatus.idle || _pullRefreshStatus == PullRefreshStatus.failed;
+  bool get isFetchingAllowed =>
+      _pullRefreshStatus == PullRefreshStatus.idle ||
+      _pullRefreshStatus == PullRefreshStatus.failed;
 
   /// 当前的数据请求，可取消
   CancelableOperation _cancelableFetching;
@@ -72,7 +75,8 @@ abstract class PullRefreshableState<W extends StatefulWidget, T> extends State<W
   final pullRefreshController = ScrollController();
 
   /// 用于引用[RefreshIndicatorState]的[Key], Android Only
-  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
+  final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
+      GlobalKey<RefreshIndicatorState>();
 
   /// 初始化下拉刷新组件状态
   void initPullRefreshState() {
@@ -95,7 +99,7 @@ abstract class PullRefreshableState<W extends StatefulWidget, T> extends State<W
   ///
   /// 底部附加一行显示loading more，其余位置展示数据
   IndexedWidgetBuilder pullRefreshItemBuilder(ItemBuilder<T> itemBuilder) =>
-          (BuildContext context, int index) => pullRefreshData.length == index
+      (BuildContext context, int index) => pullRefreshData.length == index
           ? buildLoadingMoreIndicator(context, index)
           : itemBuilder(context, pullRefreshData[index], index);
 
@@ -115,22 +119,25 @@ abstract class PullRefreshableState<W extends StatefulWidget, T> extends State<W
     }
 
     return Container(
-      padding: EdgeInsets.only(left: 16, right: 16, top: 20, bottom: bottomPadding),
+      padding:
+          EdgeInsets.only(left: 16, right: 16, top: 20, bottom: bottomPadding),
       child: Center(child: content),
     );
   }
 
   /// 程序触发的下拉刷新, [clean]可指定是否先清除数据
   void animatedRefresh({bool clean = false}) {
-    if (clean) setState(() {
-      pullRefreshData.clear();
-      _pullRefreshStatus = PullRefreshStatus.idle;
-    });
+    if (clean)
+      setState(() {
+        pullRefreshData.clear();
+        _pullRefreshStatus = PullRefreshStatus.idle;
+      });
 
     // 确保在[build]之后执行
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        isIOS ? pullRefreshController.jumpTo(-200) // jumpTo可模拟触发下拉刷新
+        isIOS
+            ? pullRefreshController.jumpTo(-200) // jumpTo可模拟触发下拉刷新
             : _refreshIndicatorKey.currentState?.show();
       }
     });
@@ -143,79 +150,92 @@ abstract class PullRefreshableState<W extends StatefulWidget, T> extends State<W
 
   /// 加载数据
   Future<void> fetchData([bool isIncremental = false]) {
-  if ((isIncremental && !isFetchingAllowed) || !mounted) return Future.value();
+    if ((isIncremental && !isFetchingAllowed) || !mounted)
+      return Future.value();
 
-  if (!isIncremental) {
-  // 整体刷新时，先取消未完成的请求，重新发请求
+    if (!isIncremental) {
+      // 整体刷新时，先取消未完成的请求，重新发请求
 //      debugPrint("---- cancel prev fetching ----");
-  _cancelableFetching?.cancel();
-  _pullRefreshStatus = PullRefreshStatus.idle;
-  }
+      _cancelableFetching?.cancel();
+      _pullRefreshStatus = PullRefreshStatus.idle;
+    }
 
-  setState(() => _pullRefreshStatus = isIncremental ? PullRefreshStatus.loadingMore : PullRefreshStatus.refreshing);
-  _cancelableFetching = CancelableOperation.fromFuture(dataFetcher(isIncremental));
+    setState(() => _pullRefreshStatus = isIncremental
+        ? PullRefreshStatus.loadingMore
+        : PullRefreshStatus.refreshing);
+    _cancelableFetching =
+        CancelableOperation.fromFuture(dataFetcher(isIncremental));
 
-  return _cancelableFetching.value
-      .then((result) {
-  if (result == null || !mounted) return;
-  setState(() {
-  if (!isIncremental) pullRefreshData.clear();
-  if (result.data != null) pullRefreshData.addAll(result.data);
-  _pullRefreshStatus = result.hasMore == true ? PullRefreshStatus.idle : PullRefreshStatus.noMore;
-  });
-  })
-      .catchError((e) {
-  setState(() => _pullRefreshStatus = PullRefreshStatus.failed);
-  debugPrint("Failed fetching data: $e");
-  });
+    return _cancelableFetching.value.then((result) {
+      if (result == null || !mounted) return;
+      setState(() {
+        if (!isIncremental) pullRefreshData.clear();
+        if (result.data != null) pullRefreshData.addAll(result.data);
+        _pullRefreshStatus = result.hasMore == true
+            ? PullRefreshStatus.idle
+            : PullRefreshStatus.noMore;
+      });
+    }).catchError((e) {
+      setState(() => _pullRefreshStatus = PullRefreshStatus.failed);
+      debugPrint("Failed fetching data: $e");
+    });
   }
 
   /// 渲染下拉刷新组件
   /// - [persistentHeaderDelegateBuilder]可用于构造驻留的header，不算在[headerCount]里面
-  Widget buildPullRefresh(BuildContext context, {
-  @required WidgetBuilder contentBuilder,
-  int headerCount = 0,
-  IndexedWidgetBuilder headerBuilder,
-  int footerCount = 0,
-  IndexedWidgetBuilder footerBuilder,
-  WidgetBuilder persistentHeaderDelegateBuilder,
+  Widget buildPullRefresh(
+    BuildContext context, {
+    @required WidgetBuilder contentBuilder,
+    int headerCount = 0,
+    IndexedWidgetBuilder headerBuilder,
+    int footerCount = 0,
+    IndexedWidgetBuilder footerBuilder,
+    WidgetBuilder persistentHeaderDelegateBuilder,
   }) {
-  final body = CustomScrollView(
-  physics: isIOS ? const BouncingScrollPhysics() : const AlwaysScrollableScrollPhysics(),
-  controller: pullRefreshController,
-  slivers: <Widget>[
-  // ios11的新样式，必须有一个largeTitle，滑动时可以collapse到顶部中间
-  // CupertinoSliverNavigationBar(
-  //  largeTitle: Text(isFollowings ? l10n?.followingsTitle : l10n?.followersTitle),
-  // ),
-  if (persistentHeaderDelegateBuilder != null) persistentHeaderDelegateBuilder(context),
+    final body = CustomScrollView(
+      physics: isIOS
+          ? const BouncingScrollPhysics()
+          : const AlwaysScrollableScrollPhysics(),
+      controller: pullRefreshController,
+      slivers: <Widget>[
+        // ios11的新样式，必须有一个largeTitle，滑动时可以collapse到顶部中间
+        // CupertinoSliverNavigationBar(
+        //  largeTitle: Text(isFollowings ? l10n?.followingsTitle : l10n?.followersTitle),
+        // ),
+        if (persistentHeaderDelegateBuilder != null)
+          persistentHeaderDelegateBuilder(context),
 
-  if (isIOS) CupertinoSliverRefreshControl(
-  onRefresh: fetchData,
-  ),
+        if (isIOS)
+          CupertinoSliverRefreshControl(
+            onRefresh: fetchData,
+          ),
 
-  // Headers 不使用CupertinoSliverNavigationBar，需要使用SliverSafeArea，避免被状态栏遮挡
-  if (headerCount > 0) _buildSliverList(headerCount, headerBuilder),
+        // Headers 不使用CupertinoSliverNavigationBar，需要使用SliverSafeArea，避免被状态栏遮挡
+        if (headerCount > 0)
+          _buildSliverList(headerCount, headerBuilder),
 
-  // Content
-  contentBuilder(context),
+        // Content
+        contentBuilder(context),
 
-  // Footers
-  if (footerCount > 0) _buildSliverList(footerCount, footerBuilder),
-  ],
-  );
+        // Footers
+        if (footerCount > 0)
+          _buildSliverList(footerCount, footerBuilder),
+      ],
+    );
 
-  return isIOS ? body : RefreshIndicator(
-  key: _refreshIndicatorKey,
-  onRefresh: fetchData,
-  child: body,
-  );
+    return isIOS
+        ? body
+        : RefreshIndicator(
+            key: _refreshIndicatorKey,
+            onRefresh: fetchData,
+            child: body,
+          );
   }
 
   Widget _buildSliverList(int count, IndexedWidgetBuilder builder) =>
-  SliverList(
-  delegate: SliverChildBuilderDelegate(builder, childCount: count),
-  );
+      SliverList(
+        delegate: SliverChildBuilderDelegate(builder, childCount: count),
+      );
 }
 
 /// 构造可伸缩的[CustomScrollView] header
@@ -223,14 +243,15 @@ SliverPersistentHeader makePersistentHeader({
   @required double minHeight,
   @required double maxHeight,
   @required Widget child,
-}) => SliverPersistentHeader(
-  pinned: true,
-  delegate: PersistentHeaderDelegate(
-    minHeight: minHeight,
-    maxHeight: maxHeight,
-    child: child,
-  ),
-);
+}) =>
+    SliverPersistentHeader(
+      pinned: true,
+      delegate: PersistentHeaderDelegate(
+        minHeight: minHeight,
+        maxHeight: maxHeight,
+        child: child,
+      ),
+    );
 
 /// 可伸缩的[CustomScrollView] header
 /// 参考: https://medium.com/flutter/slivers-demystified-6ff68ab0296f
@@ -251,12 +272,36 @@ class PersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => max(maxHeight, minHeight);
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) =>
+  Widget build(
+          BuildContext context, double shrinkOffset, bool overlapsContent) =>
       SizedBox.expand(child: child);
 
   @override
   bool shouldRebuild(PersistentHeaderDelegate oldDelegate) =>
       maxHeight != oldDelegate.maxHeight ||
-          minHeight != oldDelegate.minHeight ||
-          child != oldDelegate.child;
+      minHeight != oldDelegate.minHeight ||
+      child != oldDelegate.child;
+}
+
+class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
+  final TabBar child;
+
+  StickyTabBarDelegate({@required this.child});
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return this.child;
+  }
+
+  @override
+  double get maxExtent => this.child.preferredSize.height;
+
+  @override
+  double get minExtent => this.child.preferredSize.height;
+
+  @override
+  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
+    return true;
+  }
 }

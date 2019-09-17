@@ -9,3 +9,7 @@ export 'pages/detail_page.dart';
 export 'pages/main_page.dart';
 export 'package:book/time/time_main_page.dart';
 export 'to_do.dart';
+export 'package:book/time/time_item_detail.dart';
+export 'package:book/time/introduction_page.dart';
+export 'package:book/time/movie_comments_page.dart';
+export 'package:book/time/more_detail_page.dart';

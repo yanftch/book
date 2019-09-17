@@ -1,6 +1,18 @@
-import 'package:book/domins.dart' show NearestShowtime, Video;
+import 'dart:collection';
+
+import 'package:book/domins.dart';
 
 class Movie {
+  List<Actors> actorsStuffs;
+  Actors director;
+  int movieStatus;
+  StageImg stageImg;
+  String story;
+  String releaseArea;
+  int ratingCount;
+  String mins;
+  int hasSeenCount;
+  String bigImage;
   String actorName1;
   String actorName2;
   String btnText;
@@ -26,14 +38,23 @@ class Movie {
   String titleEn;
   String type;
   int wantedCount;
-  String actors;
   String releaseDate;
-  List<Video> videos;
+  Video video;
 
   bool showRatings() => ratingFinal > 0;
 
   Movie(
-      {this.actorName1,
+      {this.actorsStuffs,
+      this.director,
+      this.movieStatus,
+      this.stageImg,
+      this.story,
+      this.releaseArea,
+      this.ratingCount,
+      this.mins,
+      this.hasSeenCount,
+      this.bigImage,
+      this.actorName1,
       this.actorName2,
       this.btnText,
       this.commonSpecial,
@@ -58,16 +79,55 @@ class Movie {
       this.titleEn,
       this.type,
       this.wantedCount,
-      this.actors,
       this.releaseDate,
-        this.videos});
+      this.video});
 
   Movie.fromJson(Map<String, dynamic> json) {
+    if (json['actors'] != null) {
+      actorsStuffs = new List<Actors>();
+      json['actors'].forEach((v) {
+        actorsStuffs.add(new Actors.fromJson(v));
+      });
+    }
+    if (json['director'] != null) {
+      if (json['director'] is String) {
+        director = Actors(name: json['director']);
+      } else {
+        director = new Actors.fromJson(json['director']);
+      }
+    } else {
+      director = null;
+    }
+
+    movieStatus = json['movieStatus'];
+    stageImg = json['stageImg'] != null
+        ? new StageImg.fromJson(json['stageImg'])
+        : null;
+    story = json['story'];
+    if (json['type'] is String) {
+      type = json['type'];
+    } else {
+      List<dynamic> list = json['type'];
+      var str = "";
+      list.forEach((t) {
+        str = "${t}/${str}";
+      });
+      if (str.endsWith("/")) {
+        str = str.substring(0, str.length - 1);
+      }
+      type = str;
+    }
+
+    releaseArea = json['releaseArea'];
+
+    ratingCount = json['ratingCount'];
+    mins = json['mins'];
+    hasSeenCount = json['hasSeenCount'];
+    bigImage = json['bigImage'];
     actorName1 = json['actorName1'] ?? json['aN1'] ?? json['actor1'];
     actorName2 = json['actorName2'] ?? json['aN2'] ?? json['actor2'];
-    actors = json['actors'];
     btnText = json['btnText'];
-    commonSpecial = json['commonSpecial'];
+    commonSpecial = json['commonSpecial'] ?? json['commentSpecial'];
     directorName = json['directorName'];
     img = json['img'] ?? json['image'];
     is3D = json['is3D'];
@@ -83,26 +143,38 @@ class Movie {
     nearestShowtime = json['nearestShowtime'] != null
         ? new NearestShowtime.fromJson(json['nearestShowtime'])
         : null;
-    if (json['videos'] != null) {
-      videos = List<Video>();
-      json['videos'].forEach((v) {
-        videos.add(Video.fromJson(v));
-      });
-    }
+
+    video = json['video'] != null ? new Video.fromJson(json['video']) : null;
 
     preferentialFlag = json['preferentialFlag'];
     rDay = json['rDay'];
     rMonth = json['rMonth'];
     rYear = json['rYear'];
-    ratingFinal = json['ratingFinal'] ?? json['r'];
-    titleCn = json['titleCn'] ?? json['title'] ?? json['t'];
-    titleEn = json['titleEn'];
-    type = json['type'];
-    wantedCount = json['wantedCount'];
+    ratingFinal = (json['ratingFinal'] ?? json['r']) ?? json['overallRating'];
+    titleCn = json['titleCn'] ?? json['title'] ?? json['t'] ?? json['name'];
+    titleEn = json['titleEn'] ?? json['nameEn'];
+    wantedCount = json['wantedCount'] ?? json['wantToSeeCount'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.actorsStuffs != null) {
+      data['actors'] = this.actorsStuffs.map((v) => v.toJson()).toList();
+    }
+    if (this.director != null) {
+      data['director'] = this.director.toJson();
+    }
+    data['movieStatus'] = this.movieStatus;
+    if (this.stageImg != null) {
+      data['stageImg'] = this.stageImg.toJson();
+    }
+    data['story'] = this.story;
+    data['type'] = this.type;
+    data['ratingCount'] = this.ratingCount;
+    data['bigImage'] = this.bigImage;
+    data['hasSeenCount'] = this.hasSeenCount;
+    data['mins'] = this.mins;
+    data['releaseArea'] = this.releaseArea;
     data['actorName1'] = this.actorName1;
     data['actorName2'] = this.actorName2;
     data['btnText'] = this.btnText;
@@ -114,7 +186,6 @@ class Movie {
     data['isFilter'] = this.isFilter;
     data['isHot'] = this.isHot;
     data['isIMAX'] = this.isIMAX;
-    data['actors'] = this.actors;
     data['isIMAX3D'] = this.isIMAX3D;
     data['isNew'] = this.isNew;
     data['length'] = this.length;
@@ -124,8 +195,8 @@ class Movie {
       data['nearestShowtime'] = this.nearestShowtime.toJson();
     }
 
-    if (this.videos != null) {
-      data['videos'] = this.videos.map((v) => v.toJson()).toList();
+    if (this.video != null) {
+      data['video'] = this.video.toJson();
     }
     data['preferentialFlag'] = this.preferentialFlag;
     data['rDay'] = this.rDay;

@@ -64,8 +64,7 @@ class MyApp extends StatelessWidget {
     print("settings----->$settings");
     if (isEmpty(settings.name)) return null;
     print(
-        "settings----->settings.name=${settings
-            .name}   settings.arguments=${settings.arguments}");
+        "settings----->settings.name=${settings.name}   settings.arguments=${settings.arguments}");
 
     final uri = Uri.parse(settings.name);
     final path = uri.path ?? '';
@@ -80,10 +79,24 @@ class MyApp extends StatelessWidget {
         return _buildRootRoute(settings, (_) => WidgetText());
       case '/detail':
         return _buildRootRoute(
-            settings, (_) => DetailPage(title: q['title'], url: q["url"],));
+            settings,
+            (_) => DetailPage(
+                  title: q['title'],
+                  url: q["url"],
+                ));
+      case '/time_movie_detail':
+        return _buildRootRoute(
+            settings,
+            (_) => MovieItemDetailPage(
+                  movieId: q['movie_id'],
+                ));
       case '/test':
         return _buildRootRoute(
-            settings, (_) => DetailPage(title: q['title'], url: q["url"],));
+            settings,
+            (_) => DetailPage(
+                  title: q['title'],
+                  url: q["url"],
+                ));
       default:
         return null;
     }
