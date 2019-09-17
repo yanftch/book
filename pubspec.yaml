@@ -42,6 +42,8 @@ dependencies:
   # banner
   flutter_swiper: ^1.1.6
   # flutter_html: ^0.11.0
+  # https://pub.dev/packages/flutter_ijkplayer 视频播放器
+  flutter_ijkplayer: ^0.3.3
 
 dev_dependencies:
   flutter_test:

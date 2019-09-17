@@ -159,48 +159,33 @@ class _IntroductionPageState extends State<IntroductionPage> {
 
   /// 花絮
   Widget _buildTrickIvView(Movie movie) => SizedBox(
-        height: 160,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return Container(
-              width: 180,
-              height: 180,
-              padding: const EdgeInsets.all(4.0),
-              child: Stack(
-                children: <Widget>[
-                  Image(
-                    image: NetworkImage("${movie.video.image}"),
-                    width: 160,
-                    height: 160,
-                    fit: BoxFit.cover,
-                  ),
-                  Align(
-                    child: Padding(
-                      child: Row(
-                        children: <Widget>[
-                          Icon(
-                            Icons.play_circle_outline,
-                            color: Colors.white,
-                          ),
-                          Expanded(
-                            child: Text(
-                              "${movie.video.title}",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 12),
-                            ),
-                          )
-                        ],
-                      ),
-                      padding: const EdgeInsets.only(left: 10, bottom: 10),
-                    ),
-                    alignment: Alignment.bottomLeft,
-                  )
-                ],
+      height: 200,
+      child: GestureDetector(
+        child: Container(
+          alignment: Alignment.center,
+          width: double.infinity,
+          height: 200,
+          padding: const EdgeInsets.all(4.0),
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              Image(
+                image: NetworkImage("${movie.video.image}"),
+                width: double.infinity,
+                height: 200,
+                fit: BoxFit.cover,
               ),
-            );
-          },
-          itemCount: 1,
+              Icon(
+                Icons.play_circle_outline,
+                color: Colors.white,
+                size: 48,
+              )
+            ],
+          ),
         ),
-      );
+        onTap: () {
+          Navigator.pushNamed(
+              context, "/video_play?video_url=${movie.video.url}&title=${movie.video.title}");
+        },
+      ));
 }

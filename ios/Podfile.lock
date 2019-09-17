@@ -3,8 +3,12 @@ PODS:
     - Flutter
     - Reachability
   - Flutter (1.0.0)
+  - flutter_ijkplayer (0.0.1):
+    - Flutter
+    - FlutterIJK (~> 0.1.0)
   - flutter_webview_plugin (0.0.1):
     - Flutter
+  - FlutterIJK (0.1.0)
   - fluttertoast (0.0.2):
     - Flutter
   - Reachability (3.2)
@@ -14,12 +18,14 @@ PODS:
 DEPENDENCIES:
   - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_ijkplayer (from `.symlinks/plugins/flutter_ijkplayer/ios`)
   - flutter_webview_plugin (from `.symlinks/plugins/flutter_webview_plugin/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - FlutterIJK
     - Reachability
 
 EXTERNAL SOURCES:
@@ -27,6 +33,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/connectivity/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
+  flutter_ijkplayer:
+    :path: ".symlinks/plugins/flutter_ijkplayer/ios"
   flutter_webview_plugin:
     :path: ".symlinks/plugins/flutter_webview_plugin/ios"
   fluttertoast:
@@ -37,7 +45,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   connectivity: c72716e202a1225ec4810740d5cb56b8ae3bf4cc
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_ijkplayer: ef9006131553deb6d8ae6d7fbd3bcbf93b135930
   flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
+  FlutterIJK: 68b00c1d11162b5016f3611853aa699e198bd1d2
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523

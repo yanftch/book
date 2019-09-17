@@ -40,7 +40,7 @@ class _MovieItemDetailPageState extends State<MovieItemDetailPage>
   @override
   Widget build(BuildContext context) => SafeArea(
         child: Scaffold(
-          body: (_movie == null)
+          body: (_movie == null || _comments == null || _boxOffice == null)
               ? Center(
                   child: CircularProgressIndicator(),
                 )
