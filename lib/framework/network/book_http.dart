@@ -1,9 +1,9 @@
 import 'dart:collection';
 import 'package:connectivity/connectivity.dart';
-import 'package:book/framework/base_result.dart';
-import 'package:book/framework/http_code.dart';
-import 'package:book/framework/config.dart';
-import 'package:book/framework/error_result.dart';
+import 'package:book/framework/network/base_result.dart';
+import 'package:book/framework/network/http_code.dart';
+import 'package:book/framework/network/config.dart';
+import 'package:book/framework/network/error_result.dart';
 import 'package:dio/dio.dart';
 import 'dart:io';
 import 'package:fluttertoast/fluttertoast.dart';

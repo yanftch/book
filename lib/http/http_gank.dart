@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:book/http.dart';
 import 'package:book/domins.dart';
-import 'package:book/widgets/pull_refresh.dart';
+import 'package:book/framework/widgets/pull_refresh.dart';
 
 /// gank API 类
 ///
