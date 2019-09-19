@@ -98,7 +98,7 @@ class Comment {
   String locationName;
   String nickname;
   int praiseCount;
-  int rating;
+  num rating;
   int replyCount;
 
   Comment(

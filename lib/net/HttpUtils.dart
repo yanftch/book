@@ -14,6 +14,7 @@ import 'package:book/http.dart' show ApiConfig;
 
 class HttpUtils {
   // TODO: 2018/11/7 动态配置请求头信息
+  static String wanandroidBaseUrl = "https://www.wanandroid.com/";
 
   static Map<String, String> baseHeaders = {
     "x-noomi-channel": "enterprise",
@@ -73,7 +74,7 @@ class HttpUtils {
       option = new BaseOptions(method: "GET");
       option.headers = headers;
     }
-    option.baseUrl = ApiConfig.wanandroidBaseUrl;
+    option.baseUrl = wanandroidBaseUrl;
     option.connectTimeout = 15000; //单位毫秒
     option.receiveTimeout = 15000;
     option.connectTimeout = 30000;

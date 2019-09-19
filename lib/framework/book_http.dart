@@ -67,7 +67,7 @@ class BookHttpUtils {
     /// 设置 base url,
     /// 如果设置了，那么参数里边的 [url] 就直接传递 path 即可
     /// 如果不设置，那么参数 [url] 就需要传递 host + path 的格式
-    options.baseUrl = _baseUrl;
+//    options.baseUrl = _baseUrl;
 
     /// 实例化网络请求对象
     var dio = Dio(options);
@@ -92,7 +92,7 @@ class BookHttpUtils {
         print("\n================== 错误响应数据 ======================");
         print("type = ${e.type}");
         print("message = ${e.message}");
-        print("stackTrace = ${e.stackTrace}");
+//        print("stackTrace = ${e.stackTrace}");
         print("\n");
       }));
     }

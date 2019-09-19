@@ -26,7 +26,7 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> pages = [
     HomePage(),
-    ProjectPage(),
+    GankHomePage(),
     TimeMainPage(),
     ThirdPage(),
     MinePage()
@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Styles.colorPrimary),
     BottomNavigationBarItem(
         icon: Icon(Icons.chat),
-        title: Text("second"),
+        title: Text("GANK"),
         backgroundColor: Styles.colorPrimary),
     BottomNavigationBarItem(
         icon: Icon(Icons.timelapse),

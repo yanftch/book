@@ -15,7 +15,6 @@ class HttpUtil {
   static Dio _dio;
 
   static Options _options = Options(
-    connectTimeout: 5000,
     receiveTimeout: 5000,
     headers: httpHeaders,
   );

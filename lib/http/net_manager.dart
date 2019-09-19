@@ -1,4 +1,4 @@
-import 'package:book/http/api_config.dart';
+import 'package:book/http/apis.dart';
 import 'package:flutter/material.dart';
 import 'package:book/net/BaseResp.dart';
 import 'package:book/net/HttpUtils.dart';
@@ -29,7 +29,7 @@ class NetManager {
 
   /// 获取首页 banner 数据
   static Future<List<HomeBannerBean>> fetchHomeBanner() async{
-    BaseResp baseResp =  await HttpUtils.getRequest(ApiConfig.HOME_BANNER, null, null);
+    BaseResp baseResp =  await HttpUtils.getRequest(Api.HOME_BANNER, null, null);
 
     BaseResp base = BaseResp.init(baseResp.data);
     List<HomeBannerBean> banners =  HomeBannerBean.fromJsons(base.data);
