@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:book/domins.dart';
+import 'package:book/utils/t.dart';
 import 'package:dio/dio.dart';
 
 class TimeNetUtil {
@@ -39,6 +40,16 @@ class TimeNetUtil {
       if (response != null) {
         callback(HotModel.fromJson(response.data));
       }
+    }).catchError((error) {
+      var msg;
+      if (error is DioError) {
+        msg = error.message;
+        print("getMovieDetail-->error: ${error.type}  ${error.message}");
+      } else {
+        msg = "API 异常";
+        print("getMovieDetail-->error: other errors....");
+      }
+      T.show(msg);
     });
   }
 
@@ -49,6 +60,16 @@ class TimeNetUtil {
       if (response != null) {
         callback(NowShowingMovieModel.fromJson(response.data));
       }
+    }).catchError((error) {
+      var msg;
+      if (error is DioError) {
+        msg = error.message;
+        print("getMovieDetail-->error: ${error.type}  ${error.message}");
+      } else {
+        msg = "API 异常";
+        print("getMovieDetail-->error: other errors....");
+      }
+      T.show(msg);
     });
   }
 
@@ -59,39 +80,76 @@ class TimeNetUtil {
       if (response != null) {
         callback(ComingMovies.fromJson(response.data));
       }
+    }).catchError((error) {
+      var msg;
+      if (error is DioError) {
+        msg = error.message;
+        print("getMovieDetail-->error: ${error.type}  ${error.message}");
+      } else {
+        msg = "API 异常";
+        print("getMovieDetail-->error: other errors....");
+      }
+      T.show(msg);
     });
   }
 
   /// 影片详情, 获取影片信息，以及演员导演信息等等
-   void getMovieDetail(String movieId, Function callback) async {
+  void getMovieDetail(String movieId, Function callback) async {
     Dio().get(movie_detail + movieId).then((response) {
-      // print("getMovieDetail--->$response");
+      print("getMovieDetail--->$response");
       if (response != null) {
         callback(MovieDetailModel.fromJson(response.data));
       }
+    }).catchError((error) {
+      var msg;
+      if (error is DioError) {
+        msg = error.message;
+        print("getMovieDetail-->error: ${error.type}  ${error.message}");
+      } else {
+        msg = "API 异常";
+        print("getMovieDetail-->error: other errors....");
+      }
+      T.show(msg);
     });
   }
 
-
-   /// 获取影评信息
-   void getMovieCommentsApi(String movieId, Function callback) async {
+  /// 获取影评信息
+  void getMovieCommentsApi(String movieId, Function callback) async {
     Dio().get(movie_comments + movieId).then((response) {
-      // print("getMovieCommentsApi--->$response");
+      print("getMovieCommentsApi--->$response");
       if (response != null) {
         callback(MovieCommentModel.fromJson(response.data));
       }
+    }).catchError((error) {
+      var msg;
+      if (error is DioError) {
+        msg = error.message;
+        print("getMovieDetail-->error: ${error.type}  ${error.message}");
+      } else {
+        msg = "API 异常";
+        print("getMovieDetail-->error: other errors....");
+      }
+      T.show(msg);
     });
   }
 
-
-
-    /// 获预告&花絮
-   void getMovieTricksApi(String movieId, Function callback) async {
+  /// 获预告&花絮
+  void getMovieTricksApi(String movieId, Function callback) async {
     Dio().get(movie_tricks + movieId).then((response) {
       print("getMovieTricksApi--->${response.data}");
       if (response != null) {
         callback(TricksModel.fromJson(response.extra));
       }
+    }).catchError((error) {
+      var msg;
+      if (error is DioError) {
+        msg = error.message;
+        print("getMovieDetail-->error: ${error.type}  ${error.message}");
+      } else {
+        msg = "API 异常";
+        print("getMovieDetail-->error: other errors....");
+      }
+      T.show(msg);
     });
   }
 }

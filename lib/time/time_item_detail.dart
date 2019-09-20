@@ -6,8 +6,6 @@ import 'package:book/domins.dart';
 import 'package:flutter/services.dart';
 import 'package:book/screens.dart' show IntroductionPage, MovieCommentsPage;
 
-import '../widgets.dart';
-
 /// 时光网电影详情页
 class MovieItemDetailPage extends StatefulWidget {
   /// movieId 唯一标识，作为查询详情页参数

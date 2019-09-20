@@ -139,7 +139,7 @@ class Movie {
     isNew = json['isNew'];
     length = json['length'];
     releaseDate = json['releaseDate'];
-    movieId = json['movieId'];
+    movieId = json['movieId'] ?? json['id'];
     nearestShowtime = json['nearestShowtime'] != null
         ? new NearestShowtime.fromJson(json['nearestShowtime'])
         : null;

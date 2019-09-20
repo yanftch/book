@@ -37,6 +37,7 @@ class _TimeMainPageState extends State<TimeMainPage> {
         slivers: <Widget>[
           SliverAppBar(
             pinned: true,
+            centerTitle: true,
             title: Text("时光"),
           ),
           SliverToBoxAdapter(

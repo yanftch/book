@@ -25,6 +25,7 @@ class _GankHomePageState extends State<GankHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("G"),
       ),
       body: isLoading
