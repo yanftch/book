@@ -132,10 +132,6 @@ class _IntroductionPageState extends State<IntroductionPage> {
                         fontSize: 18.0,
                         fontWeight: FontWeight.w500,
                         color: Colors.black)),
-                // Text(
-                //   "全部 >",
-                //   style: TextStyle(fontSize: 14.0, color: Colors.black38),
-                // ),
               ],
             ),
             _buildStageIvView(movie)
@@ -162,7 +158,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
               ),
             );
           },
-          itemCount: movie.actorsStuffs.length,
+          itemCount: movie.stageImg.list.length,
         ),
       );
 

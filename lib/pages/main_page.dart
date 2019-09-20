@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Styles.colorPrimary),
     BottomNavigationBarItem(
         icon: Icon(Icons.chat),
-        title: Text("GANK"),
+        title: Text("干货"),
         backgroundColor: Styles.colorPrimary),
     BottomNavigationBarItem(
         icon: Icon(Icons.timelapse),
