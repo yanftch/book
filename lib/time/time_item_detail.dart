@@ -1,4 +1,5 @@
 import 'package:book/screens.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:book/time/time_net_util.dart';
 import 'package:book/domins.dart';
@@ -28,7 +29,6 @@ class _MovieItemDetailPageState extends State<MovieItemDetailPage>
   //// 花絮
   List<Video> _videos;
 
-
   @override
   void initState() {
     super.initState();
@@ -39,114 +39,140 @@ class _MovieItemDetailPageState extends State<MovieItemDetailPage>
 
   @override
   Widget build(BuildContext context) => SafeArea(
-        child: Scaffold(
-          body: (_movie == null || _comments == null || _boxOffice == null)
-              ? Center(
-                  child: CircularProgressIndicator(),
-                )
-              : NestedScrollView(
-                  headerSliverBuilder: (context, index) {
-                    return [
-                      SliverAppBar(
-                        bottom: PreferredSize(
-                          preferredSize: Size(double.infinity, 60.0),
-                          child: TabBar(
-                            controller: _tabController,
-                            labelColor: Colors.black,
-                            unselectedLabelColor: Colors.black38,
-                            indicatorColor: Colors.black54,
-                            tabs: <Widget>[
-                              Tab(
-                                text: "简介",
-                              ),
-                              Tab(
-                                text: "影评",
-                              ),
-                              Tab(
-                                text: "更多",
-                              ),
-                            ],
-                          ),
-                        ),
-                        title: Text("${_movie.titleCn}"),
-                        brightness: Brightness.light,
-                        pinned: true,
-                        leading: IconButton(
-                          icon: Icon(
-                            Icons.arrow_back_ios,
-                            color: Colors.black54,
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                        expandedHeight: 260,
-                        flexibleSpace: FlexibleSpaceBar(
-                          background: _buildTabHeader(),
-                        ),
-                      )
-                    ];
-                  },
-                  body: TabBarView(
-                    controller: _tabController,
+        child: (_movie == null || _comments == null || _boxOffice == null)
+            ? Scaffold(
+                appBar: AppBar(
+                  leading: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.black54,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  title: Text("detail"),
+                ),
+                body: Container(
+                  alignment: Alignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      IntroductionPage(_movie),
-                      MovieCommentsPage(_comments),
-                      MoreDetailPage(_boxOffice, _movie)
+                      Image.asset('assets/placeholder.png'),
+                      Text("error...")
                     ],
                   ),
-                )
+                ),
+              )
+            : Scaffold(
+                body:
+                    (_movie == null || _comments == null || _boxOffice == null)
+                        ? Center(
+                            child: CircularProgressIndicator(),
+                          )
+                        : NestedScrollView(
+                            headerSliverBuilder: (context, index) {
+                              return [
+                                SliverAppBar(
+                                  bottom: PreferredSize(
+                                    preferredSize: Size(double.infinity, 60.0),
+                                    child: TabBar(
+                                      controller: _tabController,
+                                      labelColor: Colors.black,
+                                      unselectedLabelColor: Colors.black38,
+                                      indicatorColor: Colors.black54,
+                                      tabs: <Widget>[
+                                        Tab(
+                                          text: "简介",
+                                        ),
+                                        Tab(
+                                          text: "影评",
+                                        ),
+                                        Tab(
+                                          text: "更多",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  title: Text("${_movie.titleCn}"),
+                                  brightness: Brightness.light,
+                                  pinned: true,
+                                  leading: IconButton(
+                                    icon: Icon(
+                                      Icons.arrow_back_ios,
+                                      color: Colors.black54,
+                                    ),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                  expandedHeight: 260,
+                                  flexibleSpace: FlexibleSpaceBar(
+                                    background: _buildTabHeader(),
+                                  ),
+                                )
+                              ];
+                            },
+                            body: TabBarView(
+                              controller: _tabController,
+                              children: <Widget>[
+                                IntroductionPage(_movie),
+                                MovieCommentsPage(_comments),
+                                MoreDetailPage(_boxOffice, _movie)
+                              ],
+                            ),
+                          )
 
-          // CustomScrollView(
-          //     slivers: <Widget>[
-          //       SliverAppBar(
-          //         title: Text("${_movie.titleCn}"),
-          //         brightness: Brightness.light,
-          //         pinned: true,
-          //         leading: IconButton(
-          //           icon: Icon(
-          //             Icons.arrow_back_ios,
-          //             color: Colors.black54,
-          //           ),
-          //           onPressed: () {
-          //             Navigator.pop(context);
-          //           },
-          //         ),
-          //         expandedHeight: 220,
-          //         flexibleSpace: FlexibleSpaceBar(
-          //           background: _buildTabHeader(),
-          //         ),
-          //       ),
-          //       SliverPersistentHeader(
-          //           pinned: true,
-          //           delegate: StickyTabBarDelegate(
-          //               child: TabBar(
-          //             labelColor: Colors.black,
-          //             unselectedLabelColor: Colors.black38,
-          //             indicatorColor: Colors.black54,
-          //             controller: _tabController,
-          //             tabs: <Widget>[
-          //               Tab(
-          //                 text: "简介",
-          //               ),
-          //               Tab(
-          //                 text: "影评",
-          //               )
-          //             ],
-          //           ))),
-          //       SliverFillRemaining(
-          //         child: TabBarView(
-          //           controller: _tabController,
-          //           children: <Widget>[
-          //             IntroductionPage(_movie),
-          //             MovieCommentsPage(_movie),
-          //           ],
-          //         ),
-          //       )
-          //     ],
-          //   )
-          ,
-        ),
+                // CustomScrollView(
+                //     slivers: <Widget>[
+                //       SliverAppBar(
+                //         title: Text("${_movie.titleCn}"),
+                //         brightness: Brightness.light,
+                //         pinned: true,
+                //         leading: IconButton(
+                //           icon: Icon(
+                //             Icons.arrow_back_ios,
+                //             color: Colors.black54,
+                //           ),
+                //           onPressed: () {
+                //             Navigator.pop(context);
+                //           },
+                //         ),
+                //         expandedHeight: 220,
+                //         flexibleSpace: FlexibleSpaceBar(
+                //           background: _buildTabHeader(),
+                //         ),
+                //       ),
+                //       SliverPersistentHeader(
+                //           pinned: true,
+                //           delegate: StickyTabBarDelegate(
+                //               child: TabBar(
+                //             labelColor: Colors.black,
+                //             unselectedLabelColor: Colors.black38,
+                //             indicatorColor: Colors.black54,
+                //             controller: _tabController,
+                //             tabs: <Widget>[
+                //               Tab(
+                //                 text: "简介",
+                //               ),
+                //               Tab(
+                //                 text: "影评",
+                //               )
+                //             ],
+                //           ))),
+                //       SliverFillRemaining(
+                //         child: TabBarView(
+                //           controller: _tabController,
+                //           children: <Widget>[
+                //             IntroductionPage(_movie),
+                //             MovieCommentsPage(_movie),
+                //           ],
+                //         ),
+                //       )
+                //     ],
+                //   )
+                ,
+              ),
       );
 
   Widget _buildTabHeader() => Container(
@@ -159,9 +185,16 @@ class _MovieItemDetailPageState extends State<MovieItemDetailPage>
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Image.network(
-                _movie.img,
-                fit: BoxFit.fill,
+              Container(
+                child: CachedNetworkImage(
+                  fit: BoxFit.fill,
+                  imageUrl: _movie.img,
+                  width: 90,
+                  height: 120,
+                  placeholder: (context, url) => Container(
+                    child: Image.asset("assets/placeholder.png"),
+                  ),
+                ),
                 width: 90,
                 height: 120,
               ),
@@ -252,6 +285,4 @@ class _MovieItemDetailPageState extends State<MovieItemDetailPage>
       });
     });
   }
-
-  
 }

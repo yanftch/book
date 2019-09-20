@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:book/domins.dart' show Movie, Video;
 
@@ -65,12 +66,17 @@ class _IntroductionPageState extends State<IntroductionPage> {
               child: Column(
                 children: <Widget>[
                   Container(
-                    child: Image.network(
-                      "${movie.actorsStuffs[index].img}",
+                    child: CachedNetworkImage(
+                      imageUrl: "${movie.actorsStuffs[index].img}",
                       width: 90,
                       height: 120,
                       fit: BoxFit.fill,
+                      placeholder: (context, url) => Container(
+                        child: Image.asset("assets/placeholder.png"),
+                      ),
                     ),
+                    width: 90,
+                    height: 120,
                   ),
                   Text("${movie.actorsStuffs[index].name}",
                       style: TextStyle(fontSize: 16.0, color: Colors.black87)),
@@ -145,11 +151,14 @@ class _IntroductionPageState extends State<IntroductionPage> {
           itemBuilder: (context, index) {
             return Container(
               padding: const EdgeInsets.all(4.0),
-              child: Image(
-                image: NetworkImage("${movie.stageImg.list[index].imgUrl}"),
+              child: CachedNetworkImage(
+                imageUrl: "${movie.stageImg.list[index].imgUrl}",
                 width: 120,
                 height: 120,
                 fit: BoxFit.cover,
+                placeholder: (context, url) => Container(
+                  child: Image.asset("assets/placeholder.png"),
+                ),
               ),
             );
           },
@@ -169,11 +178,14 @@ class _IntroductionPageState extends State<IntroductionPage> {
           child: Stack(
             alignment: Alignment.center,
             children: <Widget>[
-              Image(
-                image: NetworkImage("${movie.video.image}"),
+              CachedNetworkImage(
+                imageUrl: "${movie.video.image}",
                 width: double.infinity,
-                height: 200,
+                height: 120,
                 fit: BoxFit.cover,
+                placeholder: (context, url) => Container(
+                  child: Image.asset("assets/placeholder.png"),
+                ),
               ),
               Icon(
                 Icons.play_circle_outline,
@@ -184,8 +196,8 @@ class _IntroductionPageState extends State<IntroductionPage> {
           ),
         ),
         onTap: () {
-          Navigator.pushNamed(
-              context, "/video_play?video_url=${movie.video.url}&title=${movie.video.title}");
+          Navigator.pushNamed(context,
+              "/video_play?video_url=${movie.video.url}&title=${movie.video.title}");
         },
       ));
 }

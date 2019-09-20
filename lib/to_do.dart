@@ -8,6 +8,7 @@ class TodoListPage extends StatelessWidget {
     Todo(false, "1.title 和 subtitle 的 Text，样式各自统一的话，可以考虑分别封装不同的 Text，自带样式。"),
     Todo(false, "2.影片简介页面，story 内容，展开/收起  功能完善"),
     Todo(false, "3.image 加载过程中的 loadingbuilder 添加默认图"),
+    Todo(false, "首页小的 icon 添加随机颜色"),
   ];
 
   @override

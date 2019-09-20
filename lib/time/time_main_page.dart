@@ -2,6 +2,7 @@ import 'package:book/time/time_net_util.dart';
 import 'package:flutter/material.dart';
 import 'package:book/domins.dart';
 import 'package:book/styles.dart' show Styles;
+import 'package:cached_network_image/cached_network_image.dart';
 
 /// 时光网主页
 ///
@@ -95,10 +96,16 @@ class _TimeMainPageState extends State<TimeMainPage> {
                 Stack(
                   alignment: Alignment.bottomCenter,
                   children: <Widget>[
-                    Image.network(
-                      movie.img,
-                      fit: BoxFit.fill,
-                      width: 100,
+                    Container(
+                      child: CachedNetworkImage(
+                        imageUrl: movie.img,
+                        width: 80,
+                        height: 120,
+                        placeholder: (context, url) => Container(
+                          child: Image.asset("assets/placeholder.png"),
+                        ),
+                      ),
+                      width: 80,
                       height: 120,
                     ),
                     Container(
@@ -145,9 +152,15 @@ class _TimeMainPageState extends State<TimeMainPage> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Image.network(
-                  movie.img,
-                  fit: BoxFit.fill,
+                Container(
+                  child: CachedNetworkImage(
+                    imageUrl: movie.img,
+                    width: 80,
+                    height: 120,
+                    placeholder: (context, url) => Container(
+                      child: Image.asset("assets/placeholder.png"),
+                    ),
+                  ),
                   width: 80,
                   height: 120,
                 ),

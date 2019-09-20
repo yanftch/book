@@ -44,6 +44,8 @@ dependencies:
   # flutter_html: ^0.11.0
   # https://pub.dev/packages/flutter_ijkplayer 视频播放器
   flutter_ijkplayer: ^0.3.3
+  # 支持缓存的图片加载库
+  cached_network_image: ^1.1.1
 
 dev_dependencies:
   flutter_test:

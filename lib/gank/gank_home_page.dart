@@ -4,6 +4,7 @@ import 'package:book/http.dart' show HttpGankUtils;
 import 'package:book/widgets.dart' show GankCategoryWidget;
 import 'package:book/widgets.dart' show PullRefreshGridState, PullRefreshList;
 import 'package:book/styles.dart' show Styles;
+import 'package:cached_network_image/cached_network_image.dart';
 
 /// homepage for [gank]
 /// todo 添加右上角的搜索框
@@ -57,8 +58,15 @@ class _GankHomePageState extends State<GankHomePage> {
                   height: 100,
                   width: 100,
                   decoration: BoxDecoration(color: Colors.grey[100]),
-                  child: Image.network(data.imgUrl(), width: 100, height: 100),
+                  child: CachedNetworkImage(
+                      imageUrl: data.imgUrl(),
+                      width: 100,
+                      height: 100,
+                      placeholder: (context, url) => Container(
+                            child: Image.asset("assets/placeholder.png"),
+                          )),
                 ),
+                SizedBox(width: 8.0),
                 Expanded(
                   child: Container(
                     height: 100,
@@ -76,14 +84,14 @@ class _GankHomePageState extends State<GankHomePage> {
                         Row(
                           children: <Widget>[
                             Icon(
-                              Icons.info,
+                              Icons.flag,
                               size: 12,
                               color: Colors.black45,
                             ),
                             Text(
                               " ${data.type}",
                               style: TextStyle(
-                                  fontSize: 12.0, color: Colors.black45),
+                                  fontSize: 12.0, color: Colors.purpleAccent),
                             ),
                             SizedBox(width: 16.0),
                             Icon(
