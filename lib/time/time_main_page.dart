@@ -154,13 +154,34 @@ class _TimeMainPageState extends State<TimeMainPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  child: CachedNetworkImage(
-                    imageUrl: movie.img,
-                    width: 80,
-                    height: 120,
-                    placeholder: (context, url) => Container(
-                      child: Image.asset("assets/placeholder.png"),
-                    ),
+                  child: Stack(
+                    children: <Widget>[
+                      CachedNetworkImage(
+                        imageUrl: movie.img,
+                        width: 80,
+                        fit: BoxFit.fill,
+                        height: 120,
+                        placeholder: (context, url) => Container(
+                          child: Image.asset("assets/placeholder.png"),
+                        ),
+                      ),
+                      movie.isHot
+                          ? Container(
+                              margin: const EdgeInsets.all(2.0),
+                              padding: const EdgeInsets.all(2.0),
+                              child: Text(
+                                "Hot".toUpperCase(),
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.w800),
+                              ),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(4),
+                                  color: Colors.grey[300]),
+                            )
+                          : SizedBox()
+                    ],
                   ),
                   width: 80,
                   height: 120,
