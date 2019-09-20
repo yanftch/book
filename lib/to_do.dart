@@ -9,6 +9,7 @@ class TodoListPage extends StatelessWidget {
     Todo(false, "2.影片简介页面，story 内容，展开/收起  功能完善"),
     Todo(false, "3.image 加载过程中的 loadingbuilder 添加默认图"),
     Todo(false, "首页小的 icon 添加随机颜色"),
+    Todo(false, "大图页面，支持本地保存图片"),
   ];
 
   @override

@@ -91,11 +91,14 @@ class MyApp extends StatelessWidget {
                   movieId: q['movie_id'],
                 ));
       case '/video_play':
+        return _buildRootRoute(settings,
+            (_) => VideoPlayPage(videoUrl: q['video_url'], title: q['title']));
+      case '/image_gallery':
         return _buildRootRoute(
             settings,
-            (_) => VideoPlayPage(
-                  videoUrl: q['video_url'],
-                  title: q['title']
+            (_) => ImageGalleryPage(
+                  images: settings.arguments,
+                  position: int.parse(q['position']),
                 ));
       case '/test':
         return _buildRootRoute(

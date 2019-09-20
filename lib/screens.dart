@@ -14,6 +14,7 @@ export 'package:book/time/introduction_page.dart';
 export 'package:book/time/movie_comments_page.dart';
 export 'package:book/time/more_detail_page.dart';
 export 'package:book/time/play_page.dart';
+export 'package:book/time/image_gallery_page.dart';
 
 /// gank pages
 export 'package:book/gank/gank_home_page.dart';

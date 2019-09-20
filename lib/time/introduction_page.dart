@@ -144,8 +144,8 @@ class _IntroductionPageState extends State<IntroductionPage> {
         height: 120,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return Container(
+          itemBuilder: (context, index) => GestureDetector(
+            child: Container(
               padding: const EdgeInsets.all(4.0),
               child: CachedNetworkImage(
                 imageUrl: "${movie.stageImg.list[index].imgUrl}",
@@ -156,8 +156,12 @@ class _IntroductionPageState extends State<IntroductionPage> {
                   child: Image.asset("assets/placeholder.png"),
                 ),
               ),
-            );
-          },
+            ),
+            onTap: () {
+              var images = movie.stageImg.list;
+              Navigator.pushNamed(context, '/image_gallery?position=$index', arguments: images);
+            },
+          ),
           itemCount: movie.stageImg.list.length,
         ),
       );
