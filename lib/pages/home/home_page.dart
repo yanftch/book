@@ -17,7 +17,10 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState<T> extends State<HomePage> {
+class _HomePageState<T> extends State<HomePage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   final _pullRefreshKey = GlobalKey<PullRefreshGridState>();
 
 //  final _cartFabKey = GlobalKey<FlashDealCartFabState>();

@@ -7,8 +7,10 @@ class ThirdPage extends StatefulWidget {
   _ThirdPageState createState() => _ThirdPageState();
 }
 
-class _ThirdPageState extends State<ThirdPage> {
- 
+class _ThirdPageState extends State<ThirdPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +19,13 @@ class _ThirdPageState extends State<ThirdPage> {
         title: Text("3"),
         centerTitle: true,
       ),
-      body: RaisedButton(child: Text("images"),onPressed: (){
-        Navigator.pushNamed(context, '/image_gallery?title=abc&images=imgaeUrlS');
-      },),
+      body: RaisedButton(
+        child: Text("images"),
+        onPressed: () {
+          Navigator.pushNamed(
+              context, '/image_gallery?title=abc&images=imgaeUrlS');
+        },
+      ),
     );
   }
 }

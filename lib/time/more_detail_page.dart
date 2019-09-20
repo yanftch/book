@@ -13,7 +13,10 @@ class MoreDetailPage extends StatefulWidget {
   _MoreDetailPageState createState() => _MoreDetailPageState();
 }
 
-class _MoreDetailPageState extends State<MoreDetailPage> {
+class _MoreDetailPageState extends State<MoreDetailPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     return Container(

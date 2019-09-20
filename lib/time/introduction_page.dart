@@ -12,7 +12,10 @@ class IntroductionPage extends StatefulWidget {
   _IntroductionPageState createState() => _IntroductionPageState();
 }
 
-class _IntroductionPageState extends State<IntroductionPage> {
+class _IntroductionPageState extends State<IntroductionPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
         child: Column(
@@ -159,7 +162,8 @@ class _IntroductionPageState extends State<IntroductionPage> {
             ),
             onTap: () {
               var images = movie.stageImg.list;
-              Navigator.pushNamed(context, '/image_gallery?position=$index', arguments: images);
+              Navigator.pushNamed(context, '/image_gallery?position=$index',
+                  arguments: images);
             },
           ),
           itemCount: movie.stageImg.list.length,

@@ -11,7 +11,11 @@ class TimeMainPage extends StatefulWidget {
   _TimeMainPageState createState() => new _TimeMainPageState();
 }
 
-class _TimeMainPageState extends State<TimeMainPage> {
+class _TimeMainPageState extends State<TimeMainPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   /// 标记是否正在加载中
   bool isLoading = false;
   List<Movie> movies = [];

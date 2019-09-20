@@ -10,7 +10,10 @@ class MovieCommentsPage extends StatefulWidget {
   _MovieCommentsPageState createState() => _MovieCommentsPageState();
 }
 
-class _MovieCommentsPageState extends State<MovieCommentsPage> {
+class _MovieCommentsPageState extends State<MovieCommentsPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) => ListView.builder(
       itemCount: widget.comments.length,

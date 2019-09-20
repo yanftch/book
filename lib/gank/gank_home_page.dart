@@ -13,7 +13,10 @@ class GankHomePage extends StatefulWidget {
   _GankHomePageState createState() => new _GankHomePageState();
 }
 
-class _GankHomePageState extends State<GankHomePage> {
+class _GankHomePageState extends State<GankHomePage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   final _pullRefreshKey = GlobalKey<PullRefreshGridState>();
 
   bool isLoading = false;
