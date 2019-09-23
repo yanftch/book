@@ -16,7 +16,8 @@ class HttpGankUtils {
       "$API_GANK_HOST/api/history/content";
   static const String API_SUBMIT = "$API_GANK_HOST/api/add2gank";
   static const String CHECK_UPDATE = "$API_GANK_HOST/api/checkversion";
-static var page = 0;
+  static var page = 0;
+
   /// 每页加载数量，默认 20
   static const String DEFAULT_NUM = '20';
   static const category = [
@@ -37,9 +38,28 @@ static var page = 0;
     return baseResult;
   }
 
-  /// 获取某一个类别下的数据
-  static getOneCategoryDatas() async {}
 
+  /// 获取某一个类别下的数据
+  static Future<List<GankInfo>> fetchCategoryDatas([String category = "all", bool isIncrement = false]) async {
+    page = isIncrement ? (page + 1) : 0;
+    print("fetchCategoryDatas--------> page======>$page     "   "请求 URL===>$API_DATA$category/$DEFAULT_NUM/$page");
+    BaseResult baseResult =
+        await BookHttpUtils.get("$API_DATA$category/$DEFAULT_NUM/$page");
+    var gankCategory = GankCategory.fromJson(baseResult.data);
+    return gankCategory.results;
+  }
+
+
+  /// 获取某一个类别下的数据
+  static Future<FetchResult<GankInfo>> getDatasByCategory(String category,
+      [bool isIncrement = false]) async {
+    page = isIncrement ? (page + 1) : 0;
+    print("isIncrement-------->$isIncrement   page======>$page"   "请求 URL===>${API_DATA}$category/$DEFAULT_NUM/$page");
+    BaseResult baseResult =
+        await BookHttpUtils.get("${API_DATA}$category/$DEFAULT_NUM/$page");
+    var gankCategory = GankCategory.fromJson(baseResult.data);
+    return FetchResult<GankInfo>(gankCategory.results, true);
+  }
 
   /// 获取 IOS 类别的数据
   /// @param page 分页页码
@@ -51,9 +71,10 @@ static var page = 0;
     print("isIncremental-------->$isIncremental   page======>$page");
     BaseResult baseResult =
         await BookHttpUtils.get("${API_DATA}iOS/$DEFAULT_NUM/$page");
-        var gankCategory = GankCategory.fromJson(baseResult.data);
-        return FetchResult<GankInfo>(gankCategory.results, true);
+    var gankCategory = GankCategory.fromJson(baseResult.data);
+    return FetchResult<GankInfo>(gankCategory.results, true);
   }
+
   /// [page] 当前是第几页，用于分页加载数据的处理
   static getIOSDatas(int page) async {
     BaseResult baseResult =
@@ -78,7 +99,6 @@ static var page = 0;
     return baseResult;
   }
 }
-
 
 ///
 // ///

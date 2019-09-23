@@ -152,6 +152,7 @@ class _TimeMainPageState extends State<TimeMainPage>
 
   Widget _buildCardItem(Movie movie) => GestureDetector(
         child: Card(
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           child: Container(
             margin: const EdgeInsets.all(8.0),
             child: Row(

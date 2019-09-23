@@ -53,8 +53,9 @@ class _GankHomePageState extends State<GankHomePage>
   Widget _buildItem(BuildContext context, GankInfo data, int index) =>
       GestureDetector(
         child: Card(
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           child: Container(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(8.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[

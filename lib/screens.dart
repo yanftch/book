@@ -18,3 +18,4 @@ export 'package:book/time/image_gallery_page.dart';
 
 /// gank pages
 export 'package:book/gank/gank_home_page.dart';
+export 'package:book/gank/gank_list_page.dart';

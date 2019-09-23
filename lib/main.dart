@@ -100,6 +100,12 @@ class MyApp extends StatelessWidget {
                   images: settings.arguments,
                   position: int.parse(q['position']),
                 ));
+      case '/gank_list':
+        return _buildRootRoute(
+            settings,
+            (_) => GankCategoryListPage(
+                  category: q['category'],
+                ));
       case '/test':
         return _buildRootRoute(
             settings,
