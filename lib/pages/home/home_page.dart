@@ -1,3 +1,4 @@
+import 'package:book/utils/t.dart';
 import 'package:flutter/material.dart';
 import 'package:book/http.dart' show NetManager;
 import 'package:book/domins.dart';
@@ -17,7 +18,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState<T> extends State<HomePage>
+class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
@@ -49,7 +50,9 @@ class _HomePageState<T> extends State<HomePage>
   List<Widget> _buildActionBarButton() => [
         IconButton(
           icon: Icon(Icons.search),
-          onPressed: () {},
+          onPressed: () {
+            T.show("to do");
+          },
         )
       ];
 

@@ -1,3 +1,4 @@
+import 'package:book/utils/collection_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
@@ -23,10 +24,21 @@ class _DetailPageState extends State<DetailPage> {
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
 
   bool isLoading = true;
+  bool hasLiked = false;
+
+  void _checkLiked() async {
+    bool liked = await CollectionUtils.hasCollected(widget.url);
+    print("是否已经收藏。。。。。。。。。。$liked");
+    setState(() {
+      hasLiked = liked;
+    });
+  }
 
   @override
   void initState() {
     super.initState();
+    _checkLiked();
+
     flutterWebviewPlugin.onStateChanged.listen((state) {
       debugPrint('state:_' + state.type.toString());
       if (state.type == WebViewState.finishLoad) {
@@ -61,8 +73,28 @@ class _DetailPageState extends State<DetailPage> {
                   )),
         actions: <Widget>[
           GestureDetector(
-            child: Icon(Icons.favorite_border),
-            onTap: () {},
+            child: Icon(
+              Icons.favorite,
+              color: hasLiked ? Colors.red : Colors.white,
+            ),
+            onTap: () {
+              if (hasLiked) {
+                CollectionUtils.unCollect(
+                    url: widget.url,
+                    title: widget.title,
+                    type: "study",
+                    movieId: -1);
+              } else {
+                CollectionUtils.collect(
+                    url: widget.url,
+                    title: widget.title,
+                    type: "study",
+                    movieId: -1);
+              }
+              setState(() {
+                hasLiked = !hasLiked;
+              });
+            },
           ),
           GestureDetector(
             child: Container(

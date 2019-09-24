@@ -106,6 +106,8 @@ class MyApp extends StatelessWidget {
             (_) => GankCategoryListPage(
                   category: q['category'],
                 ));
+      case '/collection':
+        return _buildRootRoute(settings, (_) => CollectionPage());
       case '/test':
         return _buildRootRoute(
             settings,

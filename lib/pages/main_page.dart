@@ -28,7 +28,7 @@ class _MainPageState extends State<MainPage> {
     HomePage(),
     GankHomePage(),
     TimeMainPage(),
-    ThirdPage(),
+    CollectionPage(),
     MinePage()
   ];
 
@@ -47,7 +47,7 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Styles.colorPrimary),
     BottomNavigationBarItem(
         icon: Icon(Icons.video_library),
-        title: Text("third"),
+        title: Text("收藏"),
         backgroundColor: Styles.colorPrimary),
     BottomNavigationBarItem(
         icon: Icon(Icons.account_circle),

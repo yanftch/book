@@ -3,6 +3,7 @@ export 'domin/NavigationBean.dart';
 export 'domin/SystemTreeArticleBean.dart';
 export 'domin/SystemTreeBean.dart';
 export 'domin/HomeBannerBean.dart';
+export 'domin/db_model.dart';
 
 /// 时光电影
 export 'package:book/time/time_main_page.dart';
