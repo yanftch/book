@@ -8,15 +8,15 @@ class TimeNetUtil {
 
   /// 正在售票
   final String hot_api =
-      "https://api-m.mtime.cn/PageSubArea/HotPlayMovies.api?locationId=290";
+      "https://api-m.mtime.cn/PageSubArea/HotPlayMovies.api?locationId=";
 
   /// 正在上映
   final String current_in_api =
-      'https://api-m.mtime.cn/Showtime/LocationMovies.api?locationId=290';
+      'https://api-m.mtime.cn/Showtime/LocationMovies.api?locationId=';
 
   /// 即将上映
   final String coming_movies =
-      'https://api-m.mtime.cn/Movie/MovieComingNew.api?locationId=290';
+      'https://api-m.mtime.cn/Movie/MovieComingNew.api?locationId=';
 
   /// 影片详情  替换参数：locationId & movieId
   final String movie_detail =
@@ -34,8 +34,9 @@ class TimeNetUtil {
   final String movie_tricks =
       'https://api-m.mtime.cn/Movie/Video.api?pageIndex=1&movieId=';
 
-  void getHotMovies(Function callback) async {
-    Dio().get(hot_api).then((response) {
+  void getHotMovies(String id, Function callback) async {
+    print("url: $hot_api$id");
+    Dio().get("$hot_api$id").then((response) {
 //      print("getHotMovies--->$response");
       if (response != null) {
         callback(HotModel.fromJson(response.data));
@@ -54,8 +55,8 @@ class TimeNetUtil {
   }
 
   /// 正在热映
-  void getNowShowingMovies(Function callback) async {
-    Dio().get(current_in_api).then((response) {
+  void getNowShowingMovies(String id, Function callback) async {
+    Dio().get("$current_in_api$id").then((response) {
 //      print("getHotMovies--->$response");
       if (response != null) {
         callback(NowShowingMovieModel.fromJson(response.data));
@@ -74,8 +75,8 @@ class TimeNetUtil {
   }
 
   /// 即将上映
-  void getComingMovies(Function callback) async {
-    Dio().get(coming_movies).then((response) {
+  void getComingMovies(String id, Function callback) async {
+    Dio().get("$coming_movies$id").then((response) {
       print("getComingMovies--->$response");
       if (response != null) {
         callback(ComingMovies.fromJson(response.data));

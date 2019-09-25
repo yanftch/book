@@ -11,6 +11,8 @@ class MinePage extends StatefulWidget {
 
 class _MinePageState extends State<MinePage>
     with AutomaticKeepAliveClientMixin {
+  final _key = GlobalKey();
+
   @override
   bool get wantKeepAlive => true;
   int total;
@@ -39,7 +41,44 @@ class _MinePageState extends State<MinePage>
           )
         ],
       ),
-      body: Container(
+      body: _body2(),
+    );
+  }
+
+  Widget _body2() => Container(
+        alignment: Alignment.center,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              key: _key,
+              child: Text("left"),
+              onPressed: () {
+                PopupWindow.showPopWindow(
+                    context,
+                    "hello",
+                    _key,
+                    PopDirection.top,
+                    Container(
+                      child: Column(
+                        children: <Widget>[
+                          FlatButton(
+                            child: Text("delete"),
+                            onPressed: () {
+                              print("object---click delete");
+                            },
+                          )
+                        ],
+                      ),
+                    ));
+              },
+            ),
+          ],
+        ),
+      );
+
+  Widget _body() => Container(
         child: FutureBuilder<List<GankInfo>>(
           future: _future,
           builder: (context, snapshot) {
@@ -63,9 +102,7 @@ class _MinePageState extends State<MinePage>
             return SizedBox();
           },
         ),
-      ),
-    );
-  }
+      );
 
   Widget _buildList() => ListViewWidget<GankInfo>(_pageRequest, _buildItemCopy);
 

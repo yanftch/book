@@ -20,12 +20,13 @@ class _TimeMainPageState extends State<TimeMainPage>
   bool isLoading = false;
   List<Movie> movies = [];
   List<Movie> comingMovies = [];
+  String city = '北京';
+  String id = "290";
 
   @override
   void initState() {
     super.initState();
-    fetchData();
-    fetchComingData();
+    http();
   }
 
   @override
@@ -42,7 +43,21 @@ class _TimeMainPageState extends State<TimeMainPage>
           SliverAppBar(
             pinned: true,
             centerTitle: true,
-            title: Text("时光"),
+            title: GestureDetector(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text("时光"),
+                  Text(
+                    "$city",
+                    style: TextStyle(fontSize: 10, color: Colors.grey[300]),
+                  )
+                ],
+              ),
+              onTap: () {
+                _selectCity();
+              },
+            ),
           ),
           SliverToBoxAdapter(
             child: Container(
@@ -305,8 +320,13 @@ class _TimeMainPageState extends State<TimeMainPage>
         ],
       );
 
-  void fetchData() {
-    TimeNetUtil().getHotMovies((HotModel hotModel) {
+  void http() {
+    fetchData(id);
+    fetchComingData(id);
+  }
+
+  void fetchData(String id) {
+    TimeNetUtil().getHotMovies(id, (HotModel hotModel) {
       print("count===>${hotModel.count}");
       setState(() {
         isLoading = false;
@@ -316,8 +336,8 @@ class _TimeMainPageState extends State<TimeMainPage>
     });
   }
 
-  void fetchNowShowingData() {
-    TimeNetUtil().getNowShowingMovies((NowShowingMovieModel model) {
+  void fetchNowShowingData(String id) {
+    TimeNetUtil().getNowShowingMovies(id, (NowShowingMovieModel model) {
       print("model.ms.length========>${model.ms.length}");
       setState(() {
         isLoading = false;
@@ -327,8 +347,8 @@ class _TimeMainPageState extends State<TimeMainPage>
     });
   }
 
-  void fetchComingData() {
-    TimeNetUtil().getComingMovies((ComingMovies model) {
+  void fetchComingData(String id) {
+    TimeNetUtil().getComingMovies(id, (ComingMovies model) {
       setState(() {
         print("model.moviecomings.length------->${model.moviecomings.length}");
         isLoading = false;
@@ -336,5 +356,19 @@ class _TimeMainPageState extends State<TimeMainPage>
         comingMovies.addAll(model.moviecomings);
       });
     });
+  }
+
+  void _selectCity() async {
+    final result = await Navigator.pushNamed(context, '/select_city');
+    print("返回：$result");
+    if (result is City) {
+      City c = result;
+      print("返回的是：$c");
+      setState(() {
+        city = c.name;
+        id = "${c.id}";
+        http();
+      });
+    }
   }
 }

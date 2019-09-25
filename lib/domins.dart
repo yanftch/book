@@ -20,6 +20,7 @@ export 'package:book/time/domin/stage_image.dart';
 export 'package:book/time/domin/stage_small_image.dart';
 export 'package:book/time/domin/movie_comment_model.dart';
 export 'package:book/time/domin/tricks_model.dart';
+export 'package:book/time/domin/city_model.dart';
 
 
 ///

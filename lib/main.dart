@@ -108,6 +108,8 @@ class MyApp extends StatelessWidget {
                 ));
       case '/collection':
         return _buildRootRoute(settings, (_) => CollectionPage());
+      case '/select_city':
+        return _buildRootRoute(settings, (_) => SelectCityPage());
       case '/test':
         return _buildRootRoute(
             settings,
