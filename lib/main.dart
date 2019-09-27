@@ -1,3 +1,4 @@
+import 'package:book/pages/test_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'styles.dart';
@@ -113,9 +114,7 @@ class MyApp extends StatelessWidget {
       case '/test':
         return _buildRootRoute(
             settings,
-            (_) => DetailPage(
-                  title: q['title'],
-                  url: q["url"],
+            (_) => TestPage(
                 ));
       default:
         return null;

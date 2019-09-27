@@ -14,27 +14,27 @@ class NetManager {
   /// 获取首页列表数据
   /// @param page 分页页码
   /// [increment]指定是否为增量加载(翻页)
-  static Future<FetchResult<HomeItemBean>> fetchHomeListApi([
-    bool isIncremental = false,
-  ]) async {
-    page = isIncremental ? (page + 1) : 0;
-    print("isIncremental-------->$isIncremental");
-    BaseResp baseResp = await HttpUtils.getRequest(
-        "article/list/" + page.toString() + "/json", null, null,
-        showLoading: true);
-    BaseResp ta = BaseResp.init(baseResp.data);
-    HomeBean homeBean = HomeBean.fromJson(ta.data);
-    return FetchResult<HomeItemBean>(homeBean.datas, true);
-  }
+  // static Future<FetchResult<HomeItemBean>> fetchHomeListApi([
+  //   bool isIncremental = false,
+  // ]) async {
+  //   page = isIncremental ? (page + 1) : 0;
+  //   print("isIncremental-------->$isIncremental");
+  //   BaseResp baseResp = await HttpUtils.getRequest(
+  //       "article/list/" + page.toString() + "/json", null, null,
+  //       showLoading: true);
+  //   BaseResp ta = BaseResp.init(baseResp.data);
+  //   HomeBean homeBean = HomeBean.fromJson(ta.data);
+  //   return FetchResult<HomeItemBean>(homeBean.datas, true);
+  // }
 
-  /// 获取首页 banner 数据
-  static Future<List<HomeBannerBean>> fetchHomeBanner() async{
-    BaseResp baseResp =  await HttpUtils.getRequest(Api.HOME_BANNER, null, null);
+  // /// 获取首页 banner 数据
+  // static Future<List<HomeBannerBean>> fetchHomeBanner() async{
+  //   BaseResp baseResp =  await HttpUtils.getRequest(Api.HOME_BANNER, null, null);
 
-    BaseResp base = BaseResp.init(baseResp.data);
-    List<HomeBannerBean> banners =  HomeBannerBean.fromJsons(base.data);
-    return banners;
-  }
+  //   BaseResp base = BaseResp.init(baseResp.data);
+  //   List<HomeBannerBean> banners =  HomeBannerBean.fromJsons(base.data);
+  //   return banners;
+  // }
 
 
 

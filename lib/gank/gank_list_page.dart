@@ -1,6 +1,6 @@
 import 'package:book/domins.dart' show GankCategory, GankInfo;
 import 'package:flutter/material.dart';
-import 'package:book/http.dart' show HttpGankUtils;
+import 'package:book/http.dart' show HttpImpl;
 import 'package:book/widgets.dart' show FetchResult, GankCategoryWidget;
 import 'package:book/widgets.dart' show PullRefreshGridState, PullRefreshGrid;
 import 'package:book/styles.dart' show Styles;
@@ -146,7 +146,7 @@ class _GankCategoryListPageState extends State<GankCategoryListPage> {
 
     // await Future.delayed(Duration(milliseconds: 3000));
     List<GankInfo> infoList =
-        await HttpGankUtils.fetchCategoryDatas(widget.category, isIncrement);
+        await HttpImpl.fetchCategoryDatas(widget.category, isIncrement);
 
     var list = infoList;
 

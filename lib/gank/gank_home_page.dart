@@ -1,6 +1,6 @@
 import 'package:book/domins.dart' show GankCategory, GankInfo;
 import 'package:flutter/material.dart';
-import 'package:book/http.dart' show HttpGankUtils;
+import 'package:book/http.dart' show HttpImpl;
 import 'package:book/widgets.dart' show GankCategoryWidget;
 import 'package:book/widgets.dart' show PullRefreshGridState, PullRefreshList;
 import 'package:book/styles.dart' show Styles;
@@ -42,7 +42,7 @@ class _GankHomePageState extends State<GankHomePage>
   /// 渲染列表
   Widget _buildList(BuildContext context) => PullRefreshList<GankInfo>(
         key: _pullRefreshKey,
-        dataFetcher: HttpGankUtils.fetchiOSListApi,
+        dataFetcher: HttpImpl.fetchiOSListApi,
         itemBuilder: _buildItem,
         headerCount: 1,
         headerBuilder: _builderHeader,
@@ -150,7 +150,7 @@ class _GankHomePageState extends State<GankHomePage>
 
   /// 获取 IOS 列表数据
   void getRandomData() async {
-    GankCategory category = await HttpGankUtils.getIOSDatas(0);
+    GankCategory category = await HttpImpl.getIOSDatas(0);
     print("gank--->${category.results.length}");
   }
 }

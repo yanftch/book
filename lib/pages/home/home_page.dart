@@ -1,6 +1,6 @@
 import 'package:book/utils/t.dart';
 import 'package:flutter/material.dart';
-import 'package:book/http.dart' show NetManager;
+import 'package:book/http.dart' show HttpImpl;
 import 'package:book/domins.dart';
 import 'package:book/widgets.dart' show PullRefreshGridState, PullRefreshList;
 import 'package:flutter/rendering.dart' show ScrollDirection;
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage>
   /// 渲染列表
   Widget _buildList(BuildContext context) => PullRefreshList<HomeItemBean>(
         key: _pullRefreshKey,
-        dataFetcher: NetManager.fetchHomeListApi,
+        dataFetcher: HttpImpl.fetchHomeListApi,
         itemBuilder: _buildItem,
         headerCount: 1,
         headerBuilder: _builderHeader,
@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage>
   }
 
   void fetchBannerData() async {
-    List<HomeBannerBean> banners = await NetManager.fetchHomeBanner();
+    List<HomeBannerBean> banners = await HttpImpl.fetchHomeBanner();
     if (banners.isNotEmpty) {
       setState(() {
         _bannerDatas.addAll(banners);

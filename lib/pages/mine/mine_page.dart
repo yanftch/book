@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:book/domins.dart';
-import 'package:book/http.dart' show HttpGankUtils;
+import 'package:book/http.dart' show HttpImpl;
 import 'package:book/widgets.dart';
-
 ///
 class MinePage extends StatefulWidget {
   @override
@@ -25,6 +24,7 @@ class _MinePageState extends State<MinePage>
     _future = getRandomDataCopy();
     _pageRequest = getRandomDataCopy2;
   }
+  var list  = ["111111","222222","333333","444444"];
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +36,18 @@ class _MinePageState extends State<MinePage>
           FlatButton(
             child: Text("click==$total"),
             onPressed: () {
-              getRandomData();
+              Navigator.pushNamed(context, '/test');
             },
           )
         ],
       ),
-      body: _body2(),
+      body: _body3(),
     );
   }
+
+  Widget _body3() => Container(
+
+  );
 
   Widget _body2() => Container(
         alignment: Alignment.center,
@@ -121,7 +125,7 @@ class _MinePageState extends State<MinePage>
 
   /// 获取 IOS 列表数据
   void getRandomData() async {
-    GankCategory category = await HttpGankUtils.getIOSDatas(0);
+    GankCategory category = await HttpImpl.getIOSDatas(0);
     print("gank--->${category.results.length}");
     setState(() {
       total = category.results.length;
@@ -131,7 +135,7 @@ class _MinePageState extends State<MinePage>
   }
 
   Future<List<GankInfo>> getRandomDataCopy() async {
-    GankCategory category = await HttpGankUtils.getIOSDatas(0);
+    GankCategory category = await HttpImpl.getIOSDatas(0);
     List<GankInfo> lists = category.results;
     print("gank--->${category.results.length}");
     setState(() {
@@ -143,7 +147,7 @@ class _MinePageState extends State<MinePage>
   }
 
   Future<List<GankInfo>> getRandomDataCopy2(int page, int pageSize) async {
-    GankCategory category = await HttpGankUtils.getIOSDatas(0);
+    GankCategory category = await HttpImpl.getIOSDatas(0);
     List<GankInfo> lists = category.results;
     print("gank--->${category.results.length}");
     setState(() {

@@ -1,6 +1,7 @@
 import 'package:book/time/time_net_util.dart';
 import 'package:flutter/material.dart';
 import 'package:book/domins.dart';
+import 'package:book/http.dart' show HttpImpl;
 import 'package:book/styles.dart' show Styles;
 import 'package:cached_network_image/cached_network_image.dart';
 
@@ -326,7 +327,7 @@ class _TimeMainPageState extends State<TimeMainPage>
   }
 
   void fetchData(String id) {
-    TimeNetUtil().getHotMovies(id, (HotModel hotModel) {
+    HttpImpl.getHotMovies(id, (HotModel hotModel) {
       print("count===>${hotModel.count}");
       setState(() {
         isLoading = false;
@@ -337,7 +338,7 @@ class _TimeMainPageState extends State<TimeMainPage>
   }
 
   void fetchNowShowingData(String id) {
-    TimeNetUtil().getNowShowingMovies(id, (NowShowingMovieModel model) {
+    HttpImpl.getNowShowingMovies(id, (NowShowingMovieModel model) {
       print("model.ms.length========>${model.ms.length}");
       setState(() {
         isLoading = false;
@@ -348,7 +349,7 @@ class _TimeMainPageState extends State<TimeMainPage>
   }
 
   void fetchComingData(String id) {
-    TimeNetUtil().getComingMovies(id, (ComingMovies model) {
+    HttpImpl.getComingMovies(id, (ComingMovies model) {
       setState(() {
         print("model.moviecomings.length------->${model.moviecomings.length}");
         isLoading = false;

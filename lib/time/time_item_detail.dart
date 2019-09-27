@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:book/time/time_net_util.dart';
 import 'package:book/domins.dart';
+import 'package:book/http.dart' show HttpImpl;
 import 'package:flutter/services.dart';
 import 'package:book/screens.dart' show IntroductionPage, MovieCommentsPage;
 
@@ -253,7 +254,7 @@ class _MovieItemDetailPageState extends State<MovieItemDetailPage>
       ));
 
   void fetchMovieDetail(String movieId) {
-    TimeNetUtil().getMovieDetail(movieId, (MovieDetailModel model) {
+    HttpImpl.getMovieDetail(movieId, (MovieDetailModel model) {
       setState(() {
         model.data.movie.actorsStuffs.insert(0, model.data.movie.director);
         _movie = model.data.movie;
@@ -266,7 +267,7 @@ class _MovieItemDetailPageState extends State<MovieItemDetailPage>
 
   /// 获取影评信息
   void fetchMovieComments(String movieId) {
-    TimeNetUtil().getMovieCommentsApi(movieId, (MovieCommentModel model) {
+    HttpImpl.getMovieCommentsApi(movieId, (MovieCommentModel model) {
       setState(() {
         _comments = model.data.mini.list;
         _comments.addAll(model.data.plus.list);
@@ -276,7 +277,7 @@ class _MovieItemDetailPageState extends State<MovieItemDetailPage>
 
   /// 获取花絮
   void fetchMovieTricks(String movieId) {
-    TimeNetUtil().getMovieTricksApi(movieId, (TricksModel model) {
+    HttpImpl.getMovieTricksApi(movieId, (TricksModel model) {
       setState(() {
         print("fetchMovieTricks--->${model.videos}");
         _videos = model.videos;

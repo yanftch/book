@@ -32,72 +32,72 @@ class HttpGankUtils {
   ];
 
   /// 获取今日数据
-  static getTodayData() async {
-    BaseResult baseResult =
-        await BookHttpUtils.get("http://gank.io/api/xiandu/categories");
-    return baseResult;
-  }
+  // static getTodayData() async {
+  //   BaseResult baseResult =
+  //       await BookHttpUtils.get("http://gank.io/api/xiandu/categories");
+  //   return baseResult;
+  // }
 
 
   /// 获取某一个类别下的数据
-  static Future<List<GankInfo>> fetchCategoryDatas([String category = "all", bool isIncrement = false]) async {
-    page = isIncrement ? (page + 1) : 0;
-    print("fetchCategoryDatas--------> page======>$page     "   "请求 URL===>$API_DATA$category/$DEFAULT_NUM/$page");
-    BaseResult baseResult =
-        await BookHttpUtils.get("$API_DATA$category/$DEFAULT_NUM/$page");
-    var gankCategory = GankCategory.fromJson(baseResult.data);
-    return gankCategory.results;
-  }
+  // static Future<List<GankInfo>> fetchCategoryDatas([String category = "all", bool isIncrement = false]) async {
+  //   page = isIncrement ? (page + 1) : 0;
+  //   print("fetchCategoryDatas--------> page======>$page     "   "请求 URL===>$API_DATA$category/$DEFAULT_NUM/$page");
+  //   BaseResult baseResult =
+  //       await BookHttpUtils.get("$API_DATA$category/$DEFAULT_NUM/$page");
+  //   var gankCategory = GankCategory.fromJson(baseResult.data);
+  //   return gankCategory.results;
+  // }
 
 
-  /// 获取某一个类别下的数据
-  static Future<FetchResult<GankInfo>> getDatasByCategory(String category,
-      [bool isIncrement = false]) async {
-    page = isIncrement ? (page + 1) : 0;
-    print("isIncrement-------->$isIncrement   page======>$page"   "请求 URL===>${API_DATA}$category/$DEFAULT_NUM/$page");
-    BaseResult baseResult =
-        await BookHttpUtils.get("${API_DATA}$category/$DEFAULT_NUM/$page");
-    var gankCategory = GankCategory.fromJson(baseResult.data);
-    return FetchResult<GankInfo>(gankCategory.results, true);
-  }
+  // /// 获取某一个类别下的数据
+  // static Future<FetchResult<GankInfo>> getDatasByCategory(String category,
+  //     [bool isIncrement = false]) async {
+  //   page = isIncrement ? (page + 1) : 0;
+  //   print("isIncrement-------->$isIncrement   page======>$page"   "请求 URL===>${API_DATA}$category/$DEFAULT_NUM/$page");
+  //   BaseResult baseResult =
+  //       await BookHttpUtils.get("${API_DATA}$category/$DEFAULT_NUM/$page");
+  //   var gankCategory = GankCategory.fromJson(baseResult.data);
+  //   return FetchResult<GankInfo>(gankCategory.results, true);
+  // }
 
-  /// 获取 IOS 类别的数据
-  /// @param page 分页页码
-  /// [increment]指定是否为增量加载(翻页)
-  static Future<FetchResult<GankInfo>> fetchiOSListApi([
-    bool isIncremental = false,
-  ]) async {
-    page = isIncremental ? (page + 1) : 0;
-    print("isIncremental-------->$isIncremental   page======>$page");
-    BaseResult baseResult =
-        await BookHttpUtils.get("${API_DATA}iOS/$DEFAULT_NUM/$page");
-    var gankCategory = GankCategory.fromJson(baseResult.data);
-    return FetchResult<GankInfo>(gankCategory.results, true);
-  }
+  // /// 获取 IOS 类别的数据
+  // /// @param page 分页页码
+  // /// [increment]指定是否为增量加载(翻页)
+  // static Future<FetchResult<GankInfo>> fetchiOSListApi([
+  //   bool isIncremental = false,
+  // ]) async {
+  //   page = isIncremental ? (page + 1) : 0;
+  //   print("isIncremental-------->$isIncremental   page======>$page");
+  //   BaseResult baseResult =
+  //       await BookHttpUtils.get("${API_DATA}iOS/$DEFAULT_NUM/$page");
+  //   var gankCategory = GankCategory.fromJson(baseResult.data);
+  //   return FetchResult<GankInfo>(gankCategory.results, true);
+  // }
 
-  /// [page] 当前是第几页，用于分页加载数据的处理
-  static getIOSDatas(int page) async {
-    BaseResult baseResult =
-        await BookHttpUtils.get("${API_DATA}iOS/$DEFAULT_NUM/$page");
-    return GankCategory.fromJson(baseResult.data);
-  }
+  // /// [page] 当前是第几页，用于分页加载数据的处理
+  // static getIOSDatas(int page) async {
+  //   BaseResult baseResult =
+  //       await BookHttpUtils.get("${API_DATA}iOS/$DEFAULT_NUM/$page");
+  //   return GankCategory.fromJson(baseResult.data);
+  // }
 
-  static getAndroidDatas() async {}
+  // static getAndroidDatas() async {}
 
   /// 获取随机数据
-  static getRandomData() async {
-    /// 随机一个类型
-    Random random = Random();
-    var i = random.nextInt(category.length);
-    if (i < 0 || i > category.length) {
-      i = 0;
-    }
-    print("random--->${category[i]}");
+  // static getRandomData() async {
+  //   /// 随机一个类型
+  //   Random random = Random();
+  //   var i = random.nextInt(category.length);
+  //   if (i < 0 || i > category.length) {
+  //     i = 0;
+  //   }
+  //   print("random--->${category[i]}");
 
-    BaseResult baseResult = await BookHttpUtils.get(
-        "http://gank.io/api/random/data/${category[i]}/40");
-    return baseResult;
-  }
+  //   BaseResult baseResult = await BookHttpUtils.get(
+  //       "http://gank.io/api/random/data/${category[i]}/40");
+  //   return baseResult;
+  // }
 }
 
 ///
