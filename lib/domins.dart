@@ -26,3 +26,7 @@ export 'package:book/time/domin/city_model.dart';
 ///
 export 'package:book/framework/network/base_result.dart';
 export 'package:book/gank/domin/gank_category.dart';
+
+
+export 'package:book/gank/domin/history_model.dart';
+export 'package:book/gank/domin/history.dart';

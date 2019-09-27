@@ -2,7 +2,8 @@ import 'package:book/utils/t.dart';
 import 'package:flutter/material.dart';
 import 'package:book/http.dart' show HttpImpl;
 import 'package:book/domins.dart';
-import 'package:book/widgets.dart' show PullRefreshGridState, PullRefreshList;
+import 'package:book/widgets.dart'
+    show PullRefreshGridState, PullRefreshList, BottomSheetView;
 import 'package:flutter/rendering.dart' show ScrollDirection;
 import 'package:book/styles.dart';
 import 'package:book/framework.dart' show isNotEmpty;
@@ -27,11 +28,16 @@ class _HomePageState extends State<HomePage>
 //  final _cartFabKey = GlobalKey<FlashDealCartFabState>();
 
   List<HomeBannerBean> _bannerDatas = [];
+  List<History> _historyDatas = [];
+
+  /// 为了支持 BottomSheet 可以在别的地方调用
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
     fetchBannerData();
+    fetchHistories();
   }
 
   @override
@@ -94,39 +100,81 @@ class _HomePageState extends State<HomePage>
   Widget _builderHeader(BuildContext context, int index) {
     double screenWidth = MediaQueryData.fromWindow(ui.window).size.width;
 
-    return _bannerDatas.isNotEmpty
-        ? Container(
-            height: screenWidth * 5 / 9,
-            child: Swiper(
-              onTap: (index) {
-                Navigator.pushNamed(context,
-                    "/detail?title=${_bannerDatas[index].title}&url=${_bannerDatas[index].url}");
-              },
-              pagination: SwiperPagination(alignment: Alignment.bottomRight),
-              autoplay: true,
-              itemCount: _bannerDatas.length ?? 0,
-              itemBuilder: (context, index) => Image.network(
-                _bannerDatas[index].imagePath,
-                fit: BoxFit.fill,
-                loadingBuilder: (BuildContext context, Widget child,
-                    ImageChunkEvent loadingProgress) {
-                  if (loadingProgress == null) {
-                    return child;
-                  }
-                  return Center(
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2.0,
-                      value: loadingProgress.expectedTotalBytes != null
-                          ? loadingProgress.cumulativeBytesLoaded /
-                              loadingProgress.expectedTotalBytes
-                          : null,
+    return Column(
+      children: <Widget>[
+        _bannerDatas.isNotEmpty
+            ? Container(
+                height: screenWidth * 5 / 9,
+                child: Swiper(
+                  onTap: (index) {
+                    Navigator.pushNamed(context,
+                        "/detail?title=${_bannerDatas[index].title}&url=${_bannerDatas[index].url}");
+                  },
+                  pagination:
+                      SwiperPagination(alignment: Alignment.bottomRight),
+                  autoplay: true,
+                  itemCount: _bannerDatas.length ?? 0,
+                  itemBuilder: (context, index) => Image.network(
+                    _bannerDatas[index].imagePath,
+                    fit: BoxFit.fill,
+                    loadingBuilder: (BuildContext context, Widget child,
+                        ImageChunkEvent loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child;
+                      }
+                      return Center(
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2.0,
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  loadingProgress.expectedTotalBytes
+                              : null,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              )
+            : SizedBox(),
+        _historyDatas.isNotEmpty
+            ? Container(
+                height: 40,
+                alignment: Alignment.center,
+                child: Swiper(
+                  onTap: (index) {
+                    _showBottomSheet(_historyDatas[index].eId);
+                  },
+                  autoplay: true,
+                  scrollDirection: Axis.vertical,
+                  itemCount: _historyDatas.length ?? 0,
+                  itemBuilder: (context, index) => Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0, vertical: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Expanded(
+                          child: Center(
+                            child: Text(
+                              "${_historyDatas[index].title}",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.red[500],
+                                  fontWeight: FontWeight.w500),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  );
-                },
-              ),
-            ),
-          )
-        : null;
+                  ),
+                ),
+              )
+            : SizedBox(),
+      ],
+    );
   }
 
   void _onItemClick(HomeItemBean item) {
@@ -134,12 +182,33 @@ class _HomePageState extends State<HomePage>
         context, "/detail?title=${item.title}&url=${item.link}");
   }
 
+  void _showBottomSheet(String param) {
+    showModalBottomSheet(
+      backgroundColor: Colors.transparent,
+      context: context,
+      builder: (context) => BottomSheetView(param: param),
+    );
+  }
+
+  /// 获取 banner 数据
   void fetchBannerData() async {
     List<HomeBannerBean> banners = await HttpImpl.fetchHomeBanner();
     if (banners.isNotEmpty) {
       setState(() {
         _bannerDatas.addAll(banners);
         print("banners.length--->${_bannerDatas.length}");
+      });
+    }
+  }
+
+  /// 获取历史上的今天的数据
+  void fetchHistories() async {
+    List<History> historys = await HttpImpl.getHistories('9/27');
+    print("historys.length-------->${historys.length}");
+    if (historys.isNotEmpty) {
+      setState(() {
+        _historyDatas.clear();
+        _historyDatas.addAll(historys);
       });
     }
   }

@@ -9,6 +9,7 @@ import 'package:book/http/apis.dart';
 import 'package:book/net/BaseResp.dart';
 import 'package:book/net/HttpUtils.dart';
 import 'package:book/widgets.dart' show FetchResult;
+
 /// 不区分那个 host 了，全部都在这统一整理请求方法
 ///
 ///https://juejin.im/post/5b5d782ae51d45191c7e7fb3#heading-7   json 解析
@@ -122,11 +123,11 @@ class HttpImpl {
   }
 
   /// 获取首页 banner 数据
-  static Future<List<HomeBannerBean>> fetchHomeBanner() async{
-    BaseResp baseResp =  await HttpUtils.getRequest(Api.HOME_BANNER, null, null);
+  static Future<List<HomeBannerBean>> fetchHomeBanner() async {
+    BaseResp baseResp = await HttpUtils.getRequest(Api.HOME_BANNER, null, null);
 
     BaseResp base = BaseResp.init(baseResp.data);
-    List<HomeBannerBean> banners =  HomeBannerBean.fromJsons(base.data);
+    List<HomeBannerBean> banners = HomeBannerBean.fromJsons(base.data);
     return banners;
   }
 
@@ -141,7 +142,7 @@ class HttpImpl {
       "https://api-m.mtime.cn/PageSubArea/HotPlayMovies.api?locationId=";
 
   /// 正在上映
-  static  String current_in_api =
+  static String current_in_api =
       'https://api-m.mtime.cn/Showtime/LocationMovies.api?locationId=';
 
   /// 即将上映
@@ -282,5 +283,35 @@ class HttpImpl {
       }
       T.show(msg);
     });
+  }
+
+  /// ***************************历史上的今天***************************
+  /// ***************************历史上的今天***************************
+  /// ***************************历史上的今天***************************
+  static String apiKey = '341db9ae817fafbeedb1d501301c0aff';
+  static String todayInHistory =
+      "http://v.juhe.cn/todayOnhistory/queryEvent.php?key=$apiKey&date=";
+
+  static String detailInHistory =
+      "http://v.juhe.cn/todayOnhistory/queryDetail.php?key=$apiKey&e_id=";
+
+  /// 根据输入的时间查询历史上的今天
+  /// 格式 : [month/day]
+  static Future<List<History>> getHistories(String date) async {
+    //todo 判断输入格式是否是 month/day 的格式
+    BaseResult baseResult = await BookHttpUtils.get("$todayInHistory$date");
+    HistoryModel model = HistoryModel.fromJson(baseResult.data);
+    return model.historys;
+  }
+
+  /// 历史上的今天详情
+  static Future<HistoryModel> getHistory(String id) async {
+    print("路径---$detailInHistory$id");
+
+    BaseResult baseResult = await BookHttpUtils.get("$detailInHistory$id");
+    print("baseResult======>${baseResult}");
+    
+    HistoryModel model = HistoryModel.fromJson(baseResult.data);
+    return model;
   }
 }
