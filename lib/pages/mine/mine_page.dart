@@ -1,3 +1,4 @@
+import 'package:book/utils/date_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:book/domins.dart';
 import 'package:book/http.dart' show HttpImpl;
@@ -46,7 +47,16 @@ class _MinePageState extends State<MinePage>
   }
 
   Widget _body3() => Container(
-
+      child: FlatButton(child: Icon(Icons.cloud_circle),onPressed: (){
+        var date = DateTime.now();
+        var millisecond = date.millisecondsSinceEpoch;
+        print("now=====$date");
+        print("millisecond=====$millisecond");
+        String timestamp = "${date.year.toString()}-${date.month.toString().padLeft(2,'0')}-${date.day.toString().padLeft(2,'0')} ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}";
+        print("timestamp=====$timestamp");
+        print("utils=====${DateUtils.month}/${DateUtils.day}");
+        
+      },),
   );
 
   Widget _body2() => Container(

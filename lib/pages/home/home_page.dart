@@ -1,3 +1,5 @@
+import 'package:book/utils/date_utils.dart';
+import 'package:book/utils/sp_util.dart';
 import 'package:book/utils/t.dart';
 import 'package:flutter/material.dart';
 import 'package:book/http.dart' show HttpImpl;
@@ -9,6 +11,7 @@ import 'package:book/styles.dart';
 import 'package:book/framework.dart' show isNotEmpty;
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'dart:ui' as ui;
+import 'package:book/cache.dart';
 
 // TODO title 和 subtitle 的 Text，样式各自统一的话，可以考虑分别封装不同的 Text，自带样式。
 
@@ -203,12 +206,21 @@ class _HomePageState extends State<HomePage>
 
   /// 获取历史上的今天的数据
   void fetchHistories() async {
-    List<History> historys = await HttpImpl.getHistories('9/27');
+    var date = "${DateUtils.month}/${DateUtils.day}";
+    List<History> historys = await HttpImpl.getHistories(date);
     print("historys.length-------->${historys.length}");
     if (historys.isNotEmpty) {
+      // 本地缓存
+      Cache.cacheHomeHistorys(historys);
       setState(() {
         _historyDatas.clear();
         _historyDatas.addAll(historys);
+      });
+    } else {
+      var list = Cache.getHomeHistorys();
+      setState(() {
+        _historyDatas.clear();
+        _historyDatas.addAll(list);
       });
     }
   }

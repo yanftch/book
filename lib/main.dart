@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:book/pages/test_page.dart';
+import 'package:book/utils/sp_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'styles.dart';
@@ -7,7 +10,14 @@ import 'framework.dart';
 
 /// 当做入口，只提供路由跳转
 ///
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
+void main() async {
+  /// todo 提出去，将一些初始化的操作放到单独类里边
+  /// 
+  SpUtil.getInstance();
+
+  runZoned(() async => runApp(MyApp()));
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -112,10 +122,7 @@ class MyApp extends StatelessWidget {
       case '/select_city':
         return _buildRootRoute(settings, (_) => SelectCityPage());
       case '/test':
-        return _buildRootRoute(
-            settings,
-            (_) => TestPage(
-                ));
+        return _buildRootRoute(settings, (_) => TestPage());
       default:
         return null;
     }
