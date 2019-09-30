@@ -10,16 +10,16 @@ import 'framework.dart';
 
 /// 当做入口，只提供路由跳转
 ///
-// void main() => runApp(MyApp());
+// void main() => runApp(Entrance());
 void main() async {
   /// todo 提出去，将一些初始化的操作放到单独类里边
   /// 
   SpUtil.getInstance();
 
-  runZoned(() async => runApp(MyApp()));
+  runZoned(() async => runApp(Entrance()));
 }
 
-class MyApp extends StatelessWidget {
+class Entrance extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) => MaterialApp(
