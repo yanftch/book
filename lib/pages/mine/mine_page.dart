@@ -1,3 +1,4 @@
+import 'package:book/framework/channels/app.dart';
 import 'package:book/utils/date_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:book/domins.dart';
@@ -10,7 +11,7 @@ class MinePage extends StatefulWidget {
 }
 
 class _MinePageState extends State<MinePage>
-    with AutomaticKeepAliveClientMixin {
+    with AutomaticKeepAliveClientMixin, AppChannels {
   final _key = GlobalKey();
 
   @override
@@ -55,6 +56,8 @@ class _MinePageState extends State<MinePage>
         String timestamp = "${date.year.toString()}-${date.month.toString().padLeft(2,'0')}-${date.day.toString().padLeft(2,'0')} ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}";
         print("timestamp=====$timestamp");
         print("utils=====${DateUtils.month}/${DateUtils.day}");
+
+        showNativeToast(message: "Flutter 调用了原生的 toast");
         
       },),
   );
