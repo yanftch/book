@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.yanftch.book.DeepLinkHelper
+import com.yanftch.book.utils.ShareUtils
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import javax.inject.Inject
@@ -23,28 +24,33 @@ import javax.inject.Inject
 @SuppressLint("LongLogTag")
 class AppMethodCallHandler @Inject constructor(private val context: Context) : MethodChannel.MethodCallHandler {
 
-
     private var pendingResult: MethodChannel.Result? = null
 
     override fun onMethodCall(methodCall: MethodCall, result: MethodChannel.Result) {
-        val method = methodCall.method
 
-        val isPending = when (method) {
-            "open" -> onOpenPage(methodCall, result)
-            "toast" -> showToasts(methodCall, result)
+        val isPending = when (methodCall.method ?: "") {
+            _M_OPEN -> onOpenPage(methodCall, result)
+            _M_TOAST -> showToasts(methodCall, result)
+            _M_SHARE -> share(methodCall, result)
             else -> {
                 result.notImplemented()
                 false
             }
         }
         if (isPending) pendingResult = result
+    }
 
+    private fun share(methodCall: MethodCall, result: MethodChannel.Result): Boolean {
+        val args = methodCall.arguments as? Map<*, *> ?: return false
+        val content = args["content"] as String
+        Log.e("debug_AppMethodCallHandler", "share: share content--->$content")
+        ShareUtils.nativeShare(context, content)
+        return false
     }
 
     private fun showToasts(methodCall: MethodCall, result: MethodChannel.Result): Boolean {
         val args = methodCall.arguments as? Map<*, *> ?: return false
         val msg = args["message"] as String
-
         Log.e("debug_AppMethodCallHandler", "showToasts: 调用了原生的 toast, 内容是：$msg")
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
         return false
@@ -93,6 +99,13 @@ class AppMethodCallHandler @Inject constructor(private val context: Context) : M
 
         private const val TRACKER_GA = 0
         private const val TRACKER_FIREBASE = 1
+
+        // 定义与 flutter 交互的 key
+
+        val _M_OPEN = "open"
+        val _M_TOAST = "toast"
+        val _M_SHARE = "share"
+
     }
 
 }
