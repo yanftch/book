@@ -5,9 +5,7 @@ import 'package:book/framework/widgets/pull_refresh.dart';
 import 'dart:async';
 import 'package:book/utils/t.dart';
 import 'package:dio/dio.dart';
-import 'package:book/http/apis.dart';
-import 'package:book/net/BaseResp.dart';
-import 'package:book/net/HttpUtils.dart';
+import 'package:book/http/WanAndroidBaseResp.dart';
 import 'package:book/widgets.dart' show FetchResult;
 
 /// 不区分那个 host 了，全部都在这统一整理请求方法
@@ -105,6 +103,8 @@ class HttpImpl {
   /// ***************************玩 Android***************************
   /// ***************************玩 Android***************************
   ///
+  static const String API_WANANDROID_HOST = 'http://www.wanandroid.com';
+  static const String API_WANANDROID_HOME_BANNER = '$API_WANANDROID_HOST/banner/json';
 
   /// 获取首页列表数据
   /// @param page 分页页码
@@ -114,19 +114,16 @@ class HttpImpl {
   ]) async {
     page = isIncremental ? (page + 1) : 0;
     print("isIncremental-------->$isIncremental");
-    BaseResp baseResp = await HttpUtils.getRequest(
-        "article/list/" + page.toString() + "/json", null, null,
-        showLoading: true);
-    BaseResp ta = BaseResp.init(baseResp.data);
+    BaseResult baseResult = await BookHttpUtils.get("$API_WANANDROID_HOST/article/list/" + page.toString() + "/json");
+    WanAndroidBaseResp ta = WanAndroidBaseResp.init(baseResult.data);
     HomeBean homeBean = HomeBean.fromJson(ta.data);
     return FetchResult<HomeItemBean>(homeBean.datas, true);
   }
 
   /// 获取首页 banner 数据
   static Future<List<HomeBannerBean>> fetchHomeBanner() async {
-    BaseResp baseResp = await HttpUtils.getRequest(Api.HOME_BANNER, null, null);
-
-    BaseResp base = BaseResp.init(baseResp.data);
+    BaseResult baseResult = await BookHttpUtils.get(API_WANANDROID_HOME_BANNER);
+    WanAndroidBaseResp base = WanAndroidBaseResp.init(baseResult.data);
     List<HomeBannerBean> banners = HomeBannerBean.fromJsons(base.data);
     return banners;
   }
