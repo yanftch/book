@@ -1,4 +1,4 @@
-package com.yanftch.book
+package com.yanftch.book.test
 
 import android.content.Context
 import android.content.Intent
@@ -9,9 +9,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.yanftch.book.Constants.EXTRA_ID
 import com.yanftch.book.utils.BaseUtils.isNotEmpty
-import org.jetbrains.anko.UI
-import org.jetbrains.anko.textView
-import org.jetbrains.anko.verticalLayout
+import org.jetbrains.anko.*
+import org.jetbrains.anko.sdk15.listeners.onClick
+import javax.inject.Inject
 
 /**
  *
@@ -24,6 +24,10 @@ import org.jetbrains.anko.verticalLayout
 class TestActivity : AppCompatActivity() {
 
     var testId: String? = null
+
+    @Inject
+    lateinit var student: Student
+
 
     companion object {
         fun handleDeepLink(context: Context, uri: Uri): Intent? {
@@ -48,6 +52,8 @@ class TestActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //新添代码
+        DaggerBaseComponent.builder().baseModule(BaseModule(this)).build().inject(this)
         handleIntent()
         setContentView(createView())
     }
@@ -58,6 +64,14 @@ class TestActivity : AppCompatActivity() {
             textView { text = "测试页面..." }
             textView {
                 text = "传过来的 id 是：$testId"
+            }
+            button {
+                text = "Student"
+                onClick {
+                    toast("click student: ${student.toString()}")
+
+
+                }
             }
         }
     }.view
