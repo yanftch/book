@@ -24,6 +24,7 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
@@ -42,12 +43,18 @@ android {
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath false
             }
         }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
 
     buildTypes {
@@ -64,13 +71,33 @@ flutter {
 }
 
 dependencies {
-
-    kapt "com.google.dagger:dagger-compiler:2.16"
-    implementation "com.google.dagger:dagger:2.16"
-    annotationProcessor "com.google.dagger:dagger-compiler:2.16"
+    kapt deps.dagger.compiler
+    implementation deps.dagger.core
 
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation deps.support.appcompat
+    implementation deps.support.fragment
+    implementation deps.support.annotations
+    implementation deps.support.multidex
+    implementation deps.support.design
+    implementation deps.support.recyclerview
+    implementation deps.support.cardview
+    implementation deps.support.gridlayout
+    implementation deps.support.percent // TODO remove percent layouts
+    implementation deps.support.transition
+    implementation deps.constraint_layout
+
+
+
+    implementation deps.kotlin.stdlib
+    implementation deps.anko.core
+    implementation deps.anko.listeners
+    implementation deps.anko.design
+    implementation deps.anko.cardview
+    implementation deps.anko.recyclerview
+    implementation(deps.anko.constraint_layout) {
+        exclude group: 'org.jetbrains.kotlin'
+    }
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'

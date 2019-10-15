@@ -17,7 +17,8 @@ class MainActivity : FlutterActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        appChannelHandler = AppMethodCallHandler(applicationContext)
+        // TODO: 2019-10-15  不能直接引用 this 易造成内存泄漏， 暂时使用 ，
+        appChannelHandler = AppMethodCallHandler(this)
         GeneratedPluginRegistrant.registerWith(this)
         MethodChannel(flutterView, CHANNEL_APP).setMethodCallHandler(appChannelHandler)
 

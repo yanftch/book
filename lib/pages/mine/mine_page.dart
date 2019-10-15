@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:book/domins.dart';
 import 'package:book/http.dart' show HttpImpl;
 import 'package:book/widgets.dart';
+
 ///
 class MinePage extends StatefulWidget {
   @override
@@ -26,7 +27,8 @@ class _MinePageState extends State<MinePage>
     _future = getRandomDataCopy();
     _pageRequest = getRandomDataCopy2;
   }
-  var list  = ["111111","222222","333333","444444"];
+
+  var list = ["111111", "222222", "333333", "444444"];
 
   @override
   Widget build(BuildContext context) {
@@ -48,19 +50,32 @@ class _MinePageState extends State<MinePage>
   }
 
   Widget _body3() => Container(
-      child: FlatButton(child: Icon(Icons.cloud_circle),onPressed: (){
-        var date = DateTime.now();
-        var millisecond = date.millisecondsSinceEpoch;
-        print("now=====$date");
-        print("millisecond=====$millisecond");
-        String timestamp = "${date.year.toString()}-${date.month.toString().padLeft(2,'0')}-${date.day.toString().padLeft(2,'0')} ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}";
-        print("timestamp=====$timestamp");
-        print("utils=====${DateUtils.month}/${DateUtils.day}");
+        child: Column(
+          children: <Widget>[
+            FlatButton(
+              child: Icon(Icons.cloud_circle),
+              onPressed: () {
+                var date = DateTime.now();
+                var millisecond = date.millisecondsSinceEpoch;
+                print("now=====$date");
+                print("millisecond=====$millisecond");
+                String timestamp =
+                    "${date.year.toString()}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')} ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}";
+                print("timestamp=====$timestamp");
+                print("utils=====${DateUtils.month}/${DateUtils.day}");
 
-        showNativeToast(message: "Flutter 调用了原生的 toast");
-        
-      },),
-  );
+                showNativeToast(message: "Flutter 调用了原生的 toast");
+              },
+            ),
+            InkWell(
+              child: Text("open native page : book://test_page?id=998877"),
+              onTap: () {
+                openAppPage(url: "book://test_page?id=998877");
+              },
+            )
+          ],
+        ),
+      );
 
   Widget _body2() => Container(
         alignment: Alignment.center,

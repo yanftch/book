@@ -1,8 +1,14 @@
 package com.yanftch.book.flutter
 
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.yanftch.book.DeepLinkHelper
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import javax.inject.Inject
@@ -13,7 +19,9 @@ import javax.inject.Inject
  * Time : 15:28
  * Desc : Flutter 与原生交互的通道
  */
-class AppMethodCallHandler @Inject constructor(val context: Context) : MethodChannel.MethodCallHandler {
+
+@SuppressLint("LongLogTag")
+class AppMethodCallHandler @Inject constructor(private val context: Context) : MethodChannel.MethodCallHandler {
 
 
     private var pendingResult: MethodChannel.Result? = null
@@ -51,16 +59,40 @@ class AppMethodCallHandler @Inject constructor(val context: Context) : MethodCha
             result.success(null)
             return false
         }
-        var intent = null
-//        val intent = DeepLinkHelper.getDeepLinkIntent(theContext, Uri.parse(url), 0)
+        val intent = DeepLinkHelper.getDeepLinkIntent(context, Uri.parse(url), 0)
         return if (intent != null) {
             // 打开指定页面，并尝试把结果返回给Flutter
-//            startActivityForResult(intent, REQ_RETURN_RESULT)
+            startActivityForResult(intent, REQ_RETURN_RESULT)
             true
         } else {
             result.success(null)
             false
         }
+    }
+
+    // TODO: 2019-10-15 提出去，不要放在这
+    protected fun startActivityForResult(intent: Intent, requestCode: Int) {
+        if (context is Activity) {
+            context.startActivityForResult(intent, requestCode)
+        } else if (context is android.app.Fragment) {
+            (context as android.app.Fragment).startActivityForResult(intent, requestCode)
+        } else if (context is Fragment) {
+            (context as Fragment).startActivityForResult(intent, requestCode)
+        } else {
+            throw IllegalStateException("failed to start activity from the context $context")
+        }
+    }
+
+
+    companion object {
+        private val apiUrlPattern = """^https?://(.*)/api(/v\d+)?$""".toPattern()
+
+        private const val REQ_RETURN_RESULT = 50001
+        private const val RESULT_OK = 0
+        private const val RESULT_CANCELLED = 1
+
+        private const val TRACKER_GA = 0
+        private const val TRACKER_FIREBASE = 1
     }
 
 }
