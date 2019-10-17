@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:book/domins.dart';
 import 'package:book/http.dart' show HttpImpl;
 import 'package:book/widgets.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 ///
 class MinePage extends StatefulWidget {
@@ -45,8 +46,35 @@ class _MinePageState extends State<MinePage>
           )
         ],
       ),
-      body: _body3(),
+      body: _buildBody(),
     );
+  }
+
+  // todo 根据是否登录来判断是否显示 user info page
+  var hasLoging = false;
+
+  Widget _buildBody() => hasLoging ? Container() : _buildUnLoginWidget();
+
+  Widget _buildLoginWidget() => null;
+
+  Widget _buildUnLoginWidget() => Container(
+        child: Column(
+          children: <Widget>[
+            Text("尚未登录，点此去登录~",
+                style: TextStyle(fontSize: 32.0, color: Colors.black87)),
+                RoundLinearProgressIndicator(value: 0.8,),
+          ],
+        ),
+        alignment: Alignment.center,
+      );
+
+  void requestPermissions() async {
+    Map<PermissionGroup, PermissionStatus> permissions =
+        await PermissionHandler().requestPermissions([PermissionGroup.camera]);
+
+    permissions.forEach((p, status) {
+      print("PermissionGroup--->${p}    status======>$status");
+    });
   }
 
   Widget _body3() => Container(
@@ -68,9 +96,18 @@ class _MinePageState extends State<MinePage>
               },
             ),
             InkWell(
-              child: Text("open native page : book://test_page?id=998877"),
+              child: Text(
+                "open native page : book://test_page?id=998877",
+                style: TextStyle(fontSize: 20.0),
+              ),
               onTap: () {
                 openAppPage(url: "book://test_page?id=998877");
+              },
+            ),
+            FlatButton(
+              child: Text("permission for camera"),
+              onPressed: () {
+                requestPermissions();
               },
             )
           ],
