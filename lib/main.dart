@@ -121,6 +121,8 @@ class Entrance extends StatelessWidget {
         return _buildRootRoute(settings, (_) => CollectionPage());
       case '/select_city':
         return _buildRootRoute(settings, (_) => SelectCityPage());
+        case '/login':
+        return _buildRootRoute(settings, (_) => LoginPage());
       case '/test':
         return _buildRootRoute(settings, (_) => TestPage());
       default:

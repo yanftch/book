@@ -48,6 +48,8 @@ dependencies:
   cached_network_image: ^1.1.1
   # 数据库存储
   sqflite: ^1.1.6+5
+  # APP 端权限处理
+  permission_handler: ^3.2.2
 
 dev_dependencies:
   flutter_test:

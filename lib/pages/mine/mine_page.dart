@@ -60,9 +60,16 @@ class _MinePageState extends State<MinePage>
   Widget _buildUnLoginWidget() => Container(
         child: Column(
           children: <Widget>[
-            Text("尚未登录，点此去登录~",
+            InkWell(
+              child: Text("尚未登录，点此去登录~",
                 style: TextStyle(fontSize: 32.0, color: Colors.black87)),
-                RoundLinearProgressIndicator(value: 0.8,),
+                onTap: (){
+                  Navigator.pushNamed(context, "login");
+                },
+            ),
+            RoundLinearProgressIndicator(
+              value: 0.8,
+            ),
           ],
         ),
         alignment: Alignment.center,
