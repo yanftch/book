@@ -1,4 +1,4 @@
-import 'history.dart';
+import 'package:book/domin/history.dart';
 
 class HistoryModel {
   String reason;
