@@ -50,6 +50,26 @@ dependencies:
   sqflite: ^1.1.6+5
   # APP 端权限处理
   permission_handler: ^3.2.2
+    # 刷新加载控件
+  flutter_easyrefresh: ^2.0.4
+  flutter_html: ^0.10.4
+  # 引导页
+  intro_slider: ^2.2.8
+  # 处理键盘事件
+  keyboard_actions: ^2.1.2
+  # 异步
+  rxdart: ^0.22.3
+
+  # 集成图标库
+  # FontAwesome 地址：http://www.fontawesome.com.cn/
+  # Feather 地址：https://feathericons.com/
+  # EvilIcons 地址：https://evil-icons.io/
+  # AntDesign 地址：https://ant.design/components/icon/
+  # Ionicons 地址：https://ionicons.com
+  # Fontisto 地址：https://fontisto.com/icons
+  # Foundation 地址：https://zurb:com/playground/foundation-icon-fonts-3
+  # Octicons 地址：https://octicons.github.com/
+  # SimpleLineIcons 地址：https://simplelineicons.github.io/
 
 dev_dependencies:
   flutter_test:

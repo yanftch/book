@@ -16,7 +16,7 @@ export 'time/more_detail_page.dart';
 export 'time/play_page.dart';
 export 'time/image_gallery_page.dart';
 export 'time/select_city_page.dart';
-export 'wanandroid/login/login_page.dart';
+export 'wanandroid/login/password_login_page.dart';
 
 /// gank pages
 export 'gank/gank_home_page.dart';
