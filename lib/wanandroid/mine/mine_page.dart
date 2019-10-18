@@ -39,9 +39,9 @@ class _MinePageState extends State<MinePage>
         centerTitle: true,
         actions: <Widget>[
           FlatButton(
-            child: Text("click==$total"),
+            child: Text("demo"),
             onPressed: () {
-              Navigator.pushNamed(context, '/test');
+              Navigator.pushNamed(context, '/widgets_for_week');
             },
           )
         ],

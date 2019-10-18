@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:book/demo/widgets/w_button.dart';
 import 'package:book/wanandroid/test_page.dart';
 import 'package:book/utils/sp_util.dart';
 import 'package:flutter/cupertino.dart';
@@ -95,6 +96,8 @@ class Entrance extends StatelessWidget {
         return _buildRootRoute(settings, (_) => WidgetsListPage());
       case '/widgets_for_text':
         return _buildRootRoute(settings, (_) => WidgetText());
+        case '/widgets_for_button':
+        return _buildRootRoute(settings, (_) => WidgetButton());
       case '/detail':
         return _buildRootRoute(
             settings,
