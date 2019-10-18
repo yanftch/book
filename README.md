@@ -1,16 +1,14 @@
 # book
 
-A new Flutter application.
+A Flutter application.
 
-## Getting Started
+参考 wanandroid gankIo  时光网  api 的练手 Flutter 项目。
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+关于 dart 文件的引用，参考***，统一封装引用
+- 所有的业务无关的 widget，统一使用 widgets.dart 管理
+- 所有的工具类(理论上来说都业务无关)，统一使用 utils.dart 管理
+- 所有的样式，统一使用 styles.dart 管理
+- 所有的页面，统一使用 screens.dart 管理
+- model 类，统一使用 domins.dart 管理
