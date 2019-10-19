@@ -6,6 +6,7 @@ import 'package:book/utils/sp_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'demo/widgets/w_webview.dart';
 import 'styles.dart';
 import 'screens.dart';
 import 'framework.dart';
@@ -98,6 +99,8 @@ class Entrance extends StatelessWidget {
         return _buildRootRoute(settings, (_) => WidgetText());
         case '/widgets_for_button':
         return _buildRootRoute(settings, (_) => WidgetButton());
+         case '/widgets_for_week_webview':
+        return _buildRootRoute(settings, (_) => WidgetWebview());
       case '/detail':
         return _buildRootRoute(
             settings,

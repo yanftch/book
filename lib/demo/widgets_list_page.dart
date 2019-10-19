@@ -49,7 +49,16 @@ class _WidgetsListPageState extends State<WidgetsListPage> {
               trailing: Icon(Icons.web, color: randomColor()),
             ),
             onTap: () {
-              Navigator.pushNamed(context, "/widgets_for_button");
+              Navigator.pushNamed(context, "/widgets_for_week_webview");
+            },
+          ),
+           InkWell(
+            child: ListTile(
+              title: Text("WebView 与 JS 交互"),
+              trailing: Icon(Icons.web, color: randomColor()),
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, "/widgets_for_week_webview");
             },
           )
         ],
