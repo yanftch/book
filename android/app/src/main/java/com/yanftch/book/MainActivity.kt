@@ -10,14 +10,13 @@ class MainActivity : FlutterActivity() {
 
     companion object {
         const val CHANNEL_APP = "book/app"
-
     }
 
     lateinit var appChannelHandler: AppMethodCallHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // TODO: 2019-10-15  不能直接引用 this 易造成内存泄漏， 暂时使用 ，
+        // TODO: 2019-10-15  不能直接引用 this 易造成内存泄漏， 暂时使用 ，后续完善
         appChannelHandler = AppMethodCallHandler(this)
         GeneratedPluginRegistrant.registerWith(this)
         MethodChannel(flutterView, CHANNEL_APP).setMethodCallHandler(appChannelHandler)

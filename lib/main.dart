@@ -1,9 +1,12 @@
 import 'dart:async';
 
-import 'package:book/pages/test_page.dart';
+import 'package:book/demo/widgets/w_button.dart';
+import 'package:book/wanandroid/test_page.dart';
 import 'package:book/utils/sp_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'demo/widgets/w_webview.dart';
 import 'styles.dart';
 import 'screens.dart';
 import 'framework.dart';
@@ -15,6 +18,12 @@ void main() async {
   /// todo 提出去，将一些初始化的操作放到单独类里边
   /// 
   SpUtil.getInstance();
+    if (isAndroid) {
+        // 以下两行 设置android状态栏为透明的沉浸。写在组件渲染之后，是为了在渲染后进行set赋值，覆盖状态栏，写在渲染之前MaterialApp组件会覆盖掉这个值。
+        SystemUiOverlayStyle systemUiOverlayStyle =
+            SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+        SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+      }
 
   runZoned(() async => runApp(Entrance()));
 }
@@ -88,6 +97,10 @@ class Entrance extends StatelessWidget {
         return _buildRootRoute(settings, (_) => WidgetsListPage());
       case '/widgets_for_text':
         return _buildRootRoute(settings, (_) => WidgetText());
+        case '/widgets_for_button':
+        return _buildRootRoute(settings, (_) => WidgetButton());
+         case '/widgets_for_week_webview':
+        return _buildRootRoute(settings, (_) => WidgetWebview());
       case '/detail':
         return _buildRootRoute(
             settings,
@@ -121,6 +134,8 @@ class Entrance extends StatelessWidget {
         return _buildRootRoute(settings, (_) => CollectionPage());
       case '/select_city':
         return _buildRootRoute(settings, (_) => SelectCityPage());
+        case '/login':
+        return _buildRootRoute(settings, (_) => PasswordLoginPage());
       case '/test':
         return _buildRootRoute(settings, (_) => TestPage());
       default:

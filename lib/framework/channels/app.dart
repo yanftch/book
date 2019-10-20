@@ -1,4 +1,3 @@
-
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter/rendering.dart' show ScrollDirection;
 import 'package:flutter/services.dart' show MethodChannel, EventChannel;
@@ -12,12 +11,11 @@ import '../consts.dart';
 /// TODO 由于数据涉及到App层面的东西，简化起见，虽然[AppChannels]定义在framework模块，
 /// 但原生层是在App层面实现的，并非由framework模块独立提供，后续想办法拆分
 mixin AppChannels {
-
-  
   static const RESULT_OK = 0;
   static const RESULT_CANCELLED = 1;
 
   static const _M_OPEN_PAGE = 'open';
+  static const _M_NATIVE_SHARE = 'share';
   static const _M_SHOW_TOAST = 'toast';
   static const _M_FINISH_PAGE = 'finish';
   static const _M_GET_SESSION = 'session';
@@ -45,27 +43,35 @@ mixin AppChannels {
     @required String url,
     bool isPresenting,
     Map<String, dynamic> args,
-  }) => _appChannel.invokeMethod(_M_OPEN_PAGE, <String, dynamic>{
-    'url': url,
-    'args': args,
-    if (isPresenting == true) 'present': isPresenting,
-  });
+  }) =>
+      _appChannel.invokeMethod(_M_OPEN_PAGE, <String, dynamic>{
+        'url': url,
+        'args': args,
+        if (isPresenting == true) 'present': isPresenting,
+      });
 
-  Future<dynamic> showNativeToast({@required String message, Map<String, dynamic> args})  =>
-  _appChannel.invokeMethod(_M_SHOW_TOAST, <String, dynamic> {
-        'message' : message,
-        'args': args
-  });
+  /// 调用原生分享
+  Future<dynamic> nativeShare(
+          {@required String message, Map<String, dynamic> args}) =>
+      _appChannel.invokeMethod(
+          _M_NATIVE_SHARE, <String, dynamic>{'content': message, 'args': args});
+
+  Future<dynamic> showNativeToast(
+          {@required String message, Map<String, dynamic> args}) =>
+      _appChannel.invokeMethod(
+          _M_SHOW_TOAST, <String, dynamic>{'message': message, 'args': args});
 
   /// 使用原生新窗口打开另一个flutter页面, 使用通用的deeplink: `fivemiles://flt`
-  Future<dynamic> newFlutterWindow(String route, {
+  Future<dynamic> newFlutterWindow(
+    String route, {
     bool isPresenting,
     Map<String, dynamic> args,
-  }) => openAppPage(
-    url: "fivemiles://flt?url=${Uri.encodeComponent(route)}",
-    isPresenting: isPresenting,
-    args: args,
-  );
+  }) =>
+      openAppPage(
+        url: "fivemiles://flt?url=${Uri.encodeComponent(route)}",
+        isPresenting: isPresenting,
+        args: args,
+      );
 
   /// 关闭当前页面(即退出当前Flutter app), 并可向native层传递数据.
   ///
@@ -74,40 +80,41 @@ mixin AppChannels {
   Future<void> finishCurrPage({
     int code = RESULT_CANCELLED,
     Map<String, dynamic> data,
-  }) => _appChannel.invokeMethod(_M_FINISH_PAGE, <String, dynamic>{
-    'code': code,
-    'data': data,
-  });
+  }) =>
+      _appChannel.invokeMethod(_M_FINISH_PAGE, <String, dynamic>{
+        'code': code,
+        'data': data,
+      });
 
   /// 通过 key 获取用户本地存储的(JSON String).
-  Future<String> getConfigs({String key}) => _appChannel.invokeMethod(_M_GET_CONFIG, key)
-    .then((json) => json);
+  Future<String> getConfigs({String key}) =>
+      _appChannel.invokeMethod(_M_GET_CONFIG, key).then((json) => json);
 
   /// 获取指定广告位[adSlotKey]的广告id
   Future<String> getAdId(String adSlotKey) => _appChannel
-    .invokeMethod(_M_AD_ID, adSlotKey)
-    .then((id) => id?.toString() ?? "");
+      .invokeMethod(_M_AD_ID, adSlotKey)
+      .then((id) => id?.toString() ?? "");
 
-
-
-  Future<void> requestShare(String templateName, String fullUrl, String type, String objectId, String objectTitle, Map<String, dynamic> data) =>
-    _appChannel.invokeMethod(_M_SHARE, <String, dynamic>{
-      'templateName': templateName,
-      'fullUrl': fullUrl,
-      'type': type,
-      'objectId': objectId,
-      'objectTitle': objectTitle,
-      'data': data,
-    });
+  Future<void> requestShare(String templateName, String fullUrl, String type,
+          String objectId, String objectTitle, Map<String, dynamic> data) =>
+      _appChannel.invokeMethod(_M_SHARE, <String, dynamic>{
+        'templateName': templateName,
+        'fullUrl': fullUrl,
+        'type': type,
+        'objectId': objectId,
+        'objectTitle': objectTitle,
+        'data': data,
+      });
 
   /// 向原生层发送广播消息, [code]为唯一标示, 可携带附加数据[data]
-  Future<void> broadcast(FmMsgCode code, [
+  Future<void> broadcast(
+    FmMsgCode code, [
     Map<String, dynamic> data,
-  ]) => _appChannel.invokeMethod(_M_BROADCAST, <String, dynamic>{
-    'code': code.index,
-    'data': data,
-  })
-  .catchError((e) => debugPrint("broadcast failed: $e"));
+  ]) =>
+      _appChannel.invokeMethod(_M_BROADCAST, <String, dynamic>{
+        'code': code.index,
+        'data': data,
+      }).catchError((e) => debugPrint("broadcast failed: $e"));
 
   /// 向原生层发送`onScroll`事件
   Future<void> broadcastOnScroll(ScrollPosition position) {

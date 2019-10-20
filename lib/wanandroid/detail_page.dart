@@ -1,3 +1,4 @@
+import 'package:book/framework/channels/app.dart';
 import 'package:book/utils/collection_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
@@ -20,7 +21,7 @@ class DetailPage extends StatefulWidget {
   _DetailPageState createState() => new _DetailPageState();
 }
 
-class _DetailPageState extends State<DetailPage> {
+class _DetailPageState extends State<DetailPage> with AppChannels {
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
 
   bool isLoading = true;
@@ -98,10 +99,13 @@ class _DetailPageState extends State<DetailPage> {
           ),
           GestureDetector(
             child: Container(
-              child: Icon(Icons.apps),
+              child: Icon(Icons.share),
               margin: EdgeInsets.only(right: 10.0, left: 10.0),
             ),
-            onTap: () {},
+            onTap: () {
+              showNativeToast(message: "preparing content...");
+              nativeShare(message: "我发现了一个有意思的东西, 一起来看看吧~\r\n ${widget.title} \r\n ${widget.url}");
+            },
           ),
         ],
       ),
