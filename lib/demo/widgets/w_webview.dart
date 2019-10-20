@@ -12,8 +12,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 class WidgetWebview extends StatefulWidget {
   String remoteUrl = "https://www.jianshu.com/p/a110b6a11e2f";
   String localUrl = "assets/html/login.html";
-  bool useWebviewFlutter = true; // 是否使用 flutter 提供的插件
-  String title;
+  bool useWebviewFlutter = false; // 是否使用 flutter 提供的插件
+  String title = "";
 
   @override
   _WidgetWebviewState createState() =>
@@ -23,6 +23,58 @@ class WidgetWebview extends StatefulWidget {
 /// 方便将两个插件放在一起对比~
 abstract class _WidgetWebviewState extends State<WidgetWebview> {}
 
+/// flutter_webview_plugin 的使用
+class _FlutterWebViewPluginState extends _WidgetWebviewState {
+  FlutterWebviewPlugin flutterWebviewPlugin;
+
+  @override
+  void initState() {
+    widget.title = "FlutterWebviewPlugin 与 JS 交互";
+    flutterWebviewPlugin = new FlutterWebviewPlugin();
+
+    super.initState();
+    flutterWebviewPlugin.onStateChanged.listen((state) {
+      debugPrint('state:_' + state.type.toString());
+      if (state.type == WebViewState.finishLoad) {
+        // 加载完成
+        setState(() {});
+      } else if (state.type == WebViewState.startLoad) {
+        setState(() {});
+      }
+    });
+  }
+
+  /// 加载本地 HTML 文件
+  Future<String> _loadHtmlFile() async {
+    return await rootBundle.loadString(widget.localUrl);
+  }
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder(
+        future: _loadHtmlFile(),
+        builder: (context, snapshot) => WebviewScaffold(
+          appBar: AppBar(
+            title: Text(widget.title),
+            actions: <Widget>[
+              InkWell(
+                child: Icon(Icons.share),
+                onTap: () {
+                  /// Flutter 调用 JS 的方法
+                  flutterWebviewPlugin.evalJavascript(
+                      "flutterCallJsMethod('message from Flutter!(flutter_webview_plugin)')");
+                },
+              )
+            ],
+          ),
+          url: new Uri.dataFromString(snapshot.data,
+                  mimeType: 'text/html', encoding: Encoding.getByName('utf-8'))
+              .toString(),
+          withJavascript: true,
+        ),
+      );
+}
+
+/// Flutter 官方插件 webview_flutter 的使用
 class _WebviewFlutterState extends _WidgetWebviewState {
   WebViewController _webViewController;
   @override
@@ -64,8 +116,10 @@ class _WebviewFlutterState extends _WidgetWebviewState {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: (){
-          _webViewController.evaluateJavascript("flutterCallJsMethod('message from Flutter!')");
+        onPressed: () {
+          /// 调用 JS 的方法
+          _webViewController.evaluateJavascript(
+              "flutterCallJsMethod('message from Flutter!')");
         },
       ),
     );
@@ -91,17 +145,6 @@ class _WebviewFlutterState extends _WidgetWebviewState {
   /// 加载本地 HTML 文件
   Future<String> _loadHtmlFile() async {
     return await rootBundle.loadString(widget.localUrl);
-  }
-}
-
-class _FlutterWebViewPluginState extends _WidgetWebviewState {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("FlutterWebViewPlugin 与 JS 交互"),
-      ),
-    );
   }
 }
 
