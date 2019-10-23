@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'SystemTreeBean.dart';
+part of 'system_tree_bean.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

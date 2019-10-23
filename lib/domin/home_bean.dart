@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'HomeBean.g.dart';
+part 'home_bean.g.dart';
 
 @JsonSerializable()
 class HomeBean {

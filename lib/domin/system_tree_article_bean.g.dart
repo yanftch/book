@@ -1,44 +1,41 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'NavigationBean.dart';
+part of 'system_tree_article_bean.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-NavigationBean _$NavigationBeanFromJson(Map<String, dynamic> json) {
-  return NavigationBean(
-    data: (json['data'] as List)
+SystemTreeArticleBean _$SystemTreeArticleBeanFromJson(
+    Map<String, dynamic> json) {
+  return SystemTreeArticleBean(
+    curPage: json['curPage'] as int,
+    offset: json['offset'] as int,
+    over: json['over'] as bool,
+    pageCount: json['pageCount'] as int,
+    size: json['size'] as int,
+    total: json['total'] as int,
+    datas: (json['datas'] as List)
         ?.map((e) =>
-            e == null ? null : NaviBean.fromJson(e as Map<String, dynamic>))
+            e == null ? null : DatasBean.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
 
-Map<String, dynamic> _$NavigationBeanToJson(NavigationBean instance) =>
+Map<String, dynamic> _$SystemTreeArticleBeanToJson(
+        SystemTreeArticleBean instance) =>
     <String, dynamic>{
-      'data': instance.data,
+      'curPage': instance.curPage,
+      'offset': instance.offset,
+      'over': instance.over,
+      'pageCount': instance.pageCount,
+      'size': instance.size,
+      'total': instance.total,
+      'datas': instance.datas,
     };
 
-NaviBean _$NaviBeanFromJson(Map<String, dynamic> json) {
-  return NaviBean(
-    cid: json['cid'] as int,
-    name: json['name'] as String,
-    articles: (json['articles'] as List)
-        ?.map((e) =>
-            e == null ? null : ArticlesBean.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-  );
-}
-
-Map<String, dynamic> _$NaviBeanToJson(NaviBean instance) => <String, dynamic>{
-      'cid': instance.cid,
-      'name': instance.name,
-      'articles': instance.articles,
-    };
-
-ArticlesBean _$ArticlesBeanFromJson(Map<String, dynamic> json) {
-  return ArticlesBean(
+DatasBean _$DatasBeanFromJson(Map<String, dynamic> json) {
+  return DatasBean(
     apkLink: json['apkLink'] as String,
     author: json['author'] as String,
     chapterId: json['chapterId'] as int,
@@ -64,8 +61,7 @@ ArticlesBean _$ArticlesBeanFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$ArticlesBeanToJson(ArticlesBean instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$DatasBeanToJson(DatasBean instance) => <String, dynamic>{
       'apkLink': instance.apkLink,
       'author': instance.author,
       'chapterId': instance.chapterId,

@@ -16,14 +16,14 @@ import 'framework.dart';
 // void main() => runApp(Entrance());
 void main() async {
   /// todo 提出去，将一些初始化的操作放到单独类里边
-  /// 
+  ///
   SpUtil.getInstance();
-    if (isAndroid) {
-        // 以下两行 设置android状态栏为透明的沉浸。写在组件渲染之后，是为了在渲染后进行set赋值，覆盖状态栏，写在渲染之前MaterialApp组件会覆盖掉这个值。
-        SystemUiOverlayStyle systemUiOverlayStyle =
-            SystemUiOverlayStyle(statusBarColor: Colors.transparent);
-        SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-      }
+  if (isAndroid) {
+    // 以下两行 设置android状态栏为透明的沉浸。写在组件渲染之后，是为了在渲染后进行set赋值，覆盖状态栏，写在渲染之前MaterialApp组件会覆盖掉这个值。
+    SystemUiOverlayStyle systemUiOverlayStyle =
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  }
 
   runZoned(() async => runApp(Entrance()));
 }
@@ -97,9 +97,9 @@ class Entrance extends StatelessWidget {
         return _buildRootRoute(settings, (_) => WidgetsListPage());
       case '/widgets_for_text':
         return _buildRootRoute(settings, (_) => WidgetText());
-        case '/widgets_for_button':
+      case '/widgets_for_button':
         return _buildRootRoute(settings, (_) => WidgetButton());
-         case '/widgets_for_week_webview':
+      case '/widgets_for_week_webview':
         return _buildRootRoute(settings, (_) => WidgetWebview());
       case '/detail':
         return _buildRootRoute(
@@ -132,9 +132,11 @@ class Entrance extends StatelessWidget {
                 ));
       case '/collection':
         return _buildRootRoute(settings, (_) => CollectionPage());
+      case '/wanandroid_search':
+        return _buildRootRoute(settings, (_) => SearchPage());
       case '/select_city':
         return _buildRootRoute(settings, (_) => SelectCityPage());
-        case '/login':
+      case '/login':
         return _buildRootRoute(settings, (_) => PasswordLoginPage());
       case '/test':
         return _buildRootRoute(settings, (_) => TestPage());

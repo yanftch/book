@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'HomeBannerBean.g.dart';
+part 'home_banner_bean.g.dart';
 
-// flutter packages pub run build_runner build --delete-conflicting-outputs`
+// flutter packages pub run build_runner build --delete-conflicting-outputs
 @JsonSerializable()
 class HomeBannerBean {
   String desc;

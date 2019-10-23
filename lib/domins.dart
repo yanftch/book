@@ -1,8 +1,8 @@
-export 'domin/HomeBean.dart';
-export 'domin/NavigationBean.dart';
-export 'domin/SystemTreeArticleBean.dart';
-export 'domin/SystemTreeBean.dart';
-export 'domin/HomeBannerBean.dart';
+export 'domin/home_bean.dart';
+export 'domin/navigation_bean.dart';
+export 'domin/system_tree_article_bean.dart';
+export 'domin/system_tree_bean.dart';
+export 'domin/home_banner_bean.dart';
 export 'domin/db_model.dart';
 export 'domin/history_model.dart';
 export 'domin/history.dart';

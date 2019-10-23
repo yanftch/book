@@ -61,6 +61,7 @@ class _HomePageState extends State<HomePage>
           icon: Icon(Icons.search),
           onPressed: () {
             T.show("to do");
+            Navigator.pushNamed(context, "/wanandroid_search");
           },
         )
       ];

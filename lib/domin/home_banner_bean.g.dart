@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'HomeBannerBean.dart';
+part of 'home_banner_bean.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

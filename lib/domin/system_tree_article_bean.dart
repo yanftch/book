@@ -1,46 +1,42 @@
 import 'package:json_annotation/json_annotation.dart';
 
+part 'system_tree_article_bean.g.dart';
+
 //flutter packages pub run build_runner build
-part 'NavigationBean.g.dart';
-
 @JsonSerializable()
-class NavigationBean {
-  List<NaviBean> data = new List();
+class SystemTreeArticleBean {
+  int curPage;
+  int offset;
+  bool over;
+  int pageCount;
+  int size;
+  int total;
+  List<DatasBean> datas;
 
-  NavigationBean({this.data});
-
-  factory NavigationBean.fromJson(List<dynamic> parsedJson) {
-    List<NaviBean> photos = new List<NaviBean>();
-    photos = parsedJson.map((i) => NaviBean.fromJson(i)).toList();
-    return new NavigationBean(
-      data: photos,
-    );
-  }
-}
-
-@JsonSerializable()
-class NaviBean {
-  int cid;
-  String name;
-  List<ArticlesBean> articles;
-
-  NaviBean({this.cid, this.name, this.articles});
+  SystemTreeArticleBean(
+      {this.curPage,
+      this.offset,
+      this.over,
+      this.pageCount,
+      this.size,
+      this.total,
+      this.datas});
 
   @override
   String toString() {
-    return 'NaviBean{cid: $cid, name: $name, articles: $articles}';
+    return 'SystemTreeArticleBean{curPage: $curPage, offset: $offset, over: $over, pageCount: $pageCount, size: $size, total: $total, datas: $datas}';
   }
 
   //序列化
-  factory NaviBean.fromJson(Map<String, dynamic> json) =>
-      _$NaviBeanFromJson(json);
+  factory SystemTreeArticleBean.fromJson(Map<String, dynamic> json) =>
+      _$SystemTreeArticleBeanFromJson(json);
 
   //反序列化
-  Map<String, dynamic> toJson() => _$NaviBeanToJson(this);
+  Map<String, dynamic> toJson() => _$SystemTreeArticleBeanToJson(this);
 }
 
 @JsonSerializable()
-class ArticlesBean {
+class DatasBean {
   String apkLink;
   String author;
   int chapterId;
@@ -64,14 +60,7 @@ class ArticlesBean {
   int visible;
   int zan;
 
-  //序列化
-  factory ArticlesBean.fromJson(Map<String, dynamic> json) =>
-      _$ArticlesBeanFromJson(json);
-
-  //反序列化
-  Map<String, dynamic> toJson() => _$ArticlesBeanToJson(this);
-
-  ArticlesBean(
+  DatasBean(
       {this.apkLink,
       this.author,
       this.chapterId,
@@ -94,4 +83,11 @@ class ArticlesBean {
       this.userId,
       this.visible,
       this.zan});
+
+//序列化
+  factory DatasBean.fromJson(Map<String, dynamic> json) =>
+      _$DatasBeanFromJson(json);
+
+  //反序列化
+  Map<String, dynamic> toJson() => _$DatasBeanToJson(this);
 }

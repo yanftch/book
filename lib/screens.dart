@@ -2,6 +2,7 @@ export 'wanandroid/home/home_page.dart';
 export 'wanandroid/mine/mine_page.dart';
 export 'wanandroid/second/project_page.dart';
 export 'wanandroid/home/home_page.dart';
+export 'wanandroid/home/search_page.dart';
 export 'wanandroid/third/collection_page.dart';
 export 'demo/widgets_list_page.dart';
 export 'demo/widgets/w_text.dart';

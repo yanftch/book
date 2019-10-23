@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'SystemTreeBean.g.dart';
+part 'system_tree_bean.g.dart';
 
 //flutter packages pub run build_runner build
 @JsonSerializable()
