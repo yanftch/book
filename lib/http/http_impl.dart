@@ -104,7 +104,10 @@ class HttpImpl {
   /// ***************************玩 Android***************************
   ///
   static const String API_WANANDROID_HOST = 'http://www.wanandroid.com';
-  static const String API_WANANDROID_HOME_BANNER = '$API_WANANDROID_HOST/banner/json';
+  static const String API_WANANDROID_HOME_BANNER =
+      '$API_WANANDROID_HOST/banner/json';
+  static const String API_WANANDROID_HOT_KEYS =
+      '$API_WANANDROID_HOST/hotkey/json';
 
   /// 获取首页列表数据
   /// @param page 分页页码
@@ -114,7 +117,8 @@ class HttpImpl {
   ]) async {
     page = isIncremental ? (page + 1) : 0;
     print("isIncremental-------->$isIncremental");
-    BaseResult baseResult = await BookHttpUtils.get("$API_WANANDROID_HOST/article/list/" + page.toString() + "/json");
+    BaseResult baseResult = await BookHttpUtils.get(
+        "$API_WANANDROID_HOST/article/list/" + page.toString() + "/json");
     WanAndroidBaseResp ta = WanAndroidBaseResp.init(baseResult.data);
     HomeBean homeBean = HomeBean.fromJson(ta.data);
     return FetchResult<HomeItemBean>(homeBean.datas, true);
@@ -129,7 +133,11 @@ class HttpImpl {
   }
 
   /// 热搜关键词
-  // static Future<>
+  static Future<HotKeyBean> fetchHotKeys() async {
+    BaseResult baseResult = await BookHttpUtils.get(API_WANANDROID_HOT_KEYS);
+    HotKeyBean hotKeyBean = HotKeyBean.fromJson(baseResult.data);
+    return hotKeyBean;
+  }
 
   ///
   /// ***************************时光***************************
@@ -310,7 +318,7 @@ class HttpImpl {
 
     BaseResult baseResult = await BookHttpUtils.get("$detailInHistory$id");
     print("baseResult======>${baseResult}");
-    
+
     HistoryModel model = HistoryModel.fromJson(baseResult.data);
     return model;
   }

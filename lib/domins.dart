@@ -6,6 +6,7 @@ export 'domin/home_banner_bean.dart';
 export 'domin/db_model.dart';
 export 'domin/history_model.dart';
 export 'domin/history.dart';
+export 'domin/hot_key_bean.dart';
 export 'time/time_main_page.dart';
 export 'domin/hot_model.dart';
 export 'domin/movie.dart';
