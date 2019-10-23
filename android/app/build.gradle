@@ -51,6 +51,9 @@ android {
                 includeCompileClasspath false
             }
         }
+        dexOptions {
+            javaMaxHeapSize "2g"
+        }
     }
 
     compileOptions {

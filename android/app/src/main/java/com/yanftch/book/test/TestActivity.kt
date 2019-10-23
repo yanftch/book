@@ -9,7 +9,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.yanftch.book.Constants.EXTRA_ID
 import com.yanftch.book.utils.BaseUtils.isNotEmpty
-import com.yanftch.book.utils.ShareUtils
 import org.jetbrains.anko.*
 import org.jetbrains.anko.sdk15.listeners.onClick
 import javax.inject.Inject
@@ -69,8 +68,10 @@ class TestActivity : AppCompatActivity() {
             button {
                 text = "Student"
                 onClick {
+                    student.age = 101
+                    student.name = "小明"
                     toast("click student: ${student.toString()}")
-                    ShareUtils.nativeShare(this@TestActivity, "你好")
+//                    ShareUtils.nativeShare(this@TestActivity, "你好")
                 }
             }
         }
