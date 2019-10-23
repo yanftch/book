@@ -1,5 +1,8 @@
 package com.yanftch.book.framework
 
+import android.app.Activity
+import android.os.Bundle
+
 /**
  *
  * User : yanftch
@@ -7,6 +10,9 @@ package com.yanftch.book.framework
  * Time : 14:44
  * Desc : Activity 基类
  */
-abstract class BaseActivity {
+abstract class BaseActivity :Activity(){
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
 }

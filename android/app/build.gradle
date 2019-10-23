@@ -78,7 +78,7 @@ dependencies {
     kapt deps.dagger.compiler
     implementation deps.dagger.core
 
-
+    // support library
     implementation deps.support.appcompat
     implementation deps.support.fragment
     implementation deps.support.annotations
@@ -90,6 +90,11 @@ dependencies {
     implementation deps.support.percent // TODO remove percent layouts
     implementation deps.support.transition
     implementation deps.constraint_layout
+
+    // rx library
+    implementation deps.rx.core
+    implementation(deps.rx.kotlin) { transitive = false }
+    implementation(deps.rx.android) { transitive = false }
 
 
 

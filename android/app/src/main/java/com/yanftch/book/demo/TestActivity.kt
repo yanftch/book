@@ -1,4 +1,4 @@
-package com.yanftch.book.test
+package com.yanftch.book.demo
 
 import android.content.Context
 import android.content.Intent

@@ -5,7 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import com.yanftch.book.utils.BaseUtils.isEmpty
 import com.yanftch.book.utils.BaseUtils.isNotEmpty
-import com.yanftch.book.test.TestActivity
+import com.yanftch.book.demo.TestActivity
 import org.jetbrains.anko.toast
 import java.util.*
 

@@ -14,6 +14,9 @@ ext {
     V_ARCH_COMP = '1.1.1'
     V_ARCH_ROOM = '1.1.1'
     V_DAGGER = '2.16'
+    V_RX = '2.2.8'
+    V_RX_ANDROID = '2.1.1'
+    V_RX_KT = '2.3.0'
     V_RX_BINDING = '2.1.1'
     V_BUTTERKNIFE = '7.0.1'
     V_GSON = '2.8.5'
@@ -87,7 +90,11 @@ ext.deps = [
                 recyclerview: "org.jetbrains.anko:anko-recyclerview-v7:$anko_version",
                 constraint_layout: "org.jetbrains.anko:anko-constraint-layout:$anko_version",
         ],
-
+        rx: [
+                core: "io.reactivex.rxjava2:rxjava:$V_RX",
+                kotlin: "io.reactivex.rxjava2:rxkotlin:$V_RX_KT",
+                android: "io.reactivex.rxjava2:rxandroid:$V_RX_ANDROID",
+        ],
         dagger: [
                 core: "com.google.dagger:dagger:$V_DAGGER",
                 compiler: "com.google.dagger:dagger-compiler:$V_DAGGER",

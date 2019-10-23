@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.yanftch.book">
     <!-- 允许程序设置内置sd卡的写权限 -->
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/ic_launcher"
-        android:label="NULL">
-        <activity android:name="com.yanftch.book.test.TestActivity" android:theme="@style/AppBaseTheme"></activity>
+        android:label="NULL"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name="com.yanftch.book.demo.TestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme" />
+        <activity
+            android:name="com.yanftch.book.demo.RxJavaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
